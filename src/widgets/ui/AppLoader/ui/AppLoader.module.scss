@@ -1,0 +1,10 @@
+.appLoader {
+	position: fixed;
+	z-index: 10;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* stylelint-disable-next-line color-function-notation */
+	background-color: rgb(var(--inverted-bg-color-rgba), 0.5);
+	inset: 0;
+}

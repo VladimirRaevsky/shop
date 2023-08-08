@@ -1,0 +1,47 @@
+:root {
+	/*
+	* size m
+    */
+	--font-size-m: 16px;
+	--line-hight-m: 24px;
+	--font-family: 'Lato', sans-serif;
+	--font-m: var(--font-size-m) / var(--line-hight-m) var(--font-family);
+
+	/*
+    * size l
+	*/ 
+	--font-size-l: 20px;
+	--line-hight-l: 28px;
+    --font-family: 'Jost', sans-serif;
+	--font-l: var(--font-size-l) / var(--line-hight-l) var(--font-family);
+
+	/*
+    * size xl
+	*/ 
+	--font-size-xl: 30px;
+	--line-hight-xl: 38px;
+    --font-family: 'Jost', sans-serif;
+	--font-xl: var(--font-size-xl) / var(--line-hight-xl) var(--font-family);
+
+	/*
+    * size nav-bar
+	*/ 
+	--nav-bar-height: 50px;
+
+	/*
+    * size side-bar
+	*/
+	--side-bar-width: 300px;
+	--side-bar-width-collapsed: 80px;
+
+	/*
+    *  z-index
+	*/ 
+    --header-index: 2;
+	--modal-index: 5;
+
+	/*
+    *  color
+	*/ 
+	--overlay-color: rgba(0 0 0 / 60%);
+}

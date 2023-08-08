@@ -1,0 +1,20 @@
+.navBar {
+    .list {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+
+.item {
+    list-style: none;
+
+    a {
+        color: var(--primary-color);
+        text-decoration: none;
+    }
+}
+
+.item:not(:last-child) {
+    margin-right: 2.5rem;
+}

@@ -1,0 +1,26 @@
+{
+	"compilerOptions": {
+		"resolveJsonModule": true,
+		"outDir": "./build/",
+		"noImplicitAny": true,
+		"module": "ESNext",
+		"target": "ES5",
+		"sourceMap": true,
+		"jsx": "react-jsx",
+		"allowJs": true,
+		"moduleResolution": "node",
+		// "noEmit": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"strict": true,
+		"baseUrl": ".",
+		"paths": {
+			"*": ["./src/*"]
+		}
+	},
+	"ts-node": {
+		"compilerOptions": {
+			"module": "CommonJS"
+		}
+	}
+}
