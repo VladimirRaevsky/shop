@@ -1,6 +1,6 @@
-import { lazy } from 'react'
+import { lazy } from 'react';
 
-export const CartPageAsync = lazy(async () => await import('./CartPage'))
+export const CartPageAsync = lazy(async () => await import('./CartPage'));
 
 // async () =>
 //     await new Promise((resolve) => {

@@ -1,27 +1,27 @@
-import { type FC } from 'react'
-import cls from './Loader.module.scss'
+import { type FC } from 'react';
+import cls from './Loader.module.scss';
 
 interface LoaderProps {
-  className?: string
+    className?: string;
 }
 
 export const Loader: FC<LoaderProps> = () => {
-  return (
-    <>
-      <div className={cls['lds-spinner']}>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </>
-  )
-}
+    return (
+        <>
+            <div className={cls['lds-spinner']}>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </>
+    );
+};

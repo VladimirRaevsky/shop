@@ -1,12 +1,12 @@
-import { type FC, Suspense } from 'react'
-import { Route, Routes } from 'react-router-dom'
-import { RouteConfig } from 'shared/config/routeConfig/RouteConfig'
-import { PageLoader } from 'widgets/ui/PageLoader'
+import { type FC, Suspense } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { RouteConfig } from 'shared/config/routeConfig/RouteConfig';
+import { PageLoader } from 'widgets/ui/PageLoader';
 
 export const AppRouter: FC = () => {
     return (
         <Suspense fallback={<PageLoader />}>
-            <div className="page-wrapper">
+            <div className='page-wrapper'>
                 <Routes>
                     {RouteConfig.map(({ element, path }) => (
                         <Route key={path} path={path} element={element} />
@@ -14,5 +14,5 @@ export const AppRouter: FC = () => {
                 </Routes>
             </div>
         </Suspense>
-    )
-}
+    );
+};

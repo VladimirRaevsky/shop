@@ -1,19 +1,19 @@
 .pageError {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	width: 100vw;
-	height: 100vh;
-	background-color: #9b7be1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #9b7be1;
 
-	p {
-		color: rgb(17 81 231);
-	}
+    p {
+        color: rgb(17 81 231);
+    }
 
-	span {
-		font-size: var(--font-size-b);
-		line-height: var(--line-height-b);
-		color: rgb(255 0 0);
-	}
+    span {
+        font-size: var(--font-size-b);
+        line-height: var(--line-height-b);
+        color: rgb(255 0 0);
+    }
 }

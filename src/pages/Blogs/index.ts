@@ -1,1 +1,1 @@
-export { BlogsAsync as BlogsPage } from './ui/Blogs.async'
+export { BlogsAsync as BlogsPage } from './ui/Blogs.async';

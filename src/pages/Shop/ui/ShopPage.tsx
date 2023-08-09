@@ -1,16 +1,16 @@
-import { type FC } from 'react'
-import { useTranslation } from 'react-i18next'
+import { type FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
-import cls from './ShopPage.module.scss'
+import cls from './ShopPage.module.scss';
 
 interface ShopPageProps {
-    className?: string
+    className?: string;
 }
 
 const ShopPage: FC<ShopPageProps> = () => {
-    const { t } = useTranslation('home')
+    const { t } = useTranslation('home');
 
-    return <div className={cls.ShopPage}>{t('Главная страница')}</div>
-}
+    return <div className={cls.ShopPage}>{t('Главная страница')}</div>;
+};
 
-export default ShopPage
+export default ShopPage;

@@ -1,15 +1,17 @@
 .appLink {
-	margin-left: 0;
+    margin-left: 0;
+    color: inherit;
+    text-decoration: none;
 }
 
 .primary {
-	color: var(--inverted-primary-color);
+    color: var(--inverted-primary-color);
 }
 
 .secondary {
-	color: var(--secondary-color);
+    color: var(--secondary-color);
 }
 
 .unaltered {
-	color:rgb(191 255 0);
+    color: rgb(191 255 0);
 }

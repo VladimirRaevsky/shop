@@ -1,40 +1,72 @@
-import { type FC } from "react";
-import { ClassNames } from "shared/lib";
-import { AppLink } from "shared/ui/AppLink";
-import cls from "./NavBar.module.scss";
+import { useState, type FC } from 'react';
+import { ClassNames } from 'shared/lib';
+import { AppLink } from 'shared/ui/AppLink';
+import { type ListType, LIST_ITEMS } from '../const';
+import cls from './NavBar.module.scss';
 
 interface NavBarProps {
-	className?: string;
+    className?: string;
 }
 
 export const NavBar: FC<NavBarProps> = (props) => {
-	const { className = "" } = props;
+    const { className = '' } = props;
 
-	return (
-		<nav className={ClassNames(cls.navBar, {}, [className])}>
-			<ul className={cls.list}>
-				<li className={cls.item}>
-					<AppLink to="/">HOME</AppLink>
-				</li>
-				<li className={cls.item}>
-					<AppLink to="about">ABOUT</AppLink>
-				</li>
-				<li className={cls.item}>
-					<AppLink to="blogs">BLOGS</AppLink>
-				</li>
-				<li className={cls.item}>
-					<AppLink to="contact">CONTACT</AppLink>
-				</li>
-				<li className={cls.item}>
-					<AppLink to="cart">CART</AppLink>
-				</li>
-				<li className={cls.item}>
-					<AppLink to="checkout">CHECKOUT</AppLink>
-				</li>
-				<li className={cls.item}>
-					<AppLink to="SHOP">SHOP</AppLink>
-				</li>
-			</ul>
-		</nav>
-	);
+    const [hoveredIndex, setHoveredIndex] = useState<null | number>(null);
+
+    const [navList, setNavList] = useState<ListType[]>(LIST_ITEMS);
+
+    const toggleClassHandler = (index: number) => {
+        const newList = navList.map((el, i) => {
+            if (i !== index) {
+                return {
+                    ...el,
+                    hover: false,
+                };
+            } else {
+                return {
+                    ...el,
+                    hover: true,
+                };
+            }
+        });
+
+        setNavList(newList);
+    };
+
+    return (
+        <nav className={ClassNames(cls.navBar, {}, [className])}>
+            <ul className={cls.list}>
+                {navList.map((el, index) => {
+                    return (
+                        <li
+                            key={index}
+                            className={ClassNames(
+                                cls.item,
+                                { [cls.hover]: el.hover },
+                                [
+                                    className,
+                                    `${
+                                        hoveredIndex === index && !el.hover
+                                            ? cls.hesitate
+                                            : ''
+                                    }`,
+                                ],
+                            )}
+                            onClick={() => {
+                                toggleClassHandler(index);
+                            }}
+                            onMouseEnter={() => {
+                                setHoveredIndex(index);
+                            }}
+                            onMouseLeave={() => {
+                                setHoveredIndex(null);
+                            }}
+                        >
+                            <AppLink to={el.to}>{el.text}</AppLink>
+                        </li>
+                    );
+                })}
+            </ul>
+        </nav>
+    );
 };

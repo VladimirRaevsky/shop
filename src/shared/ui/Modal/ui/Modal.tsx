@@ -1,56 +1,54 @@
-import { type ReactNode, type FC, useEffect, useCallback } from 'react'
-import { ClassNames } from 'shared/lib'
-import { Portal } from 'shared/ui/Portal/Portal'
-import cls from './Modal.module.scss'
+import { type ReactNode, type FC, useEffect, useCallback } from 'react';
+import { ClassNames } from 'shared/lib';
+import { Portal } from 'shared/ui/Portal/Portal';
+import cls from './Modal.module.scss';
 
 interface ModalProps {
-    className?: string
-    children: ReactNode
-    isOpen: boolean
-    onClose?: () => void
+    className?: string;
+    children: ReactNode;
+    isOpen: boolean;
+    onClose?: () => void;
 }
 
 export const Modal: FC<ModalProps> = (props) => {
-    const { className = '', isOpen, onClose, children } = props
+    const { className = '', isOpen, onClose, children } = props;
 
     const mods: Record<string, boolean> = {
         [cls.opened]: isOpen,
-    }
+    };
 
     const onCloseHandler = useCallback(() => {
-        if (onClose) {
-            onClose()
+        if (onClose != null) {
+            onClose();
         }
-    }, [onClose])
+    }, [onClose]);
 
     const onContentClick = (e: React.MouseEvent): void => {
-        e.stopPropagation()
-    }
+        e.stopPropagation();
+    };
 
     const onKeyDown = useCallback(
         (event: KeyboardEvent) => {
             if (event.key === 'Escape') {
-                onCloseHandler()
+                onCloseHandler();
             }
         },
-        [onCloseHandler]
-    )
+        [onCloseHandler],
+    );
 
     useEffect(() => {
         if (isOpen) {
-            window.addEventListener('keydown', onKeyDown)
+            window.addEventListener('keydown', onKeyDown);
         }
 
         return () => {
-            window.removeEventListener('keydown', onKeyDown)
-        }
-    }, [isOpen, onKeyDown])
+            window.removeEventListener('keydown', onKeyDown);
+        };
+    }, [isOpen, onKeyDown]);
 
     if (!isOpen) {
-        return null
+        return null;
     }
-
-    
 
     return (
         <Portal>
@@ -62,5 +60,5 @@ export const Modal: FC<ModalProps> = (props) => {
                 </div>
             </div>
         </Portal>
-    )
-}
+    );
+};

@@ -1,1 +1,1 @@
-export { CheckoutPageAsync as CheckoutPage } from './ui/CheckoutPageAsync.async'
+export { CheckoutPageAsync as CheckoutPage } from './ui/CheckoutPageAsync.async';

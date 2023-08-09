@@ -1,24 +1,24 @@
-import { type Meta, type StoryObj } from '@storybook/react'
+import { type Meta, type StoryObj } from '@storybook/react';
 
-import { Button, ButtonSize, ButtonTheme } from './Button'
-import '../../../../shared/config/i18n/i18nForStorybook'
+import { Button, ButtonSize, ButtonTheme } from './Button';
+import '../../../../shared/config/i18n/i18nForStorybook';
 
 const meta: Meta<typeof Button> = {
     title: 'shared/Button',
     component: Button,
 
     tags: ['autodocs'],
-}
+};
 
-export default meta
+export default meta;
 
-type Story = StoryObj<typeof Button>
+type Story = StoryObj<typeof Button>;
 
 export const Default: Story = {
     args: {
         children: 'Кнопка',
     },
-}
+};
 
 export const ClearLight: Story = {
     args: {
@@ -35,7 +35,7 @@ export const ClearLight: Story = {
             ],
         },
     },
-}
+};
 
 export const Border: StoryObj = {
     args: {
@@ -43,7 +43,7 @@ export const Border: StoryObj = {
         theme: ButtonTheme.BORDER,
         sqare: false,
     },
-}
+};
 
 export const ACTIVE = {
     args: {
@@ -51,7 +51,7 @@ export const ACTIVE = {
         theme: ButtonTheme.ACTIVE,
         sqare: false,
     },
-}
+};
 
 export const ERROR: Story = {
     args: {
@@ -59,7 +59,7 @@ export const ERROR: Story = {
         theme: ButtonTheme.ERROR,
         sqare: false,
     },
-}
+};
 
 export const Clear: Story = {
     args: {
@@ -67,7 +67,7 @@ export const Clear: Story = {
         theme: ButtonTheme.CLEAR,
         sqare: false,
     },
-}
+};
 
 export const SQARE_SIZE_M: Story = {
     args: {
@@ -75,7 +75,7 @@ export const SQARE_SIZE_M: Story = {
         size: ButtonSize.M,
         sqare: true,
     },
-}
+};
 
 export const SQARE_SIZE_L: Story = {
     args: {
@@ -83,7 +83,7 @@ export const SQARE_SIZE_L: Story = {
         size: ButtonSize.L,
         sqare: true,
     },
-}
+};
 
 export const SQARE_SIZE_XL: Story = {
     args: {
@@ -91,7 +91,7 @@ export const SQARE_SIZE_XL: Story = {
         size: ButtonSize.XL,
         sqare: true,
     },
-}
+};
 
 export const SIZE_M: Story = {
     args: {
@@ -99,7 +99,7 @@ export const SIZE_M: Story = {
         size: ButtonSize.M,
         sqare: false,
     },
-}
+};
 
 export const SIZE_L: Story = {
     args: {
@@ -107,7 +107,7 @@ export const SIZE_L: Story = {
         size: ButtonSize.L,
         sqare: false,
     },
-}
+};
 
 export const SIZE_XL: Story = {
     args: {
@@ -115,7 +115,7 @@ export const SIZE_XL: Story = {
         size: ButtonSize.XL,
         sqare: false,
     },
-}
+};
 
 export const BACKGROUND: Story = {
     args: {
@@ -123,4 +123,4 @@ export const BACKGROUND: Story = {
         theme: ButtonTheme.BACKGROUND,
         sqare: false,
     },
-}
+};

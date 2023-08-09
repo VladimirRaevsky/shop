@@ -1,6 +1,6 @@
-import { lazy } from 'react'
+import { lazy } from 'react';
 
-export const ContactPageAsync = lazy(async () => await import('./ContactPage'))
+export const ContactPageAsync = lazy(async () => await import('./ContactPage'));
 // export const AboutPageAsync = lazy(async ()=> await import('./AboutPage'))
 // export const AboutPageAsync = lazy(
 //     async () =>

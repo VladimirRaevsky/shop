@@ -1,1 +1,1 @@
-export { AppLoader } from './ui/AppLoader'
+export { AppLoader } from './ui/AppLoader';

@@ -1,15 +1,15 @@
-import { type Meta, type StoryObj } from '@storybook/react'
+import { type Meta, type StoryObj } from '@storybook/react';
 
-import ContactPage from './ContactPage'
+import ContactPage from './ContactPage';
 
 const meta: Meta<typeof ContactPage> = {
     title: 'pages/ContactPage',
     component: ContactPage,
 
     tags: ['autodocs'],
-}
+};
 
-export default meta
+export default meta;
 
-type Story = StoryObj<typeof ContactPage>
-export const Default: Story = {}
+type Story = StoryObj<typeof ContactPage>;
+export const Default: Story = {};

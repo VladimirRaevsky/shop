@@ -8,13 +8,19 @@
 
 .item {
     list-style: none;
-
-    a {
-        color: var(--primary-color);
-        text-decoration: none;
-    }
+    color: var(--primary-color);
+    transition: color .3s;
 }
 
 .item:not(:last-child) {
     margin-right: 2.5rem;
+}
+
+.hover {
+    color: var(--accent-color);
+}
+
+.hesitate {
+    color: var(--hover-color);
+    transition: color .3s;
 }

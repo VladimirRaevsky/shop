@@ -1,18 +1,15 @@
-import { type Meta, type StoryObj } from '@storybook/react'
-import { Loader } from './Loader'
-
+import { type Meta, type StoryObj } from '@storybook/react';
+import { Loader } from './Loader';
 
 const meta: Meta<typeof Loader> = {
     title: 'shared/Loader',
     component: Loader,
 
     tags: ['autodocs'],
-}
+};
 
-export default meta
+export default meta;
 
-type Story = StoryObj<typeof Loader>
+type Story = StoryObj<typeof Loader>;
 
-export const Default: Story = {
-}
-
+export const Default: Story = {};
