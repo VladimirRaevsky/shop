@@ -24,9 +24,19 @@
     --font-xl: var(--font-size-xl) / var(--line-hight-xl) var(--font-family);
 
     /*
+    * font-family
+    */
+    --font-family-Jost: 'Jost', sans-serif;
+
+    /*
+    *logo
+    */
+    --font-size-logo: 2.063rem;
+
+    /*
     * size nav-bar
 	*/
-    --nav-bar-height: 50px;
+    --header-height: 4.5rem;
 
     /*
     * size side-bar

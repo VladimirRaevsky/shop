@@ -7,6 +7,7 @@ import { ButtonTheme } from 'shared/ui/Button/ui/Button';
 import { useTranslation } from 'react-i18next';
 import { ThemeSwitcherButton } from 'features/SwitcherButton';
 import { NavBar } from './NavBar';
+import { MyContainer } from 'shared/ui/MyContainer';
 
 interface HeaderProps {
     className?: string;
@@ -23,20 +24,24 @@ export const Header: FC<HeaderProps> = () => {
 
     return (
         <header className={ClassNames(cls.Header, {}, [])}>
-            <div className={cls.logo}>MiniStore</div>
-            <div className='center'>
-                <NavBar />
-            </div>
-            <div className='right'>
-                <ThemeSwitcherButton />
-                <Button
-                    theme={ButtonTheme.BACKGROUND}
-                    className={cls.right}
-                    onClick={isAuthHandler}
-                >
-                    {t('Войти')}
-                </Button>
-            </div>
+            <MyContainer>
+                <div className={cls.wrapper}>
+                    <div className={cls.logo}>MiniStore</div>
+                    <div className='center'>
+                        <NavBar />
+                    </div>
+                    <div className='right'>
+                        <ThemeSwitcherButton />
+                        <Button
+                            theme={ButtonTheme.BACKGROUND}
+                            className={cls.right}
+                            onClick={isAuthHandler}
+                        >
+                            {t('Войти')}
+                        </Button>
+                    </div>
+                </div>
+            </MyContainer>
         </header>
     );
 };

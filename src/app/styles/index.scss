@@ -21,7 +21,7 @@ body {
 }
 
 .page-wrapper {
-    flex-grow: 1;
+    padding: var(--header-height) 0 0 0;
 }
 
 .sb-show-main[data-preview*='my-story-id'] {

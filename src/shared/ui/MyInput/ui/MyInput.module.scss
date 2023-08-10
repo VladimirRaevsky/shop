@@ -1,0 +1,109 @@
+.input {
+    input::placeholder {
+        color: rgb(114, 112, 112);
+        letter-spacing: 3px !important;
+    }
+}
+
+.size_m {
+    max-width: 290px;
+    height: 53px;
+    border: 1px solid #EEE;
+    box-shadow: var(--input-shadow);
+    border-radius: 10px;
+    border-style: none;
+
+    span > span:nth-child(2) > button  {
+        background-color: #020202;
+        
+        & > span > span  {
+            display: flex;
+            align-items: center;
+            background-color: inherit;
+        }
+    
+        svg {
+            color: #ffffff;
+        }
+    }
+
+    span > span:nth-child(2) > button {
+        padding: 16px;
+        width: 53px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        font-family: Lato;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 148%;
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+    
+        span {
+            display: flex;
+            align-items: center;
+            background-color:#000;
+        }
+    }
+    
+    span {
+        height: 100%;
+    }
+
+    svg {
+        width: 1.2rem;
+        height: 1.2rem;
+        color: #f4a4a4;
+    }
+
+    & > span > span > span > span:nth-child(2) {
+        display: flex;
+        align-items: center;
+    }
+
+    & > span > span > span > span > span {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.size_l {
+    width: 328px;
+    height: 53px;
+    font-size: 20px;
+
+    span {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    svg {
+        width: 1.2rem;
+        height: 1.2rem;
+        color: #f4a4a4;
+    }
+
+    span > span:nth-child(2) > button {
+        height: 100%;
+        padding: 16px;
+        width: 166px;
+        display: flex;
+        justify-content: center;
+        background-color: var(--accent-color);
+        font-family: Lato;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 148%;
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+    }
+}
+
+.size_xl {
+    width: 640px;
+    height: 62px;
+}

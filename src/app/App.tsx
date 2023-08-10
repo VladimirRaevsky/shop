@@ -1,6 +1,7 @@
 import { AppRouter } from 'app/providers/router';
 import { type FC, Suspense, useEffect } from 'react';
 import { ClassNames, useTheme } from 'shared/lib';
+import { MyContainer } from 'shared/ui/MyContainer';
 import { AppLoader } from 'widgets/ui/AppLoader';
 import { Header } from 'widgets/ui/Header';
 
@@ -23,7 +24,9 @@ export const App: FC<AppProps> = () => {
 
             <Suspense fallback={<AppLoader />}>
                 <div className='page-content'>
-                    <AppRouter />
+                    <MyContainer>
+                        <AppRouter />
+                    </MyContainer>
                 </div>
             </Suspense>
         </div>
