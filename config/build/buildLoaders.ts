@@ -34,12 +34,11 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
 
 	const svgLoader = {
 		test: /\.svg$/i,
-		issuer: /\.[jt]sx?$/,
 		use: ["@svgr/webpack"],
 	};
 
 	const fileLoader = {
-		test: /\.(gif|png|jpe?g|svg|woff2|woff)$/i,
+		test: /\.(gif|png|jpe?g|woff2|woff)$/i,
 		use: [
 			"file-loader",
 			{

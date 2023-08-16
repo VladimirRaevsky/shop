@@ -1,13 +1,13 @@
 import { useCallback, useState, type FC } from 'react';
-import { ClassNames } from 'shared/lib';
+import { ClassNames, useTheme } from 'shared/lib';
 import { Button } from 'shared/ui/Button';
-
-import cls from './Header.module.scss';
 import { ButtonTheme } from 'shared/ui/Button/ui/Button';
 import { useTranslation } from 'react-i18next';
-import { ThemeSwitcherButton } from 'features/SwitcherButton';
 import { NavBar } from './NavBar';
 import { MyContainer } from 'shared/ui/MyContainer';
+import Switch from 'antd/es/switch';
+
+import cls from './Header.module.scss';
 
 interface HeaderProps {
     className?: string;
@@ -15,6 +15,8 @@ interface HeaderProps {
 
 export const Header: FC<HeaderProps> = () => {
     const [isAuth, setIsAuth] = useState(false);
+
+    const { theme, themeToggleHandler } = useTheme();
 
     const { t } = useTranslation();
 
@@ -31,13 +33,19 @@ export const Header: FC<HeaderProps> = () => {
                         <NavBar />
                     </div>
                     <div className='right'>
-                        <ThemeSwitcherButton />
+                        <Switch
+                            checked={theme === 'light'}
+                            onChange={themeToggleHandler}
+                            checkedChildren={t('светлая')}
+                            unCheckedChildren={t('темная')}
+                        />
+
                         <Button
                             theme={ButtonTheme.BACKGROUND}
                             className={cls.right}
                             onClick={isAuthHandler}
                         >
-                            {t('Войти')}
+                            {t('войти')}
                         </Button>
                     </div>
                 </div>

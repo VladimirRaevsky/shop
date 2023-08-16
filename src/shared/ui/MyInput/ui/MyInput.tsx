@@ -1,58 +1,78 @@
 import { type InputHTMLAttributes, type FC } from 'react';
-import { AudioOutlined } from '@ant-design/icons';
-import { Input, Space } from 'antd';
-
+import { Input } from 'antd';
 import { ClassNames } from 'shared/lib';
 import cls from './MyInput.module.scss';
+import { useTranslation } from 'react-i18next';
 
 const { Search } = Input;
 
-const suffix = (
-    <AudioOutlined
-        style={{
-            fontSize: 20,
-            color: '#1677ff',
-        }}
-    />
-);
-
-export enum IMyInputSize {
+export enum MyInputSize {
     M = 'size_m',
     L = 'size_l',
-    XL = 'size_xl',
+}
+
+export enum MyInputTheme {
+    SUBSCRIBE = 'subscribe',
+    SEARCH = 'search',
+}
+
+export enum MyInputText {
+    SUBSCRIBE = 'Subscribe',
+}
+
+export enum MyInputPlaceholder {
+    EMAIL = 'Your email address here',
+    SEARCH = 'Search',
 }
 
 export interface IMyInputProps
     extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
+    theme: string;
     type: string;
-    placeholder?: string;
-    size: IMyInputSize;
+    placeholder: MyInputPlaceholder;
+    size: MyInputSize;
     className?: string;
-    desc?: string;
+    desc?: MyInputText;
 }
 
 export const MyInput: FC<IMyInputProps> = (props) => {
-    const { type, placeholder, size, desc, className = '' } = props;
+    const {
+        type,
+        placeholder,
+        size,
+        desc,
+        className = '',
+        theme,
+        ...other
+    } = props;
 
-    const onSearch = (value: string): void => {
-        console.log(value);
+    const { t } = useTranslation();
+
+    const onAnimationHandler = (): void => {};
+
+    const onSearchHandler = (e: any): void => {
+        console.log(e.target?.value);
     };
 
     return (
-        <Space direction='vertical'>
-            <Search
-                rootClassName={ClassNames(cls.input, {}, [
-                    className,
-                    cls[size],
-                ])}
-                type={type}
-                maxLength={30}
-                showCount
-                placeholder={placeholder}
-                allowClear
-                enterButton={desc}
-                onSearch={onSearch}
-            />
-        </Space>
+        <Search
+            rootClassName={ClassNames(cls.input, {}, [
+                className,
+                cls[size],
+                cls[theme],
+            ])}
+            type={type}
+            maxLength={30}
+            showCount
+            placeholder={t(placeholder.length > 6 ? 'имэйл' : 'поиск')}
+            allowClear
+            enterButton={desc && t('подписаться')}
+            onInput={(e) => {
+                onSearchHandler(e);
+            }}
+            onClick={onAnimationHandler}
+            spellCheck
+            {...other}
+        />
     );
 };

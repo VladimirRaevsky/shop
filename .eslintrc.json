@@ -15,7 +15,7 @@
       "env": {
         "node": true
       },
-      "files": [".eslintrc.{js,cjs}"],
+      "files": [".eslintrc.{js,cjs,json}"],
       "parserOptions": {
         "sourceType": "script"
       }
@@ -37,6 +37,7 @@
     "@typescript-eslint/quotes": "off",
     "prettier/prettier": "error",
     "no-unused-vars": 1,
-    "@typescript-eslint/no-unused-vars": [1]
+    "@typescript-eslint/no-unused-vars": [1],
+    "@typescript-eslint/consistent-type-definitions": 0
   }
 }

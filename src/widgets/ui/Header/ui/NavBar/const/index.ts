@@ -6,11 +6,11 @@ export interface ListType {
 }
 
 export const LIST_ITEMS: ListType[] = [
-    { id: 1, to: '/', text: 'HOME', hover: true },
-    { id: 2, to: 'about', text: 'ABOUT', hover: false },
-    { id: 3, to: 'blogs', text: 'BLOGS', hover: false },
-    { id: 4, to: 'contact', text: 'CONTACT', hover: false },
-    { id: 5, to: 'cart', text: 'CART', hover: false },
-    { id: 6, to: 'checkout', text: 'CHECKOUT', hover: false },
-    { id: 7, to: 'shop', text: 'SHOP', hover: false },
+    { id: 1, to: '/', text: 'главная', hover: true },
+    { id: 2, to: 'about', text: 'о нас', hover: false },
+    { id: 3, to: 'blogs', text: 'блоги', hover: false },
+    { id: 4, to: 'contact', text: 'контакт', hover: false },
+    { id: 5, to: 'cart', text: 'корзина', hover: false },
+    { id: 6, to: 'checkout', text: 'доставка', hover: false },
+    { id: 7, to: 'shop', text: 'магазин', hover: false },
 ];

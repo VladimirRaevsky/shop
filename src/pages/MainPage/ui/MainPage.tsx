@@ -1,7 +1,14 @@
 import { type FC } from 'react';
 import { useTranslation } from 'react-i18next';
+import IconSearch from '../../../shared/assets/icons/home.svg';
 import { MyInput } from 'shared/ui/MyInput';
-import { IMyInputSize } from 'shared/ui/MyInput/ui/MyInput';
+import {
+    MyInputPlaceholder,
+    MyInputSize,
+    MyInputTheme,
+} from 'shared/ui/MyInput/ui/MyInput';
+import { InputType } from 'shared/ui/MyInputForm/ui/MyInputForm';
+import { SwitcherLang } from 'shared/ui/SwitcherLang';
 
 import cls from './MainPage.module.scss';
 
@@ -14,14 +21,14 @@ const MainPage: FC<MainePageProps> = () => {
 
     return (
         <div className={cls.MainPage}>
-            <MyInput type='text' placeholder='Search' size={IMyInputSize.M} />
             <MyInput
-                type='text'
-                placeholder='Subscribe'
-                desc='Subscribe'
-                size={IMyInputSize.L}
+                type={InputType.TEXT}
+                size={MyInputSize.M}
+                theme={MyInputTheme.SEARCH}
+                placeholder={MyInputPlaceholder.SEARCH}
             />
-            <MyInput type='text' size={IMyInputSize.XL} />
+            <SwitcherLang />
+            <IconSearch />
             {t('Главная страница')}
         </div>
     );

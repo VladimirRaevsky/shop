@@ -20,6 +20,7 @@ export class ErrorBoundary extends React.Component<
 
     static getDerivedStateFromError(error: Error): ErrorBoundaryState {
         // Обновить состояние с тем, чтобы следующий рендер показал запасной UI.
+        // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
         if (error) {
             return { hasError: true };
         } else {

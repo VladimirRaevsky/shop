@@ -1,13 +1,20 @@
 .input {
     input::placeholder {
         color: rgb(114, 112, 112);
-        letter-spacing: 3px !important;
+        letter-spacing: 2px;
     }
 }
 
-.size_m {
-    max-width: 290px;
-    height: 53px;
+:global {
+    .ant-btn > div > div {
+        color: var(--primary-color);
+    }
+    .ant-btn {
+        border: none;
+    }
+}
+
+.search {
     border: 1px solid #EEE;
     box-shadow: var(--input-shadow);
     border-radius: 10px;
@@ -15,19 +22,6 @@
 
     span > span:nth-child(2) > button  {
         background-color: #020202;
-        
-        & > span > span  {
-            display: flex;
-            align-items: center;
-            background-color: inherit;
-        }
-    
-        svg {
-            color: #ffffff;
-        }
-    }
-
-    span > span:nth-child(2) > button {
         padding: 16px;
         width: 53px;
         height: 100%;
@@ -40,14 +34,22 @@
         line-height: 148%;
         letter-spacing: 1.4px;
         text-transform: uppercase;
-    
-        span {
+
+        &:hover {
+            background-color: #4f4c4c;
+        }
+
+        & > span > span  {
             display: flex;
             align-items: center;
-            background-color:#000;
+            background-color: inherit;
+        }
+    
+        svg {
+            color: #ffffff;
         }
     }
-    
+
     span {
         height: 100%;
     }
@@ -69,11 +71,7 @@
     }
 }
 
-.size_l {
-    width: 328px;
-    height: 53px;
-    font-size: 20px;
-
+.subscribe {
     span {
         height: 100%;
         display: flex;
@@ -103,7 +101,14 @@
     }
 }
 
-.size_xl {
-    width: 640px;
-    height: 62px;
+.size_m {
+    max-width: 290px;
+    height: 53px;
 }
+
+.size_l {
+    width: 494px;
+    height: 53px;
+    font-size: 20px;
+}
+

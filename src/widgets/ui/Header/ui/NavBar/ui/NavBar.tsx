@@ -1,4 +1,5 @@
 import { useState, type FC } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ClassNames } from 'shared/lib';
 import { AppLink } from 'shared/ui/AppLink';
 import { type ListType, LIST_ITEMS } from '../const';
@@ -11,11 +12,13 @@ interface NavBarProps {
 export const NavBar: FC<NavBarProps> = (props) => {
     const { className = '' } = props;
 
+    const { t } = useTranslation();
+
     const [hoveredIndex, setHoveredIndex] = useState<null | number>(null);
 
     const [navList, setNavList] = useState<ListType[]>(LIST_ITEMS);
 
-    const toggleClassHandler = (index: number) => {
+    const toggleClassHandler = (index: number): void => {
         const newList = navList.map((el, i) => {
             if (i !== index) {
                 return {
@@ -62,7 +65,7 @@ export const NavBar: FC<NavBarProps> = (props) => {
                                 setHoveredIndex(null);
                             }}
                         >
-                            <AppLink to={el.to}>{el.text}</AppLink>
+                            <AppLink to={el.to}>{t(el.text)}</AppLink>
                         </li>
                     );
                 })}

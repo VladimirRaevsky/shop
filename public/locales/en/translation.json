@@ -1,3 +1,17 @@
 {
-    "англиский": "en"
+    "главная": "Home",
+    "о нас": "About",
+    "блоги": "Blogs",
+    "контакт": "Contact",
+    "корзина": "Cart",
+    "доставка": "Checkout",
+    "магазин": "Shop",
+    "войти": "To come in",
+    "авторизация": "Log in",
+    "регистрация": "Registration",
+    "темная": "Dark",
+    "светлая": "Light",
+    "подписаться": "Subscribe",
+    "поиск": "Search",
+    "имэйл": "Your email address here"
 }
