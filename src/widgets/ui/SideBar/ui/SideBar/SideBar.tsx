@@ -1,6 +1,6 @@
 import { type FC, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { RoutePaths } from 'shared/config/routeConfig/RouteConfig';
+import { AppRoutes } from 'shared/config/routeConfig/RouteConfig';
 import { ClassNames } from 'shared/lib';
 import { AppLink } from 'shared/ui/AppLink';
 import { AppLinkTheme } from 'shared/ui/AppLink/ui/AppLink';
@@ -31,25 +31,7 @@ export const SideBar: FC<SideBarProps> = (props) => {
                 className,
             ])}
         >
-            <div className={cls.items}>
-                <AppLink
-                    to={RoutePaths.main}
-                    theme={AppLinkTheme.PRIMARY}
-                    className={cls.link}
-                >
-                    <HomeSvg className={cls.icon} />
-                    <span className={cls.item}>{t('Главная')}</span>
-                </AppLink>
-
-                <AppLink
-                    to={RoutePaths.about}
-                    theme={AppLinkTheme.PRIMARY}
-                    className={cls.link}
-                >
-                    <AboutSvg className={cls.icon} />
-                    <span className={cls.item}>{t('О нас')}</span>
-                </AppLink>
-            </div>
+            <div className={cls.items}></div>
             <div className={cls.collapsedBtn}></div>
 
             <div className={cls.switchers}></div>

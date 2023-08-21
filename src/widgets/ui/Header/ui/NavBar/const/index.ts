@@ -1,16 +1,18 @@
+import { AppRoutes } from 'shared/config/routeConfig/RouteConfig';
+
 export interface ListType {
     id: number;
-    to: string;
+    to: AppRoutes;
     text: string;
     hover: boolean;
 }
 
 export const LIST_ITEMS: ListType[] = [
-    { id: 1, to: '/', text: 'главная', hover: true },
-    { id: 2, to: 'about', text: 'о нас', hover: false },
-    { id: 3, to: 'blogs', text: 'блоги', hover: false },
-    { id: 4, to: 'contact', text: 'контакт', hover: false },
-    { id: 5, to: 'cart', text: 'корзина', hover: false },
-    { id: 6, to: 'checkout', text: 'доставка', hover: false },
-    { id: 7, to: 'shop', text: 'магазин', hover: false },
+    { id: 1, to: AppRoutes.MAIN, text: 'главная', hover: true },
+    { id: 2, to: AppRoutes.ABOUT, text: 'о нас', hover: false },
+    { id: 3, to: AppRoutes.BLOGS, text: 'блоги', hover: false },
+    { id: 4, to: AppRoutes.CONTACT, text: 'контакт', hover: false },
+    { id: 5, to: AppRoutes.CART, text: 'корзина', hover: false },
+    { id: 6, to: AppRoutes.CHECKOUT, text: 'доставка', hover: false },
+    { id: 7, to: AppRoutes.SHOP, text: 'магазин', hover: false },
 ];

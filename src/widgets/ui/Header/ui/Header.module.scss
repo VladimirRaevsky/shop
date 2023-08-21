@@ -29,3 +29,21 @@
     font-size: var(--font-size-logo);
     font-weight: 400;
 }
+
+.avatar {
+    fill: var(--primary-color);
+    cursor: pointer;
+}
+
+.circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    width: 30px;
+    background-color: var(--primary-color);
+
+    svg {
+        fill: var(--inverted-primary-color);
+    }
+}

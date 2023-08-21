@@ -1,18 +1,18 @@
 import { type Meta, type StoryObj } from '@storybook/react';
 
-import { Button, ButtonSize, ButtonTheme } from './Button';
-import '../../../../shared/config/i18n/i18nForStorybook';
+import { MyButton, MyButtonSize, MyButtonTheme } from './MyButton';
+import '../../../config/i18n/i18nForStorybook';
 
-const meta: Meta<typeof Button> = {
+const meta: Meta<typeof MyButton> = {
     title: 'shared/Button',
-    component: Button,
+    component: MyButton,
 
     tags: ['autodocs'],
 };
 
 export default meta;
 
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<typeof MyButton>;
 
 export const Default: Story = {
     args: {
@@ -23,7 +23,7 @@ export const Default: Story = {
 export const ClearLight: Story = {
     args: {
         ...Default.args,
-        theme: ButtonTheme.CLEAR,
+        theme: MyButtonTheme.CLEAR,
         sqare: false,
     },
     parameters: {
@@ -40,7 +40,7 @@ export const ClearLight: Story = {
 export const Border: StoryObj = {
     args: {
         ...Default.args,
-        theme: ButtonTheme.BORDER,
+        theme: MyButtonTheme.BORDER,
         sqare: false,
     },
 };
@@ -48,7 +48,7 @@ export const Border: StoryObj = {
 export const ACTIVE = {
     args: {
         ...Default.args,
-        theme: ButtonTheme.ACTIVE,
+        theme: MyButtonTheme.ACTIVE,
         sqare: false,
     },
 };
@@ -56,7 +56,7 @@ export const ACTIVE = {
 export const ERROR: Story = {
     args: {
         ...Default.args,
-        theme: ButtonTheme.ERROR,
+        theme: MyButtonTheme.ERROR,
         sqare: false,
     },
 };
@@ -64,7 +64,7 @@ export const ERROR: Story = {
 export const Clear: Story = {
     args: {
         ...Default.args,
-        theme: ButtonTheme.CLEAR,
+        theme: MyButtonTheme.CLEAR,
         sqare: false,
     },
 };
@@ -72,7 +72,7 @@ export const Clear: Story = {
 export const SQARE_SIZE_M: Story = {
     args: {
         children: 'Ru',
-        size: ButtonSize.M,
+        size: MyButtonSize.M,
         sqare: true,
     },
 };
@@ -80,7 +80,7 @@ export const SQARE_SIZE_M: Story = {
 export const SQARE_SIZE_L: Story = {
     args: {
         children: 'Ru',
-        size: ButtonSize.L,
+        size: MyButtonSize.L,
         sqare: true,
     },
 };
@@ -88,7 +88,7 @@ export const SQARE_SIZE_L: Story = {
 export const SQARE_SIZE_XL: Story = {
     args: {
         children: 'Ru',
-        size: ButtonSize.XL,
+        size: MyButtonSize.XL,
         sqare: true,
     },
 };
@@ -96,7 +96,7 @@ export const SQARE_SIZE_XL: Story = {
 export const SIZE_M: Story = {
     args: {
         children: 'Ru',
-        size: ButtonSize.M,
+        size: MyButtonSize.M,
         sqare: false,
     },
 };
@@ -104,7 +104,7 @@ export const SIZE_M: Story = {
 export const SIZE_L: Story = {
     args: {
         children: 'Ru',
-        size: ButtonSize.L,
+        size: MyButtonSize.L,
         sqare: false,
     },
 };
@@ -112,7 +112,7 @@ export const SIZE_L: Story = {
 export const SIZE_XL: Story = {
     args: {
         children: 'Ru',
-        size: ButtonSize.XL,
+        size: MyButtonSize.XL,
         sqare: false,
     },
 };
@@ -120,7 +120,7 @@ export const SIZE_XL: Story = {
 export const BACKGROUND: Story = {
     args: {
         ...Default.args,
-        theme: ButtonTheme.BACKGROUND,
+        theme: MyButtonTheme.BACKGROUND,
         sqare: false,
     },
 };

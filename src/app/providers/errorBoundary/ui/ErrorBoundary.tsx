@@ -1,4 +1,4 @@
-import { PageError } from 'pages/PageError';
+import { ErrorPage } from 'pages/PageError';
 import React, { type ReactNode, type ErrorInfo, Suspense } from 'react';
 
 interface ErrorBoundaryProps {
@@ -41,7 +41,7 @@ export class ErrorBoundary extends React.Component<
             // Можно отрендерить запасной UI произвольного вида
             return (
                 <Suspense fallback={null}>
-                    <PageError />
+                    <ErrorPage />
                 </Suspense>
             );
         }

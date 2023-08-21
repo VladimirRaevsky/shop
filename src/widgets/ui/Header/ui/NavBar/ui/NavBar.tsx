@@ -1,26 +1,36 @@
-import { useState, type FC } from 'react';
+import { useCallback, useEffect, useState, type FC } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useLocation } from 'react-router-dom';
 import { ClassNames } from 'shared/lib';
 import { AppLink } from 'shared/ui/AppLink';
-import { type ListType, LIST_ITEMS } from '../const';
+import { type ListType } from '../const';
+
 import cls from './NavBar.module.scss';
 
 interface NavBarProps {
     className?: string;
+    toggleClassHandler: (el: number) => void;
+    setNavList: (el: ListType[]) => void;
+    navList: ListType[];
 }
 
 export const NavBar: FC<NavBarProps> = (props) => {
-    const { className = '' } = props;
+    const { className = '', toggleClassHandler, setNavList, navList } = props;
+
+    const location = useLocation();
 
     const { t } = useTranslation();
 
     const [hoveredIndex, setHoveredIndex] = useState<null | number>(null);
 
-    const [navList, setNavList] = useState<ListType[]>(LIST_ITEMS);
+    useEffect(() => {
+        const path =
+            location.pathname.length > 1
+                ? location.pathname.slice(1)
+                : location.pathname;
 
-    const toggleClassHandler = (index: number): void => {
-        const newList = navList.map((el, i) => {
-            if (i !== index) {
+        const newList = navList.map((el) => {
+            if (el.to !== path) {
                 return {
                     ...el,
                     hover: false,
@@ -32,9 +42,8 @@ export const NavBar: FC<NavBarProps> = (props) => {
                 };
             }
         });
-
         setNavList(newList);
-    };
+    }, []);
 
     return (
         <nav className={ClassNames(cls.navBar, {}, [className])}>

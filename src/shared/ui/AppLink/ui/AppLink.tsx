@@ -1,6 +1,8 @@
-import { type FC } from 'react';
+import { type ReactNode, type FC } from 'react';
 import { Link, type LinkProps } from 'react-router-dom';
+import { type AppRoutes } from 'shared/config/routeConfig/RouteConfig';
 import { ClassNames } from 'shared/lib';
+
 import cls from './AppLink.module.scss';
 
 export enum AppLinkTheme {
@@ -9,9 +11,11 @@ export enum AppLinkTheme {
     UNALTERED = 'unaltered',
 }
 
-interface AppLinkProps extends LinkProps {
+interface AppLinkProps extends Omit<LinkProps, 'to'> {
     className?: string;
     theme?: AppLinkTheme;
+    children: ReactNode;
+    to: AppRoutes;
 }
 
 export const AppLink: FC<AppLinkProps> = (props) => {

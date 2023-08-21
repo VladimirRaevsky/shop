@@ -1,13 +1,14 @@
 import { type FC } from 'react';
 import { ClassNames } from 'shared/lib';
-import { Button } from 'shared/ui/Button';
-import { ButtonTheme } from 'shared/ui/Button/ui/Button';
+import { MyButton } from 'shared/ui/Button';
+import { MyButtonTheme } from 'shared/ui/Button/ui/MyButton';
 
 import { AppLink } from 'shared/ui/AppLink';
 import { AppLinkTheme } from 'shared/ui/AppLink/ui/AppLink';
 import { useTranslation } from 'react-i18next';
 
 import cls from './NotFound.module.scss';
+import { AppRoutes } from 'shared/config/routeConfig/RouteConfig';
 
 interface NotFoundProps {
     className?: string;
@@ -32,15 +33,15 @@ export const NotFound: FC<NotFoundProps> = (props) => {
                 </div>
                 <div className='description'>{t('Попробуйте')}:</div>
 
-                <Button theme={ButtonTheme.ACTIVE}>
-                    <AppLink
+                <MyButton theme={MyButtonTheme.ACTIVE}>
+                    {/* <AppLink
                         theme={AppLinkTheme.UNALTERED}
-                        to={'/'}
+                        to={AppRoutes.NOT_FOUND}
                         className={cls.left}
                     >
                         {t('На главную')}
-                    </AppLink>
-                </Button>
+                    </AppLink> */}
+                </MyButton>
             </div>
         </div>
     );
