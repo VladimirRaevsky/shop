@@ -12,12 +12,6 @@ interface AppProps {
 export const App: FC<AppProps> = () => {
     const { theme } = useTheme();
 
-    useEffect(() => {
-        if (Math.random() * 5 < 1) {
-            throw Error();
-        }
-    }, []);
-
     return (
         <div className={ClassNames('app', {}, [theme])}>
             <Header />

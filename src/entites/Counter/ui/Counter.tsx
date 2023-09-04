@@ -14,16 +14,16 @@ export const Counter: FC = () => {
         (state: StateSchema) => state.counter.value,
     );
 
-    const decriment = () => {
+    const decriment = (): void => {
         dispatch(counterActions.decrement());
     };
 
-    const incriment = () => {
+    const incriment = (): void => {
         dispatch(counterActions.increment());
     };
 
     return (
-        <div>
+        <>
             <h1 data-testid='title'>value = {counterValue}</h1>
             <button data-testid='incriment-btn' onClick={incriment}>
                 incriment
@@ -31,6 +31,6 @@ export const Counter: FC = () => {
             <button data-testid='decriment-btn' onClick={decriment}>
                 decriment
             </button>
-        </div>
+        </>
     );
 };

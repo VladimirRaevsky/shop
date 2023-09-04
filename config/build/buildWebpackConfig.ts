@@ -1,6 +1,6 @@
 import webpack from "webpack";
 import 'webpack-dev-server';
-import { buildLoaders } from "./buildLoaders";
+import { buildLoader } from "./buildLoader";
 import { buildResolve } from "./buildResolve";
 import { buildPlugins } from "./buildPlugins";
 import { BuildOptions } from "./types/config";
@@ -21,7 +21,7 @@ export function buildWebpackConfig(options:BuildOptions): webpack.Configuration 
             minimize: false,
         },
         module: {
-            rules: buildLoaders(options)
+            rules: buildLoader(options)
         },
         resolve: buildResolve(options),
         plugins: buildPlugins(options),

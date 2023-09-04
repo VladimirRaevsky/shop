@@ -1,11 +1,6 @@
 .pageLoader {
-    display: flex;
-    flex-grow: 1;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    min-height: 100%;
-    /* stylelint-disable-next-line color-function-notation */
-    background-color: rgb(var(--inverted-bg-color-rgba), 0.5);
+    position: absolute;
     inset: 0;
+    /* stylelint-disable-next-line color-function-notation */
+    background-color: var(--inverted-color-rgba);
 }

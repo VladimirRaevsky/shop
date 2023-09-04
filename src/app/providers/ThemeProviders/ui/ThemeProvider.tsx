@@ -11,6 +11,7 @@ interface ThemeProviderProps {
 }
 
 const defaultTheme =
+    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
     (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT;
 
 export const ThemeProvider: FC<ThemeProviderProps> = ({

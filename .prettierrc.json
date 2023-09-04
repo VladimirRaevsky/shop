@@ -6,5 +6,5 @@
     "tabWidth": 4,
     "useTabs": false,
     "bracketSpacing": true,
-    "verticalAlign": "none"
+    "verticalAlign": 0
 }

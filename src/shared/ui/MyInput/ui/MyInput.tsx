@@ -9,26 +9,37 @@ const { Search } = Input;
 export enum MyInputSize {
     M = 'size_m',
     L = 'size_l',
+    XL = 'size_xl',
 }
 
 export enum MyInputTheme {
     SUBSCRIBE = 'subscribe',
     SEARCH = 'search',
+    AUTH_NAME = 'name',
+    AUTH_PASSWORD = 'password'
 }
 
 export enum MyInputText {
-    SUBSCRIBE = 'Subscribe',
+    SUBSCRIBE = 'subscribe',
 }
 
 export enum MyInputPlaceholder {
     EMAIL = 'Your email address here',
     SEARCH = 'Search',
+    NAME = 'name',
+    PASSWORD = 'password'
+}
+
+export enum MyInputType{
+    TEXT = 'text',
+    NUMBER = 'number',
+    PASSWORD = 'password'
 }
 
 export interface IMyInputProps
     extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
-    theme: string;
-    type: string;
+    theme: MyInputTheme;
+    type: MyInputType;
     placeholder: MyInputPlaceholder;
     size: MyInputSize;
     className?: string;
@@ -64,7 +75,7 @@ export const MyInput: FC<IMyInputProps> = (props) => {
             type={type}
             maxLength={30}
             showCount
-            placeholder={t(placeholder.length > 6 ? 'имэйл' : 'поиск')}
+            placeholder={t(placeholder && placeholder.length > 6 ? 'имэйл' : 'поиск')}
             allowClear
             enterButton={desc && t('подписаться')}
             onInput={(e) => {

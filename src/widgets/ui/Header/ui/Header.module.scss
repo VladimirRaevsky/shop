@@ -7,7 +7,50 @@
     background: var(--bg-color);
     box-shadow: var(--header-shadow);
     position: fixed;
+    z-index: var(--header-index);
     inset: 0;
+}
+
+:global {
+    .ant-switch {
+        width: 33px;
+        height: 34px;
+        border-radius: 100%;
+
+        &.ant-switch-checked {
+            background: #eef5ff;
+        }
+        
+        .ant-switch-handle {
+            width: 0;
+            height: 0;
+        }
+    }
+
+    .ant-switch.ant-switch-checked .ant-switch-inner {
+        padding-inline-start: 4px;
+        padding-inline-end: 24px;
+        position: absolute;
+        width: 60px;
+        margin-top: -20px;
+    }
+
+    .ant-switch .ant-switch-inner .ant-switch-inner-checked {
+        margin-inline-start: 4px;
+        margin: 4px 1px -12px 3px;
+        margin-inline-start: calc(-100% + 6px - 48px);
+        margin-inline-end: calc(100% - 22px + 48px);
+
+        &:hover {
+            background-color: #000;
+        }
+    }
+
+    .ant-switch .ant-switch-inner .ant-switch-inner-unchecked {
+        margin-top: -25px;
+        margin-inline-start: -13px;
+        margin-inline-end: 0;
+    }
 }
 
 .wrapper {
@@ -21,7 +64,8 @@
 }
 
 .right {
-    margin-left: auto;
+    display: flex;
+    justify-content: center;
 }
 
 .logo {
@@ -46,4 +90,17 @@
     svg {
         fill: var(--inverted-primary-color);
     }
+}
+
+.moon {
+    margin-top: -42px;
+    svg {
+        fill: #fff;
+    }
+}
+
+.ant-switch-inner-unchecked {
+    margin-top: -42px;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
 }

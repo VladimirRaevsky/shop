@@ -1,6 +1,5 @@
 import { type FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useRouteError } from 'react-router-dom';
 import { ClassNames } from 'shared/lib';
 import { MyButton } from 'shared/ui/Button';
 import { MyButtonTheme } from 'shared/ui/Button/ui/MyButton';
@@ -9,11 +8,8 @@ import cls from './ErrorPage.module.scss';
 interface ErrorPageProps {
     className?: string;
 }
-
-export const ErrorPage: FC<ErrorPageProps> = (props) => {
+const ErrorPage: FC<ErrorPageProps> = (props) => {
     const { className = '' } = props;
-    const error = useRouteError();
-    console.log('error', error);
     const { t } = useTranslation('errorboundary');
 
     const onThrow = (): void => {
@@ -34,3 +30,5 @@ export const ErrorPage: FC<ErrorPageProps> = (props) => {
         </div>
     );
 };
+
+export default ErrorPage

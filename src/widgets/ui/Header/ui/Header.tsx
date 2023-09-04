@@ -1,10 +1,9 @@
 import { useCallback, useState, type FC } from 'react';
 import { ClassNames, useTheme } from 'shared/lib';
-import { MyButton, MyButtonTheme } from 'shared/ui/Button/ui/MyButton';
 import { useTranslation } from 'react-i18next';
 import { NavBar } from './NavBar';
 import { MyContainer } from 'shared/ui/MyContainer';
-import { Switch, Button } from 'antd';
+import { Button } from 'antd';
 import AvatarIcon from 'shared/assets/icons/header/avatar.svg';
 import SearchIcon from 'shared/assets/icons/header/ion_search.svg';
 import { Icon } from '@iconify/react';
@@ -14,17 +13,17 @@ import { SwitcherLang } from 'shared/ui/SwitcherLang';
 import { AppLink } from 'shared/ui/AppLink';
 import { AppRoutes } from 'shared/config/routeConfig/RouteConfig';
 import { type ListType, LIST_ITEMS } from './NavBar/const';
+import { SwitcherButton } from 'widgets/ui/SwitcherButton';
+import { MyButton } from 'shared/ui/Button';
+import { Modal } from 'shared/ui/Modal';
+import { LoginModal } from 'features/AuthByUserName';
 
 interface HeaderProps {
     className?: string;
 }
 
 export const Header: FC<HeaderProps> = () => {
-    const [isAuth, setIsAuth] = useState(true);
-
-    const { theme, themeToggleHandler } = useTheme();
-
-    const { t } = useTranslation();
+    const [openModal, setOpenModal] = useState(false);
 
     const [navList, setNavList] = useState<ListType[]>(LIST_ITEMS);
 
@@ -42,20 +41,24 @@ export const Header: FC<HeaderProps> = () => {
                 };
             }
         });
-        console.log('list render');
+
         setNavList(newList);
     };
 
-    const isAuthHandler = useCallback((): void => {
-        setIsAuth((prev) => !prev);
+    const onOpenModalHandler = useCallback((): void => {
+        setOpenModal(true);
     }, []);
 
-    console.log(navList);
+    const onCloseModalHandler = useCallback((): void => {
+        setOpenModal(false);
+    }, []);
+
     return (
         <header className={ClassNames(cls.Header, {}, [])}>
             <MyContainer>
                 <div className={cls.wrapper}>
                     <div className={cls.logo}>MiniStore</div>
+
                     <div className='center'>
                         <NavBar
                             navList={navList}
@@ -63,45 +66,43 @@ export const Header: FC<HeaderProps> = () => {
                             setNavList={setNavList}
                         />
                     </div>
-                    <div className='right'>
+
+                    <div className={cls.right}>
                         <Button
                             className={cls.circle}
                             type='default'
                             shape='circle'
                             icon={<SearchIcon />}
-                        ></Button>
+                        />
+
                         <SwitcherLang />
-                        <Switch
-                            checked={theme === 'light'}
-                            onChange={themeToggleHandler}
-                            checkedChildren={t('светлая')}
-                            unCheckedChildren={t('темная')}
-                        />
-                        {/* {isAuth ? (
-                            <MyButton
-                                theme={MyButtonTheme.BACKGROUND}
-                                className={cls.right}
-                                onClick={isAuthHandler}
-                            >
-                                {t('войти')}
-                            </MyButton>
-                        ) : (
-                            
-                        )} */}
-                        <AvatarIcon
-                            className={cls.avatar}
-                            onClick={isAuthHandler}
-                        />
-                        <AppLink to={AppRoutes.CART}>
-                            <Icon
-                                className={cls.cart}
-                                icon='fluent:cart-20-filled'
-                                width='25'
-                                onClick={() => {
-                                    toggleClassHandler(4);
-                                }}
+
+                        <SwitcherButton />
+
+                        <MyButton>
+                            <AvatarIcon
+                                className={cls.avatar}
+                                onClick={onOpenModalHandler}
                             />
-                        </AppLink>
+                        </MyButton>
+
+                        <MyButton>
+                            <AppLink to={AppRoutes.CART}>
+                                <Icon
+                                    className={cls.cart}
+                                    icon='fluent:cart-20-filled'
+                                    width='25'
+                                    onClick={() => {
+                                        toggleClassHandler(4);
+                                    }}
+                                />
+                            </AppLink>
+                        </MyButton>
+
+                        <LoginModal
+                            isOpen={openModal}
+                            onClose={onCloseModalHandler}
+                        />
                     </div>
                 </div>
             </MyContainer>

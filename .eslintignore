@@ -1,3 +1,6 @@
 **/app/public
 node_modules
 config
+babel.config.js
+webpack.config.ts
+json-server

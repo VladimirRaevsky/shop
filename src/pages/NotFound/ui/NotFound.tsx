@@ -14,7 +14,7 @@ interface NotFoundProps {
     className?: string;
 }
 
-export const NotFound: FC<NotFoundProps> = (props) => {
+const NotFound: FC<NotFoundProps> = (props) => {
     const { className = '' } = props;
 
     const { t } = useTranslation('404');
@@ -34,15 +34,17 @@ export const NotFound: FC<NotFoundProps> = (props) => {
                 <div className='description'>{t('Попробуйте')}:</div>
 
                 <MyButton theme={MyButtonTheme.ACTIVE}>
-                    {/* <AppLink
+                    <AppLink
                         theme={AppLinkTheme.UNALTERED}
-                        to={AppRoutes.NOT_FOUND}
+                        to={AppRoutes.MAIN}
                         className={cls.left}
                     >
                         {t('На главную')}
-                    </AppLink> */}
+                    </AppLink>
                 </MyButton>
             </div>
         </div>
     );
 };
+
+export default NotFound

@@ -36,12 +36,12 @@ export const RoutePaths: Record<AppRoutes, string> = {
 export const RouteConfig: RouteProps[] = [
     { path: RoutePaths[AppRoutes.MAIN], element: <MainPage /> },
     { path: RoutePaths[AppRoutes.ABOUT], element: <AboutPage /> },
-    { path: RoutePaths[AppRoutes.NOT_FOUND], element: <NotFound /> },
     { path: RoutePaths[AppRoutes.CHECKOUT], element: <CheckoutPage /> },
     { path: RoutePaths[AppRoutes.BLOGS], element: <BlogsPage /> },
     { path: RoutePaths[AppRoutes.CONTACT], element: <ContactPage /> },
     { path: RoutePaths[AppRoutes.CART], element: <CartPage /> },
     { path: RoutePaths[AppRoutes.SHOP], element: <ShopPage /> },
+    { path: RoutePaths[AppRoutes.NOT_FOUND], element: <NotFound /> },
     {
         path: RoutePaths[AppRoutes.ERROR],
         element: <ErrorPage />,

@@ -2,11 +2,7 @@ import { type FC } from 'react';
 import { ClassNames } from 'shared/lib';
 import { Input } from 'antd';
 import cls from './MyInputForm.module.scss';
-
-export enum InputType {
-    TEXT = 'text',
-    NUMBER = 'number',
-}
+import { MyInputType } from 'shared/ui/MyInput/ui/MyInput';
 
 export enum MyInputFormSize {
     M = 'size_m',
@@ -17,7 +13,7 @@ interface MyInputFormProps {
     className?: string;
     placeholder?: string;
     desc?: string;
-    type: InputType;
+    type: MyInputType;
     size: MyInputFormSize;
 }
 
