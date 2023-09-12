@@ -1,22 +1,29 @@
-import { useCallback, useState, type FC } from 'react';
-import { ClassNames, useTheme } from 'shared/lib';
-import { useTranslation } from 'react-i18next';
-import { NavBar } from './NavBar';
-import { MyContainer } from 'shared/ui/MyContainer';
-import { Button } from 'antd';
-import AvatarIcon from 'shared/assets/icons/header/avatar.svg';
-import SearchIcon from 'shared/assets/icons/header/ion_search.svg';
 import { Icon } from '@iconify/react';
+import { Typography } from 'antd';
+import { useCallback, useState, type FC } from 'react';
+
+import { useTranslation } from 'react-i18next';
+
+import { LoginModal } from 'features/AuthByUserName';
+import AvatarIcon from 'shared/assets/icons/header/avatar.svg';
+
+import SearchIcon from 'shared/assets/icons/header/ion_search.svg';
+
+import { AppRoutes } from 'shared/config/routeConfig/RouteConfig';
+import { ClassNames } from 'shared/lib';
+import { AppLink } from 'shared/ui/AppLink';
+import { Container } from 'shared/ui/Container';
+
+import { CustomButton } from 'shared/ui/CustomButton';
+import { ButtonTheme } from 'shared/ui/CustomButton/ui/CustomButton';
+import { SwitcherLang } from 'widgets/ui/SwitcherLang';
+import { SwitcherTheme } from 'widgets/ui/SwitcherTheme';
 
 import cls from './Header.module.scss';
-import { SwitcherLang } from 'shared/ui/SwitcherLang';
-import { AppLink } from 'shared/ui/AppLink';
-import { AppRoutes } from 'shared/config/routeConfig/RouteConfig';
+import { NavBar } from './NavBar';
 import { type ListType, LIST_ITEMS } from './NavBar/const';
-import { SwitcherButton } from 'widgets/ui/SwitcherButton';
-import { MyButton } from 'shared/ui/Button';
-import { Modal } from 'shared/ui/Modal';
-import { LoginModal } from 'features/AuthByUserName';
+
+const { Title, Paragraph } = Typography;
 
 interface HeaderProps {
     className?: string;
@@ -25,10 +32,10 @@ interface HeaderProps {
 export const Header: FC<HeaderProps> = () => {
     const [openModal, setOpenModal] = useState(false);
 
-    const [navList, setNavList] = useState<ListType[]>(LIST_ITEMS);
+    const [listElements, setListElements] = useState<ListType[]>(LIST_ITEMS);
 
-    const toggleClassHandler = (index: number): void => {
-        const newList = navList.map((el, i) => {
+    const handlerToggleClass = useCallback((index: number): void => {
+        const newList = listElements.map((el, i) => {
             if (i !== index) {
                 return {
                     ...el,
@@ -42,70 +49,77 @@ export const Header: FC<HeaderProps> = () => {
             }
         });
 
-        setNavList(newList);
-    };
+        setListElements(newList);
+    }, []);
 
-    const onOpenModalHandler = useCallback((): void => {
+    const handlerOpenModal = useCallback((): void => {
         setOpenModal(true);
     }, []);
 
-    const onCloseModalHandler = useCallback((): void => {
+    const handlerCloseModal = useCallback((): void => {
         setOpenModal(false);
     }, []);
 
     return (
-        <header className={ClassNames(cls.Header, {}, [])}>
-            <MyContainer>
+        <header className={ClassNames(cls.header, {}, [])}>
+            <Container>
                 <div className={cls.wrapper}>
-                    <div className={cls.logo}>MiniStore</div>
+                    <Title
+                        className={cls.logo}
+                        aria-level={5}
+                        level={5}
+                        underline
+                        style={{ margin: 0 }}
+                    >
+                        <span className={cls.logo}>MiniStore</span>
+                    </Title>
 
                     <div className='center'>
                         <NavBar
-                            navList={navList}
-                            toggleClassHandler={toggleClassHandler}
-                            setNavList={setNavList}
+                            listElements={listElements}
+                            handlerToggleClass={handlerToggleClass}
+                            setListElements={setListElements}
                         />
                     </div>
 
                     <div className={cls.right}>
-                        <Button
-                            className={cls.circle}
-                            type='default'
-                            shape='circle'
-                            icon={<SearchIcon />}
-                        />
+                        <CustomButton theme={ButtonTheme.DEFAULT} shape>
+                            <SearchIcon />
+                        </CustomButton>
 
                         <SwitcherLang />
 
-                        <SwitcherButton />
+                        <SwitcherTheme />
 
-                        <MyButton>
+                        <CustomButton theme={ButtonTheme.DEFAULT}>
                             <AvatarIcon
                                 className={cls.avatar}
-                                onClick={onOpenModalHandler}
+                                onClick={handlerOpenModal}
                             />
-                        </MyButton>
+                        </CustomButton>
 
-                        <MyButton>
+                        <CustomButton
+                            theme={ButtonTheme.DEFAULT}
+                            className={cls.cart}
+                        >
                             <AppLink to={AppRoutes.CART}>
                                 <Icon
-                                    className={cls.cart}
+                                    className={cls.icon}
                                     icon='fluent:cart-20-filled'
-                                    width='25'
                                     onClick={() => {
-                                        toggleClassHandler(4);
+                                        handlerToggleClass(4);
                                     }}
                                 />
                             </AppLink>
-                        </MyButton>
+                        </CustomButton>
 
                         <LoginModal
                             isOpen={openModal}
-                            onClose={onCloseModalHandler}
+                            onClose={handlerCloseModal}
                         />
                     </div>
                 </div>
-            </MyContainer>
+            </Container>
         </header>
     );
 };

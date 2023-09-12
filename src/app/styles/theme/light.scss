@@ -1,13 +1,17 @@
 :root[data-theme='light'] {
     --bg-color: #fff;
+    --inverted-bg-color: #383939;
     --accent-color: #72aec8;
-    --hover-color: #aee3fa;
+    --hover-primary-color: #aee3fa;
+    --hover-secondary-color: #28282a;
     --p-color: #3a3a3a;
     --primary-color: #272727;
     --inverted-primary-color: #fff;
     --icon-social-color: #d7dddf;
     --icon-bg-color: #ebeff1;
-    --header-shadow: 0px 0px 14px 0px rgba(11, 40, 53, 0.07);
-    --input-shadow: 0px 0px 44px 0px rgba(0, 0, 0, 0.08);
-    --inverted-color-rgba: rgba(10, 108, 154, 0.08);
+    --header-shadow: 0px 0px 14px 0px rgb(11 40 53 / 7%);
+    --input-shadow: 0px 0px 44px 0px rgb(0 0 0 / 8%);
+    --inverted-color-rgba: rgb(10 108 154 / 8%);
+    --shadow-title: 0 4px 4px rgb(0 0 0 / 25%);
+    --button-primary-color: #fff;
 }

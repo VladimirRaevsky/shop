@@ -1,11 +1,15 @@
 .sideBar {
     position: relative;
+
     display: flex;
     flex-shrink: 0;
     justify-content: center;
+
     width: var(--side-bar-width);
     height: calc(100vh - var(--nav-bar-height));
+
     background-color: var(--inverted-bg-color);
+
     transition: width 0.3s;
 }
 

@@ -1,9 +1,9 @@
-@import url('./reset.scss');
-@import url('./variables/global.scss');
-@import url('./theme/dark.scss');
-@import url('./theme/light.scss');
-@import url('./normalize.scss');
-@import url('./fonts.scss');
+@import './reset';
+@import './variables/global';
+@import './theme/dark';
+@import './theme/light';
+@import './normalize';
+@import './fonts';
 
 body {
     font: var(--font-m);
@@ -26,4 +26,20 @@ body {
 
 .sb-show-main[data-preview*='my-story-id'] {
     background-color: none !important;
+}
+
+h1,h2,h3,h4,h5 {
+    font-family: Jost , sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: uppercase;
+    
+}
+
+h4,h5 {
+    font-size: 83px;
+    line-height: 114%;
+    text-shadow: var(--shadow-title);
+    text-transform: uppercase;
+    letter-spacing: 1.66px;
 }

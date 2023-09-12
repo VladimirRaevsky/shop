@@ -1,15 +1,22 @@
-.navBar {
-    .list {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
-}
+.list {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+} 
 
 .item {
-    list-style: none;
+    margin: 0;
+    padding: 0;
+
     color: var(--primary-color);
+    list-style: none;
+
     transition: color .3s;
+
+    a {
+        color: inherit;
+    }  
 }
 
 .item:not(:last-child) {
@@ -20,7 +27,7 @@
     color: var(--accent-color);
 }
 
-.hesitate {
+.active {
     color: var(--hover-color);
     transition: color .3s;
 }

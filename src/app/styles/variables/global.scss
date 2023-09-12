@@ -12,6 +12,7 @@
 	*/
     --font-size-l: 20px;
     --line-hight-l: 28px;
+    /* stylelint-disable-next-line */
     --font-family: 'Jost', sans-serif;
     --font-l: var(--font-size-l) / var(--line-hight-l) var(--font-family);
 
@@ -20,13 +21,15 @@
 	*/
     --font-size-xl: 30px;
     --line-hight-xl: 38px;
+    /* stylelint-disable-next-line */
     --font-family: 'Jost', sans-serif;
     --font-xl: var(--font-size-xl) / var(--line-hight-xl) var(--font-family);
 
     /*
     * font-family
     */
-    --font-family-Jost: 'Jost', sans-serif;
+    /* stylelint-disable-next-line */
+    --font-family: 'Jost', sans-serif;
 
     /*
     *logo
@@ -48,4 +51,9 @@
     *  color
 	*/
     --overlay-color: rgba(0 0 0 / 60%);
+
+    /*
+    * time
+    */
+    --delay: .3s;
 }

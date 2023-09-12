@@ -1,10 +1,57 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    // Форматирование кода с помощью prettier
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+    // Форматирование при сохранении файла
+    "editor.formatOnSave": true,
+
+    "css.validate": false,
+    "scss.validate": false,
+    "stylelint.snippet": ["css", "less", "postcss", "scss", "react"],
+    "stylelint.validate": ["css", "less", "scss", "postcss", "react"],
+    "stylelint.enable": true,
+    // Использование локальных правил Stylelint
+    "stylelint.useLocal": true,
+
+    // Форматирование при сохранении файла
+    "stylelint.autoFixOnSave": true,
+    "editor.fontFamily": "Fira Code, Consolas, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "javascript.inlayHints.enumMemberValues.enabled": true,
+    "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+    "javascript.inlayHints.parameterNames.enabled": "all",
+    "javascript.inlayHints.parameterTypes.enabled": true,
+    "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+    "javascript.inlayHints.variableTypes.enabled": true,
+    "typescript.inlayHints.enumMemberValues.enabled": true,
+    "typescript.inlayHints.parameterTypes.enabled": true,
+    "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+
+    // Превью предложения
+    "editor.suggest.preview": true,
+
+    // Проверка орфографии с помощью Code Spell Checker
+    "cSpell.language": "en,ru",
+
+    // Дополнительный словарь для Code Spell Checker
+    "cSpell.words": ["antd", "reduxjs"],
+
+    // Использование одной темы в проекте)
+    // "workbench.colorTheme": "One Dark Pro",
+
+    // Подсветка комментариев с приставкой TODO
+    "todohighlight.keywords": [
+        {
+            "text": "TODO:",
+            "color": "white",
+            "border": "1px solid white",
+            "backgroundColor": "rgba(46,24,83,0.5)",
+            "isWholeLine": true
+        }
+    ],
+
     "version": "0.2.0",
     "configurations": [
-    
         {
             "type": "chrome",
             "request": "launch",

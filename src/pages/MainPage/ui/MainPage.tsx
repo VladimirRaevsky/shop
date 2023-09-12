@@ -1,14 +1,19 @@
-import { Counter } from 'entites/Counter';
 import { useEffect, useState, type FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { MyCard } from 'shared/ui/MyCard';
-import { MyInput } from 'shared/ui/MyInput';
+
+import { Counter } from 'entites/Counter';
+import { CardProduct } from 'shared/ui/CardProduct';
+import { CustomButton } from 'shared/ui/CustomButton';
+import { ButtonTheme } from 'shared/ui/CustomButton/ui/CustomButton';
+import { CustomInput } from 'shared/ui/CustomInput';
 import {
-    MyInputPlaceholder,
-    MyInputSize,
-    MyInputTheme,
-    MyInputType,
-} from 'shared/ui/MyInput/ui/MyInput';
+    InputPlaceholder,
+    InputSize,
+    InputTheme,
+    InputType,
+} from 'shared/ui/CustomInput/ui/CustomInput';
+import { InputForm } from 'shared/ui/InputForm';
+import { InputFormSize } from 'shared/ui/InputForm/ui/InputForm';
 import { PageLoader } from 'widgets/ui/PageLoader';
 
 import cls from './MainPage.module.scss';
@@ -45,12 +50,21 @@ const MainPage: FC<MainePageProps> = () => {
 
     return (
         <div className={cls.MainPage}>
-            <MyInput
-                type={MyInputType.TEXT}
-                size={MyInputSize.L}
-                theme={MyInputTheme.SEARCH}
-                placeholder={MyInputPlaceholder.SEARCH}
+            <InputForm
+                size={InputFormSize.M}
+                desc='example'
+                type={InputType.TEXT}
             />
+
+            <CustomInput
+                type={InputType.TEXT}
+                size={InputSize.L}
+                theme={InputTheme.SEARCH}
+                placeholder={InputPlaceholder.SEARCH}
+            />
+            <CustomButton theme={ButtonTheme.PRIMARY}>купить</CustomButton>
+
+            <CustomButton theme={ButtonTheme.SECONDARY}>Proceed</CustomButton>
 
             {t('Главная страница')}
             <Counter />
@@ -63,7 +77,7 @@ const MainPage: FC<MainePageProps> = () => {
                             url: el.url,
                             id: el.id,
                         };
-                        return <MyCard key={el.id} {...cardInfo} />;
+                        return <CardProduct key={el.id} {...cardInfo} />;
                     })
                 ) : (
                     <PageLoader />

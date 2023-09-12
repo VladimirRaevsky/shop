@@ -1,17 +1,30 @@
-.Header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: var(--header-height);
-    background: var(--bg-color);
-    box-shadow: var(--header-shadow);
+.header {
     position: fixed;
     z-index: var(--header-index);
     inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    height: var(--header-height);
+
+    background: var(--bg-color);
+    box-shadow: var(--header-shadow);
+}
+
+.ant-switch-inner-unchecked {
+    margin-top: -42px;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
 }
 
 :global {
+    .ant-typography {
+        color: var(--primary-color);
+    }
+
     .ant-switch {
         width: 33px;
         height: 34px;
@@ -28,16 +41,17 @@
     }
 
     .ant-switch.ant-switch-checked .ant-switch-inner {
-        padding-inline-start: 4px;
-        padding-inline-end: 24px;
         position: absolute;
+
         width: 60px;
         margin-top: -20px;
+        padding-inline-start: 4px;
+        padding-inline-end: 24px;
     }
 
     .ant-switch .ant-switch-inner .ant-switch-inner-checked {
-        margin-inline-start: 4px;
         margin: 4px 1px -12px 3px;
+        margin-inline-start: 4px;
         margin-inline-start: calc(-100% + 6px - 48px);
         margin-inline-end: calc(100% - 22px + 48px);
 
@@ -60,47 +74,45 @@
 }
 
 .icon {
-    fill: var(--inverted-primary-color);
+    width: 186%;
+    height: 103%;
+
+    path {
+        fill: var(--primary-color);
+    }
+}
+
+.cart {
+    display: flex;
+    align-items: center;
 }
 
 .right {
     display: flex;
+    align-items: center;
     justify-content: center;
+    min-height: 100%;
 }
 
 .logo {
-    font-family: 'Jost', sans-serif;
+    font-family: Jost, sans-serif;
     font-size: var(--font-size-logo);
     font-weight: 400;
+    color: var(--primary-color);
 }
 
 .avatar {
-    fill: var(--primary-color);
     cursor: pointer;
-}
-
-.circle {
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    justify-content: center;
-    border-radius: 100%;
-    width: 30px;
-    background-color: var(--primary-color);
-
-    svg {
-        fill: var(--inverted-primary-color);
-    }
+    fill: var(--primary-color);
 }
 
 .moon {
     margin-top: -42px;
+
     svg {
         fill: #fff;
     }
 }
 
-.ant-switch-inner-unchecked {
-    margin-top: -42px;
-    margin-inline-start: 0;
-    margin-inline-end: 0;
-}

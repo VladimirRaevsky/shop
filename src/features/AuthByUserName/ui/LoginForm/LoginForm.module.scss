@@ -2,6 +2,13 @@
     padding: 15px 0;
 }
 
+:global {
+    .ant-input-group .ant-input-affix-wrapper:not(:last-child) {
+        border-start-end-radius: 4px !important;
+        border-end-end-radius: 4px !important;
+    }
+}
+
 .input {
     margin-bottom: 20px;
 }

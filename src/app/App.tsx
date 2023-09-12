@@ -1,7 +1,8 @@
-import { AppRouter } from 'app/providers/router';
 import { type FC, Suspense, useEffect } from 'react';
+
+import { AppRouter } from 'app/providers/router';
 import { ClassNames, useTheme } from 'shared/lib';
-import { MyContainer } from 'shared/ui/MyContainer';
+import { Container } from 'shared/ui/Container';
 import { AppLoader } from 'widgets/ui/AppLoader';
 import { Header } from 'widgets/ui/Header';
 
@@ -18,9 +19,9 @@ export const App: FC<AppProps> = () => {
 
             <Suspense fallback={<AppLoader />}>
                 <div className='page-content'>
-                    <MyContainer>
+                    <Container>
                         <AppRouter />
-                    </MyContainer>
+                    </Container>
                 </div>
             </Suspense>
         </div>

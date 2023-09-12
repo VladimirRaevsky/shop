@@ -1,12 +1,14 @@
 import { type FC } from 'react';
+
 import { ClassNames } from 'shared/lib';
-import { MyInput } from 'shared/ui/MyInput';
+import { CustomInput } from 'shared/ui/CustomInput';
 import {
-    MyInputPlaceholder,
-    MyInputSize,
-    MyInputTheme,
-    MyInputType,
-} from 'shared/ui/MyInput/ui/MyInput';
+    InputPlaceholder,
+    InputSize,
+    InputTheme,
+    InputType,
+} from 'shared/ui/CustomInput/ui/CustomInput';
+
 import cls from './LoginForm.module.scss';
 
 interface LoginFormProps {
@@ -17,21 +19,22 @@ export const LoginForm: FC<LoginFormProps> = (props) => {
     const { className = '' } = props;
 
     return (
-        <div className={ClassNames(cls.loginForm, {}, [className])}>
-            <MyInput
+        <form className={ClassNames(cls.loginForm, {}, [className])}>
+            <CustomInput
                 className={cls.input}
-                size={MyInputSize.M}
-                type={MyInputType.TEXT}
-                placeholder={MyInputPlaceholder.NAME}
-                theme={MyInputTheme.AUTH_NAME}
+                size={InputSize.M}
+                type={InputType.TEXT}
+                placeholder={InputPlaceholder.NAME}
+                theme={InputTheme.AUTH_NAME}
+                status='warning'
             />
-            <MyInput
+            <CustomInput
                 className={cls.input}
-                size={MyInputSize.M}
-                type={MyInputType.PASSWORD}
-                placeholder={MyInputPlaceholder.PASSWORD}
-                theme={MyInputTheme.AUTH_PASSWORD}
+                size={InputSize.M}
+                type={InputType.PASSWORD}
+                placeholder={InputPlaceholder.PASSWORD}
+                theme={InputTheme.AUTH_PASSWORD}
             />
-        </div>
+        </form>
     );
 };

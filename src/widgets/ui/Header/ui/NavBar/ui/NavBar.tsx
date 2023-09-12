@@ -1,21 +1,28 @@
-import { useCallback, useEffect, useState, type FC } from 'react';
+import { useEffect, useState, type FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
+
+import { type ListType } from '../const';
+
 import { ClassNames } from 'shared/lib';
 import { AppLink } from 'shared/ui/AppLink';
-import { type ListType } from '../const';
 
 import cls from './NavBar.module.scss';
 
 interface NavBarProps {
     className?: string;
-    toggleClassHandler: (el: number) => void;
-    setNavList: (el: ListType[]) => void;
-    navList: ListType[];
+    handlerToggleClass: (el: number) => void;
+    setListElements: (el: ListType[]) => void;
+    listElements: ListType[];
 }
 
 export const NavBar: FC<NavBarProps> = (props) => {
-    const { className = '', toggleClassHandler, setNavList, navList } = props;
+    const {
+        className = '',
+        handlerToggleClass,
+        setListElements,
+        listElements,
+    } = props;
 
     const location = useLocation();
 
@@ -29,7 +36,7 @@ export const NavBar: FC<NavBarProps> = (props) => {
                 ? location.pathname.slice(1)
                 : location.pathname;
 
-        const newList = navList.map((el) => {
+        const newList = listElements.map((el) => {
             if (el.to !== path) {
                 return {
                     ...el,
@@ -42,13 +49,13 @@ export const NavBar: FC<NavBarProps> = (props) => {
                 };
             }
         });
-        setNavList(newList);
+        setListElements(newList);
     }, []);
 
     return (
         <nav className={ClassNames(cls.navBar, {}, [className])}>
             <ul className={cls.list}>
-                {navList.map((el, index) => {
+                {listElements.map((el, index) => {
                     return (
                         <li
                             key={index}
@@ -59,13 +66,13 @@ export const NavBar: FC<NavBarProps> = (props) => {
                                     className,
                                     `${
                                         hoveredIndex === index && !el.hover
-                                            ? cls.hesitate
+                                            ? cls.active
                                             : ''
                                     }`,
                                 ],
                             )}
                             onClick={() => {
-                                toggleClassHandler(index);
+                                handlerToggleClass(index);
                             }}
                             onMouseEnter={() => {
                                 setHoveredIndex(index);

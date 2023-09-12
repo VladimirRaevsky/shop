@@ -1,14 +1,15 @@
 import { type FC } from 'react';
-import { ClassNames } from 'shared/lib';
-import { MyButton } from 'shared/ui/Button';
-import { MyButtonTheme } from 'shared/ui/Button/ui/MyButton';
 
-import { AppLink } from 'shared/ui/AppLink';
-import { AppLinkTheme } from 'shared/ui/AppLink/ui/AppLink';
 import { useTranslation } from 'react-i18next';
 
-import cls from './NotFound.module.scss';
 import { AppRoutes } from 'shared/config/routeConfig/RouteConfig';
+import { ClassNames } from 'shared/lib';
+import { AppLink } from 'shared/ui/AppLink';
+import { AppLinkTheme } from 'shared/ui/AppLink/ui/AppLink';
+import { CustomButton } from 'shared/ui/CustomButton';
+import { ButtonTheme } from 'shared/ui/CustomButton/ui/CustomButton';
+
+import cls from './NotFound.module.scss';
 
 interface NotFoundProps {
     className?: string;
@@ -33,7 +34,7 @@ const NotFound: FC<NotFoundProps> = (props) => {
                 </div>
                 <div className='description'>{t('Попробуйте')}:</div>
 
-                <MyButton theme={MyButtonTheme.ACTIVE}>
+                <CustomButton theme={ButtonTheme.DEFAULT}>
                     <AppLink
                         theme={AppLinkTheme.UNALTERED}
                         to={AppRoutes.MAIN}
@@ -41,10 +42,10 @@ const NotFound: FC<NotFoundProps> = (props) => {
                     >
                         {t('На главную')}
                     </AppLink>
-                </MyButton>
+                </CustomButton>
             </div>
         </div>
     );
 };
 
-export default NotFound
+export default NotFound;

@@ -1,0 +1,15 @@
+.select {
+    top: 2px;
+    width: 50px;
+    height: auto;
+}
+/* stylelint-disable-next-line color-function-notation */
+:global {
+    .ant-select-selector {
+        padding: 0 5px !important;
+    }
+
+    .ant-select-item-option-selected {
+        background-color: #f8f4be !important;
+    }
+}

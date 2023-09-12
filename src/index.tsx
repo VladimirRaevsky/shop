@@ -4,6 +4,7 @@ import { ThemeProvider } from 'app/providers/ThemeProviders';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { StoreProvider } from 'app/providers/StoreProvider';
+import { StyleProvider } from '@ant-design/cssinjs';
 
 import 'shared/config/i18n/i18n';
 
@@ -16,7 +17,9 @@ root.render(
         <BrowserRouter>
             <ErrorBoundary>
                 <ThemeProvider>
-                    <App />
+                    <StyleProvider hashPriority='high'>
+                        <App />
+                    </StyleProvider>
                 </ThemeProvider>
             </ErrorBoundary>
         </BrowserRouter>

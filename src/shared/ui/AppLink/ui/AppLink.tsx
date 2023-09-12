@@ -1,5 +1,6 @@
 import { type ReactNode, type FC } from 'react';
 import { Link, type LinkProps } from 'react-router-dom';
+
 import { type AppRoutes } from 'shared/config/routeConfig/RouteConfig';
 import { ClassNames } from 'shared/lib';
 

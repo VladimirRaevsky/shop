@@ -1,5 +1,6 @@
 import { type FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { counterActions } from '../model/slice/counterSlice';
 import { type CounterSchema } from '../model/types/counterSchema';
 

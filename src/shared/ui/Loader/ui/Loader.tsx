@@ -1,6 +1,8 @@
 import { type FC } from 'react';
 import { Hourglass } from 'react-loader-spinner';
+
 import { useTheme } from 'shared/lib';
+
 import cls from './Loader.module.scss';
 
 interface LoaderProps {
@@ -9,7 +11,7 @@ interface LoaderProps {
 
 export const Loader: FC<LoaderProps> = () => {
     const { theme } = useTheme();
-    
+
     return (
         <Hourglass
             visible={true}
@@ -18,7 +20,7 @@ export const Loader: FC<LoaderProps> = () => {
             ariaLabel='hourglass-loading'
             wrapperStyle={{}}
             wrapperClass={cls.loader}
-            colors={['#306cce', theme == 'light' ? '#272727' : '#ffffff']}
+            colors={['#306cce', theme === 'light' ? '#272727' : '#ffffff']}
         />
     );
 };
