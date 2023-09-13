@@ -1,3 +1,10 @@
+.navBar {
+    @media screen and ( width <= 992px ) {
+        display: none;
+    }
+}
+
+
 .list {
     display: flex;
     align-items: center;
@@ -19,9 +26,13 @@
     }  
 }
 
-.item:not(:last-child) {
-    margin-right: 2.5rem;
-}
+// .item:not(:last-child) {
+//     margin-right: 2.5rem;
+
+//     @media screen and ( width <= 1200px ) {
+//         margin-right: 1.5rem;
+//     }
+// }
 
 .hover {
     color: var(--accent-color);

@@ -4,6 +4,7 @@ import { AppRouter } from 'app/providers/router';
 import { ClassNames, useTheme } from 'shared/lib';
 import { Container } from 'shared/ui/Container';
 import { AppLoader } from 'widgets/ui/AppLoader';
+import { Footer } from 'widgets/ui/Footer';
 import { Header } from 'widgets/ui/Header';
 
 interface AppProps {
@@ -24,6 +25,7 @@ export const App: FC<AppProps> = () => {
                     </Container>
                 </div>
             </Suspense>
+            <Footer />
         </div>
     );
 };

@@ -1,5 +1,5 @@
 import { Icon } from '@iconify/react';
-import { Typography } from 'antd';
+import { Col, Row, Typography } from 'antd';
 import { useCallback, useState, type FC } from 'react';
 
 import { useTranslation } from 'react-i18next';
@@ -23,7 +23,7 @@ import cls from './Header.module.scss';
 import { NavBar } from './NavBar';
 import { type ListType, LIST_ITEMS } from './NavBar/const';
 
-const { Title, Paragraph } = Typography;
+const { Title } = Typography;
 
 interface HeaderProps {
     className?: string;
@@ -63,62 +63,79 @@ export const Header: FC<HeaderProps> = () => {
     return (
         <header className={ClassNames(cls.header, {}, [])}>
             <Container>
-                <div className={cls.wrapper}>
-                    <Title
-                        className={cls.logo}
-                        aria-level={5}
-                        level={5}
-                        underline
-                        style={{ margin: 0 }}
-                    >
-                        <span className={cls.logo}>MiniStore</span>
-                    </Title>
-
-                    <div className='center'>
-                        <NavBar
-                            listElements={listElements}
-                            handlerToggleClass={handlerToggleClass}
-                            setListElements={setListElements}
-                        />
-                    </div>
-
-                    <div className={cls.right}>
-                        <CustomButton theme={ButtonTheme.DEFAULT} shape>
-                            <SearchIcon />
-                        </CustomButton>
-
-                        <SwitcherLang />
-
-                        <SwitcherTheme />
-
-                        <CustomButton theme={ButtonTheme.DEFAULT}>
-                            <AvatarIcon
-                                className={cls.avatar}
-                                onClick={handlerOpenModal}
-                            />
-                        </CustomButton>
-
-                        <CustomButton
-                            theme={ButtonTheme.DEFAULT}
-                            className={cls.cart}
+                <Row
+                    gutter={{ md: 5, lg: 8, xl: 10, xxl: 12 }}
+                    align='middle'
+                    justify='space-between'
+                >
+                    <Col xxl={4}>
+                        <Title
+                            className={cls.logo}
+                            aria-level={1}
+                            level={1}
+                            style={{ margin: 0, fontSize: 0 }}
                         >
-                            <AppLink to={AppRoutes.CART}>
-                                <Icon
-                                    className={cls.icon}
-                                    icon='fluent:cart-20-filled'
-                                    onClick={() => {
-                                        handlerToggleClass(4);
-                                    }}
-                                />
-                            </AppLink>
-                        </CustomButton>
+                            <span className={cls.logo}>MiniStore</span>
+                        </Title>
+                    </Col>
+                    <Col lg={13}>
+                        <div className={cls.center}>
+                            <NavBar
+                                listElements={listElements}
+                                handlerToggleClass={handlerToggleClass}
+                                setListElements={setListElements}
+                            />
+                        </div>
+                    </Col>
+                    <Col xxl={3}>
+                        <div className={cls.right}>
+                            <CustomButton
+                                className={cls.indentation}
+                                theme={ButtonTheme.DEFAULT}
+                                shape
+                            >
+                                <SearchIcon />
+                            </CustomButton>
 
-                        <LoginModal
-                            isOpen={openModal}
-                            onClose={handlerCloseModal}
-                        />
-                    </div>
-                </div>
+                            <SwitcherLang className={cls.indentation} />
+
+                            <SwitcherTheme className={cls.indentation} />
+
+                            <CustomButton
+                                className={cls.indentation}
+                                theme={ButtonTheme.DEFAULT}
+                            >
+                                <AvatarIcon
+                                    className={cls.avatar}
+                                    onClick={handlerOpenModal}
+                                />
+                            </CustomButton>
+
+                            <CustomButton
+                                theme={ButtonTheme.DEFAULT}
+                                className={cls.cart}
+                            >
+                                <AppLink
+                                    to={AppRoutes.CART}
+                                    className={cls.align}
+                                >
+                                    <Icon
+                                        className={cls.icon}
+                                        icon='fluent:cart-20-filled'
+                                        onClick={() => {
+                                            handlerToggleClass(4);
+                                        }}
+                                    />
+                                </AppLink>
+                            </CustomButton>
+
+                            <LoginModal
+                                isOpen={openModal}
+                                onClose={handlerCloseModal}
+                            />
+                        </div>
+                    </Col>
+                </Row>
             </Container>
         </header>
     );

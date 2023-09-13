@@ -1,5 +1,6 @@
 @import './reset';
 @import './variables/global';
+@import './variables/variables';
 @import './theme/dark';
 @import './theme/light';
 @import './normalize';
@@ -36,7 +37,7 @@ h1,h2,h3,h4,h5 {
     
 }
 
-h4,h5 {
+h1,h2 {
     font-size: 83px;
     line-height: 114%;
     text-shadow: var(--shadow-title);

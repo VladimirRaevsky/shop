@@ -67,10 +67,8 @@
     }
 }
 
-.wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.indentation {
+    margin-right: 5px;
 }
 
 .icon {
@@ -99,6 +97,18 @@
     font-size: var(--font-size-logo);
     font-weight: 400;
     color: var(--primary-color);
+
+    @media screen and ( width <= 1200px ) {
+        --font-size-logo: 1.8rem;
+    }
+
+    @media screen and ( width <= 768px ) {
+        --font-size-logo: 1.5rem;
+    }
+
+    @media screen and ( width <= 576px ) {
+        --font-size-logo: 1rem;
+    }
 }
 
 .avatar {
@@ -116,3 +126,12 @@
     }
 }
 
+.align {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+
+    svg {
+        flex-shrink: 0;
+    }
+}

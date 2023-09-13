@@ -53,8 +53,8 @@ export const NavBar: FC<NavBarProps> = (props) => {
     }, []);
 
     return (
-        <nav className={ClassNames(cls.navBar, {}, [className])}>
-            <ul className={cls.list}>
+        <nav className={ClassNames(cls.navBar, {}, [])}>
+            <ul className={ClassNames(cls.list, {}, [className])}>
                 {listElements.map((el, index) => {
                     return (
                         <li

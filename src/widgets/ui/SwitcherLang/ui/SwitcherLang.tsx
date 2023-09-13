@@ -1,6 +1,7 @@
 import Select from 'antd/es/select';
 import { type FC } from 'react';
 import { useTranslation } from 'react-i18next';
+
 import cls from './SwitcherLang.module.scss';
 
 interface SwitcherLangProps {

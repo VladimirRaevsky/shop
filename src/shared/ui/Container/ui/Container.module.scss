@@ -3,4 +3,10 @@
     max-width: 83.25rem;
     margin: 0 auto;
     padding: 0 2rem; 
+
+    /* stylelint-disable */
+    @media screen and (width <= 768px) and (orientation: portrait) {
+        padding: 0 1rem; 
+    }
 }
+
