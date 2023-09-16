@@ -1,0 +1,33 @@
+.customTitle {
+    margin: 0;
+
+    font-family: Jost , sans-serif !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    color: var(--primary-color) !important;
+}
+
+h1.customTitle.h1 {
+    font-size: var(--font-size-logo);
+}
+ 
+h2.customTitle.h2 {
+    font-size: var(--font-size-h2);
+    line-height: var(--line-height-h2);
+    text-shadow: var(--shadow-title);
+    text-transform: uppercase;
+    letter-spacing: 1.66px;
+}
+
+h3.customTitle.h3 {
+    font-size: var(--font-size-h3);
+    line-height: normal;
+    color: var(--primary-color);
+    text-transform: uppercase;
+}
+
+:global {
+    .ant-typography {
+        color: var(--primary-color);
+    }
+}

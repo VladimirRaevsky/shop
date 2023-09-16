@@ -5,11 +5,56 @@
 }
 /* stylelint-disable-next-line color-function-notation */
 :global {
-    .ant-select-selector {
-        padding: 0 5px !important;
+    // .ant-select-selector {
+    //     border-color: var(--primary-color);
+    //     outline: transparent;
+    // }
+    
+    .css-dev-only-do-not-override-fpg3f5.ant-select-single .ant-select-selector {
+        color: var(--primary-color);
+    }
+    
+    .css-dev-only-do-not-override-fpg3f5.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+        background-color: var(--bg-color);
     }
 
-    .ant-select-item-option-selected {
-        background-color: #f8f4be !important;
+    .css-dev-only-do-not-override-fpg3f5.ant-select:not(.ant-select-disabled, .ant-select-customize-input, .ant-pagination-size-changer):hover .ant-select-selector {
+        padding: 0 5px;
+        border-color: var(--primary-color) !important;
+    }
+
+    .css-dev-only-do-not-override-fpg3f5.ant-select:not(.ant-select-disabled, .ant-select-customize-input, .ant-pagination-size-changer):hover .ant-select-selector:focus {
+        border-color: var(--primary-color) !important;
+    }
+
+    .ant-select > * {
+        color: var(--primary-color);
+        border-color: var(--primary-color);
+        outline: transparent;
+    }
+    
+    .css-dev-only-do-not-override-fpg3f5.ant-select-dropdown .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+        background-color: hsl(7deg 77% 71%);
+    }
+    
+    .css-dev-only-do-not-override-fpg3f5.ant-select-dropdown {
+        background-color: var(--bg-color);
+        border: 1px solid var(--inverted-bg-color);
+    }
+    
+    .css-dev-only-do-not-override-fpg3f5.ant-select .ant-select-arrow {
+        color: var(--primary-color)
+    }
+    
+    .ant-select-item-option-content {
+        color: var(--primary-color);
+    }
+    
+    .ant-select-item.ant-select-item-option.ant-select-item-option-active.ant-select-item-option-selected .ant-select-item-option-content {
+        color: #fff;
+    }
+    
+    .css-dev-only-do-not-override-fpg3f5.ant-select-single.ant-select-open .ant-select-selection-item {
+        color: var(--primary-color);
     }
 }

@@ -1,5 +1,7 @@
 import { type FC } from 'react';
+
 import { ClassNames } from 'shared/lib';
+
 import cls from './UserProfile.module.scss';
 
 interface UserProfileProps {

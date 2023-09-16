@@ -1,7 +1,9 @@
 import { fireEvent, screen } from '@testing-library/react';
+
 import '@testing-library/jest-dom/extend-expect';
-import { SideBar } from './SideBar';
 import ComponentRender from 'shared/lib/helpers/tests/componentRender/ComponentRender';
+
+import { SideBar } from './SideBar';
 
 describe('sidebar', () => {
     test('should open and close the sidebar on button click', () => {

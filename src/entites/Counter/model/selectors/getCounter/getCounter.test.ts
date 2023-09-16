@@ -1,4 +1,5 @@
 import { type DeepPartial } from '@reduxjs/toolkit';
+
 import { type StateSchema } from 'entites/Counter/ui/Counter';
 
 import { getCounter } from './getCounter';

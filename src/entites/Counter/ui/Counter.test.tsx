@@ -1,6 +1,8 @@
 import { fireEvent, screen } from '@testing-library/react';
+
 import '@testing-library/jest-dom/extend-expect';
 import ComponentRender from 'shared/lib/helpers/tests/componentRender/ComponentRender';
+
 import { Counter } from './Counter';
 
 describe('Counter', () => {

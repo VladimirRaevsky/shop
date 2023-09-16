@@ -2,6 +2,8 @@ import Select from 'antd/es/select';
 import { type FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { ClassNames } from 'shared/lib';
+
 import cls from './SwitcherLang.module.scss';
 
 interface SwitcherLangProps {
@@ -18,24 +20,26 @@ export const SwitcherLang: FC<SwitcherLangProps> = (props) => {
     };
 
     return (
-        <Select
-            labelInValue
-            defaultValue={{
-                value: i18n.language === 'ru' ? 'Ру' : 'En',
-                label: i18n.language === 'ru' ? 'Ру' : 'En',
-            }}
-            className={cls.select}
-            onChange={toggleLangHandler}
-            options={[
-                {
-                    value: 'Ру',
-                    label: 'Ру',
-                },
-                {
-                    value: 'En',
-                    label: 'En',
-                },
-            ]}
-        />
+        <div className={ClassNames(cls.wrapper, {}, [className])}>
+            <Select
+                labelInValue
+                defaultValue={{
+                    value: i18n.language === 'ru' ? 'Ру' : 'En',
+                    label: i18n.language === 'ru' ? 'Ру' : 'En',
+                }}
+                className={cls.select}
+                onChange={toggleLangHandler}
+                options={[
+                    {
+                        value: 'Ру',
+                        label: 'Ру',
+                    },
+                    {
+                        value: 'En',
+                        label: 'En',
+                    },
+                ]}
+            />
+        </div>
     );
 };

@@ -17,15 +17,10 @@ export const SwitcherTheme: FC<SwitcherThemeProps> = (props) => {
 
     const { theme, themeToggleHandler } = useTheme();
 
-    const mods: Record<string, boolean> = {
-        [cls.moon]: theme === 'light',
-        [cls.sunny]: theme === 'dark',
-    };
-
     return (
         <CustomButton
             theme={ButtonTheme.DEFAULT}
-            className={ClassNames(cls.switcherTheme, mods, [className])}
+            className={ClassNames(cls.switcherTheme, {}, [className])}
             onClick={themeToggleHandler}
         >
             <Icon

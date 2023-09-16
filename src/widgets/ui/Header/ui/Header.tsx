@@ -13,17 +13,16 @@ import { AppRoutes } from 'shared/config/routeConfig/RouteConfig';
 import { ClassNames } from 'shared/lib';
 import { AppLink } from 'shared/ui/AppLink';
 import { Container } from 'shared/ui/Container';
-
 import { CustomButton } from 'shared/ui/CustomButton';
 import { ButtonTheme } from 'shared/ui/CustomButton/ui/CustomButton';
+
+import { CustomTitle } from 'shared/ui/CustomTitle';
 import { SwitcherLang } from 'widgets/ui/SwitcherLang';
 import { SwitcherTheme } from 'widgets/ui/SwitcherTheme';
 
 import cls from './Header.module.scss';
 import { NavBar } from './NavBar';
 import { type ListType, LIST_ITEMS } from './NavBar/const';
-
-const { Title } = Typography;
 
 interface HeaderProps {
     className?: string;
@@ -69,14 +68,9 @@ export const Header: FC<HeaderProps> = () => {
                     justify='space-between'
                 >
                     <Col xxl={4}>
-                        <Title
-                            className={cls.logo}
-                            aria-level={1}
-                            level={1}
-                            style={{ margin: 0, fontSize: 0 }}
-                        >
-                            <span className={cls.logo}>MiniStore</span>
-                        </Title>
+                        <CustomTitle level={1} ariaLevel={1}>
+                            <span style={{ font: 'inherit' }}>MiniStore</span>
+                        </CustomTitle>
                     </Col>
                     <Col lg={13}>
                         <div className={cls.center}>

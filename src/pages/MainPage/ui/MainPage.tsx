@@ -12,6 +12,7 @@ import {
     InputTheme,
     InputType,
 } from 'shared/ui/CustomInput/ui/CustomInput';
+import { CustomTitle } from 'shared/ui/CustomTitle';
 import { InputForm } from 'shared/ui/InputForm';
 import { InputFormSize } from 'shared/ui/InputForm/ui/InputForm';
 import { PageLoader } from 'widgets/ui/PageLoader';
@@ -55,6 +56,10 @@ const MainPage: FC<MainePageProps> = () => {
                 desc='example'
                 type={InputType.TEXT}
             />
+
+            <CustomTitle level={2} ariaLevel={2}>
+                Your Products are great.
+            </CustomTitle>
 
             <CustomInput
                 type={InputType.TEXT}

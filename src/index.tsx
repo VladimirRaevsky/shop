@@ -1,10 +1,12 @@
+import { StyleProvider } from '@ant-design/cssinjs';
+import { createRoot } from 'react-dom/client';
+
+import { BrowserRouter } from 'react-router-dom';
+
 import { App } from 'app';
 import { ErrorBoundary } from 'app/providers/errorBoundary';
-import { ThemeProvider } from 'app/providers/ThemeProviders';
-import { createRoot } from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
 import { StoreProvider } from 'app/providers/StoreProvider';
-import { StyleProvider } from '@ant-design/cssinjs';
+import { ThemeProvider } from 'app/providers/ThemeProviders';
 
 import 'shared/config/i18n/i18n';
 

@@ -1,6 +1,8 @@
 import { Card } from 'antd';
 import { type FC } from 'react';
+
 import { ClassNames } from 'shared/lib';
+
 import cls from './CardProduct.module.scss';
 
 const { Meta } = Card;

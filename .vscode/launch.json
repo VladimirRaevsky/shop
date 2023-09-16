@@ -13,7 +13,6 @@
     // Использование локальных правил Stylelint
     "stylelint.useLocal": true,
 
-    // Форматирование при сохранении файла
     "stylelint.autoFixOnSave": true,
     "editor.fontFamily": "Fira Code, Consolas, 'Courier New', monospace",
     "editor.fontLigatures": true,
@@ -26,6 +25,8 @@
     "typescript.inlayHints.enumMemberValues.enabled": true,
     "typescript.inlayHints.parameterTypes.enabled": true,
     "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+    "better-comments.multilineComments": true,
+    "better-comments.highlightPlainText": true,
 
     // Превью предложения
     "editor.suggest.preview": true,
@@ -39,14 +40,52 @@
     // Использование одной темы в проекте)
     // "workbench.colorTheme": "One Dark Pro",
 
-    // Подсветка комментариев с приставкой TODO
-    "todohighlight.keywords": [
+    // Подсветка комментариев с приставкой
+    "better-comments.tags": [
         {
-            "text": "TODO:",
-            "color": "white",
-            "border": "1px solid white",
-            "backgroundColor": "rgba(46,24,83,0.5)",
-            "isWholeLine": true
+            "tag": "!",
+            "color": "#EEF5FF",
+            "strikethrough": false,
+            "underline": true,
+            "backgroundColor": "#3498DB",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "?",
+            "color": "#EEF5FF",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "#3498DB",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "*",
+            "color": "#FF2D00",
+            "strikethrough": true,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": true,
+            "italic": false
+        },
+        {
+            "tag": "todo",
+            "color": "#FF8C00",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
+        },
+        {
+            "tag": "*",
+            "color": "#98C379",
+            "strikethrough": false,
+            "underline": false,
+            "backgroundColor": "transparent",
+            "bold": false,
+            "italic": false
         }
     ],
 

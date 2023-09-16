@@ -1,9 +1,9 @@
 import { AppRoutes } from 'shared/config/routeConfig/RouteConfig';
 
 export interface ListType {
-    id: number;
-    to: AppRoutes;
-    text: string;
+    readonly id: number;
+    readonly to: AppRoutes;
+    readonly text: string;
     hover: boolean;
 }
 

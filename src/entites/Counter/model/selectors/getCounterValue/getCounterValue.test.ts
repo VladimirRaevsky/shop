@@ -1,4 +1,5 @@
 import { type StateSchema } from 'entites/Counter/ui/Counter';
+
 import { getCounterValue } from './getCounterValue';
 
 describe('getCounterValue', () => {
