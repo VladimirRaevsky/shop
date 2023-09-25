@@ -52,7 +52,7 @@
             "italic": false
         },
         {
-            "tag": "?",
+            "tag": "#",
             "color": "#EEF5FF",
             "strikethrough": false,
             "underline": false,

@@ -1,11 +1,8 @@
 import { type Meta, type StoryObj } from '@storybook/react';
 
-import {
-    CustomInput,
-    InputPlaceholder,
-    InputTheme,
-    InputType,
-} from './CustomInput';
+import { InputPlaceholder, InputType } from 'shared/ui/InputForm/ui/InputForm';
+
+import { CustomInput, InputText, InputTheme } from './CustomInput';
 
 const meta: Meta<typeof CustomInput> = {
     title: 'shared/CustomInput',
@@ -17,12 +14,20 @@ const meta: Meta<typeof CustomInput> = {
 export default meta;
 
 type Story = StoryObj<typeof CustomInput>;
-export const Default: Story = {};
-export const Border: StoryObj = {
+
+export const Search: Story = {
     args: {
-        ...Default.args,
+        theme: InputTheme.SEARCH,
+        type: InputType.TEXT,
+        placeholder: InputPlaceholder.SEARCH,
+    },
+};
+
+export const Subscribe: StoryObj = {
+    args: {
         theme: InputTheme.SUBSCRIBE,
         type: InputType.TEXT,
         placeholder: InputPlaceholder.EMAIL,
+        subscribe: InputText.SUBSCRIBE,
     },
 };

@@ -7,11 +7,17 @@ import cls from './CustomTitle.module.scss';
 
 const { Title } = Typography;
 
+export const enum TitleLevel {
+    ONE = 1,
+    TWO = 2,
+    THREE = 3,
+}
+
 interface TitleProps {
     className?: string;
     children: ReactNode;
-    level: 1 | 2 | 3 | 4 | 5;
-    ariaLevel: 1 | 2 | 3 | 4 | 5;
+    level: TitleLevel;
+    ariaLevel: TitleLevel;
 }
 
 export const CustomTitle: FC<TitleProps> = (props) => {

@@ -1,8 +1,7 @@
+import { UserOutlined } from '@ant-design/icons';
 import { type Meta, type StoryObj } from '@storybook/react';
 
-import { InputType } from 'shared/ui/CustomInput/ui/CustomInput';
-
-import { InputForm, InputFormSize } from './InputForm';
+import { InputForm, InputFormTheme, InputType } from './InputForm';
 
 const meta: Meta<typeof InputForm> = {
     title: 'shared/InputForm',
@@ -14,36 +13,29 @@ const meta: Meta<typeof InputForm> = {
 export default meta;
 
 type Story = StoryObj<typeof InputForm>;
-export const Default: Story = {
-    args: {
-        placeholder: 'Your email address here',
-        size: InputFormSize.M,
-    },
-};
 
 export const InputNumber: StoryObj = {
     args: {
-        ...Default.args,
         type: InputType.NUMBER,
-        desc: 'Phone',
-        size: InputFormSize.L,
+        description: 'Phone',
+        placeholder: 'Phone',
+        theme: InputFormTheme.BIG,
     },
 };
 
 export const InputPassword: StoryObj = {
     args: {
-        ...Default.args,
+        placeholder: 'password',
         type: InputType.PASSWORD,
-        desc: 'Password',
-        size: InputFormSize.M,
+        theme: InputFormTheme.SMALL,
     },
 };
 
 export const InputText: StoryObj = {
     args: {
-        ...Default.args,
+        placeholder: 'name',
         type: InputType.TEXT,
-        desc: 'First name',
-        size: InputFormSize.L,
+        theme: InputFormTheme.SMALL,
+        prefix: <UserOutlined />,
     },
 };

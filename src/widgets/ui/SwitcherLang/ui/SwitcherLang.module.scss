@@ -3,13 +3,8 @@
     width: 50px;
     height: auto;
 }
-/* stylelint-disable-next-line color-function-notation */
+
 :global {
-    // .ant-select-selector {
-    //     border-color: var(--primary-color);
-    //     outline: transparent;
-    // }
-    
     .css-dev-only-do-not-override-fpg3f5.ant-select-single .ant-select-selector {
         color: var(--primary-color);
     }

@@ -1,22 +1,20 @@
 import { Icon } from '@iconify/react';
 import { Col, Row, Typography } from 'antd';
 import { useCallback, useState, type FC } from 'react';
-
 import { useTranslation } from 'react-i18next';
 
 import { LoginModal } from 'features/AuthByUserName';
+
 import AvatarIcon from 'shared/assets/icons/header/avatar.svg';
-
 import SearchIcon from 'shared/assets/icons/header/ion_search.svg';
-
 import { AppRoutes } from 'shared/config/routeConfig/RouteConfig';
 import { ClassNames } from 'shared/lib';
 import { AppLink } from 'shared/ui/AppLink';
 import { Container } from 'shared/ui/Container';
 import { CustomButton } from 'shared/ui/CustomButton';
 import { ButtonTheme } from 'shared/ui/CustomButton/ui/CustomButton';
-
 import { CustomTitle } from 'shared/ui/CustomTitle';
+
 import { SwitcherLang } from 'widgets/ui/SwitcherLang';
 import { SwitcherTheme } from 'widgets/ui/SwitcherTheme';
 

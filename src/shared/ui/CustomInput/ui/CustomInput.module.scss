@@ -61,10 +61,21 @@
             border-color: #595858;
         }
     }
+
+    .css-dev-only-do-not-override-fpg3f5.ant-input-search .ant-input-search-button {
+        height: 100%;
+    }
+
+    .css-dev-only-do-not-override-fpg3f5[class^="ant-input"], .css-dev-only-do-not-override-fpg3f5[class*=" ant-input"] {
+        font-family: inherit;
+        font-size: inherit;
+    }
+
 }
 
 .name,
 .password {
+    display: block;
     width: 100%;
     height: 100%;
 
@@ -74,6 +85,11 @@
 }
 
 .subscribe {
+    display: block;
+    width: 494px;
+    height: 53px;
+    font-size: 16px;
+
     span {
         display: flex;
         align-items: center;
@@ -96,19 +112,38 @@
             letter-spacing: 1.4px;
     
             background-color: var(--accent-color);
+
+            & > span {
+                padding-top: 15px;
+            }
         }
     }
-
 }
 
 .search {
+    display: block;
+
+    width: 290px;
+    height: 53px;
+
+    font-size: 16px;
+
     border: 1px solid #EEE;
     border-style: none;
     border-radius: 10px;
     box-shadow: var(--input-shadow);
 
+    /* stylelint-disable */
     span {
         height: 100%;
+        position: relative;
+
+        [data-icon="close-circle"] {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-60%, -50%);
+        }
     }
 
     & > span > span > span > span > span {
@@ -164,14 +199,3 @@
     height: 45px;
 }
 
-.size_l {
-    max-width: 290px;
-    height: 53px;
-    font-size: 20px;
-}
-
-.size_xl {
-    width: 494px;
-    height: 53px;
-    font-size: 20px;
-}

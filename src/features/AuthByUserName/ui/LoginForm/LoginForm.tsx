@@ -1,13 +1,13 @@
+import { UserOutlined } from '@ant-design/icons';
 import { type FC } from 'react';
 
 import { ClassNames } from 'shared/lib';
-import { CustomInput } from 'shared/ui/CustomInput';
+import { InputForm } from 'shared/ui/InputForm';
 import {
+    InputFormTheme,
     InputPlaceholder,
-    InputSize,
-    InputTheme,
     InputType,
-} from 'shared/ui/CustomInput/ui/CustomInput';
+} from 'shared/ui/InputForm/ui/InputForm';
 
 import cls from './LoginForm.module.scss';
 
@@ -20,20 +20,18 @@ export const LoginForm: FC<LoginFormProps> = (props) => {
 
     return (
         <form className={ClassNames(cls.loginForm, {}, [className])}>
-            <CustomInput
+            <InputForm
                 className={cls.input}
-                size={InputSize.M}
                 type={InputType.TEXT}
                 placeholder={InputPlaceholder.NAME}
-                theme={InputTheme.AUTH_NAME}
-                status='warning'
+                theme={InputFormTheme.SMALL}
+                prefix={<UserOutlined />}
             />
-            <CustomInput
+            <InputForm
                 className={cls.input}
-                size={InputSize.M}
                 type={InputType.PASSWORD}
                 placeholder={InputPlaceholder.PASSWORD}
-                theme={InputTheme.AUTH_PASSWORD}
+                theme={InputFormTheme.SMALL}
             />
         </form>
     );

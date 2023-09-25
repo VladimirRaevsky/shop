@@ -6,15 +6,15 @@ import { CardProduct } from 'shared/ui/CardProduct';
 import { CustomButton } from 'shared/ui/CustomButton';
 import { ButtonTheme } from 'shared/ui/CustomButton/ui/CustomButton';
 import { CustomInput } from 'shared/ui/CustomInput';
-import {
-    InputPlaceholder,
-    InputSize,
-    InputTheme,
-    InputType,
-} from 'shared/ui/CustomInput/ui/CustomInput';
+import { InputText, InputTheme } from 'shared/ui/CustomInput/ui/CustomInput';
 import { CustomTitle } from 'shared/ui/CustomTitle';
+import { TitleLevel } from 'shared/ui/CustomTitle/ui/CustomTitle';
 import { InputForm } from 'shared/ui/InputForm';
-import { InputFormSize } from 'shared/ui/InputForm/ui/InputForm';
+import {
+    InputFormTheme,
+    InputPlaceholder,
+    InputType,
+} from 'shared/ui/InputForm/ui/InputForm';
 import { PageLoader } from 'widgets/ui/PageLoader';
 
 import cls from './MainPage.module.scss';
@@ -52,24 +52,32 @@ const MainPage: FC<MainePageProps> = () => {
     return (
         <div className={cls.MainPage}>
             <InputForm
-                size={InputFormSize.M}
-                desc='example'
+                theme={InputFormTheme.BIG}
+                description='description'
                 type={InputType.TEXT}
             />
 
-            <CustomTitle level={2} ariaLevel={2}>
+            <InputForm theme={InputFormTheme.SMALL} type={InputType.TEXT} />
+
+            <CustomTitle level={TitleLevel.ONE} ariaLevel={TitleLevel.ONE}>
                 Your Products are great.
             </CustomTitle>
 
             <CustomInput
                 type={InputType.TEXT}
-                size={InputSize.L}
+                theme={InputTheme.SUBSCRIBE}
+                placeholder={InputPlaceholder.EMAIL}
+                subscribe={InputText.SUBSCRIBE}
+            />
+
+            <CustomInput
+                type={InputType.TEXT}
                 theme={InputTheme.SEARCH}
                 placeholder={InputPlaceholder.SEARCH}
             />
-            <CustomButton theme={ButtonTheme.PRIMARY}>купить</CustomButton>
+            {/* <CustomButton theme={ButtonTheme.PRIMARY}>купить</CustomButton>
 
-            <CustomButton theme={ButtonTheme.SECONDARY}>Proceed</CustomButton>
+            <CustomButton theme={ButtonTheme.SECONDARY}>Proceed</CustomButton> */}
 
             {t('Главная страница')}
             <Counter />

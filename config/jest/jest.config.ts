@@ -23,15 +23,25 @@ const config: Config = {
 
     modulePaths: ['<rootDir>/src'],
 
+    preset: 'ts-jest',
+
     // The root directory that Jest should scan for tests and modules within
     rootDir: '../../',
 
     // A set of global variables that need to be available in all test environments
     globals: {
-        __IS_DEV__: true
+        __IS_DEV__: true,
     },
 
-    "transform": { "^.+\\.(ts|tsx|js|jsx)?$": "ts-jest" },
+    moduleNameMapper: {
+        '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
+    },
+    transform: {
+        '^.+\\.(ts|tsx|js|jsx)?$': 'ts-jest',
+    },
+
+    // Indicates which provider should be used to instrument code for coverage
+    coverageProvider: 'babel',
 
     // All imported modules in your tests should be mocked automatically
     // automock: false,
@@ -58,9 +68,6 @@ const config: Config = {
     // coveragePathIgnorePatterns: [
     //   "\\\\node_modules\\\\"
     // ],
-
-    // Indicates which provider should be used to instrument code for coverage
-    // coverageProvider: "babel",
 
     // A list of reporter names that Jest uses when writing coverage reports
     // coverageReporters: [

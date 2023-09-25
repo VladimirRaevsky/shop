@@ -12,16 +12,20 @@
 }
 
 .overlay {
+    position: relative;
+
     display: grid;
     place-items: center;
 
     width: 100%;
     height: 100%;
 
-    background: var(--overlay-color);
+    background-color: var(--overlay-color);
 
     transition: all 0.4s;
 }
+
+
 
 .content {
     transform: scale(0.5);

@@ -1,49 +1,94 @@
+import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import { Input } from 'antd';
-import { type FC } from 'react';
+import { type ReactNode, type FC } from 'react';
 
 import { ClassNames } from 'shared/lib';
-import { type InputType } from 'shared/ui/CustomInput/ui/CustomInput';
 
 import cls from './InputForm.module.scss';
 
-export enum InputFormSize {
-    M = 'size_m',
-    L = 'size_l',
+export enum InputFormTheme {
+    SMALL = 'size_m',
+    BIG = 'size_l',
+}
+
+export enum InputPlaceholder {
+    EMAIL = 'Your email address here',
+    SEARCH = 'Search',
+    NAME = 'Name',
+    PASSWORD = 'Password',
+}
+
+export enum InputType {
+    TEXT = 'text',
+    NUMBER = 'number',
+    PASSWORD = 'password',
 }
 
 interface InputFormProps {
     className?: string;
     placeholder?: string;
-    desc?: string;
+    description?: string;
     type: InputType;
-    size: InputFormSize;
+    status?: 'warning' | 'error';
+    prefix?: ReactNode;
+    theme: InputFormTheme;
 }
 
 export const InputForm: FC<InputFormProps> = (props) => {
-    const { className = '', placeholder, desc, type, size, ...other } = props;
+    const {
+        className = '',
+        placeholder,
+        description,
+        type,
+        theme,
+        status,
+        prefix,
+        ...other
+    } = props;
 
+    console.log(type);
     const onInputHandler = (vl: any): any => {
         console.log(vl.target.value);
     };
 
     return (
-        <div className={ClassNames(cls.wrapper, {}, [className, cls[size]])}>
-            {desc != null && (
+        <span className={ClassNames(cls.wrapper, {}, [className, cls[theme]])}>
+            {description != null && (
                 <label className={cls.label} htmlFor='inputField'>
-                    {desc}
+                    {description}
                 </label>
             )}
-            <Input
-                className={ClassNames(cls.inputForm, {}, [className])}
-                placeholder={placeholder}
-                id='inputField'
-                type={type}
-                maxLength={50}
-                showCount
-                allowClear
-                onInput={(e) => onInputHandler(e)}
-                {...other}
-            />
-        </div>
+            {type !== 'password' ? (
+                <Input
+                    className={ClassNames(cls.inputForm, {}, [])}
+                    placeholder={placeholder}
+                    status={status}
+                    id='inputField'
+                    type={type}
+                    maxLength={50}
+                    showCount
+                    allowClear
+                    onInput={(e) => onInputHandler(e)}
+                    prefix={prefix}
+                    {...other}
+                />
+            ) : (
+                <Input.Password
+                    className={ClassNames(cls.inputForm, {}, [])}
+                    placeholder={placeholder}
+                    status={status}
+                    id='inputField'
+                    type={type}
+                    maxLength={50}
+                    showCount
+                    allowClear
+                    onInput={(e) => onInputHandler(e)}
+                    iconRender={(visible) =>
+                        visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
+                    }
+                    {...other}
+                />
+            )}
+        </span>
     );
 };
