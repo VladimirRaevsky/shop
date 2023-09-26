@@ -11,7 +11,8 @@
     --icon-bg-color: #ebeff1;
     --header-shadow: 0px 0px 14px 0px rgb(11 40 53 / 7%);
     --input-shadow: 0px 0px 44px 0px rgb(0 0 0 / 8%);
-    --inverted-color-rgba: rgb(10 108 154 / 8%);
+    /* stylelint-disable-next-line */
+    --inverted-color-rgba: rgba(158, 158, 158, 0.8);
     --shadow-title: 0 4px 4px rgb(0 0 0 / 25%);
     --button-primary-color: #fff;
 }

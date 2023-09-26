@@ -1,9 +1,9 @@
 :root[data-theme='dark'] {
     --bg-color: #383939;
-    --inverted-bg-color: #e4e4f2;
+    --inverted-bg-color: #fff;
     --accent-color: #72aec8;
     --hover-primary-color: #aee3fa;
-    --hover-secondary-color: #bfbfbf;
+    --hover-secondary-color: #2b2b2b;
     --p-color: #c3b1b1;
     --primary-color: #fff;
     --inverted-primary-color: #383939;
@@ -11,7 +11,8 @@
     --icon-bg-color: #ebeff1;
     --header-shadow: 0px 0px 14px 0px rgb(229 237 241 / 7%);
     --input-shadow: 0px 0px 44px 0px rgb(229 237 241 / 7%);
-    --inverted-color-rgba: rgb(255 108 29 / 8%);
+    /* stylelint-disable-next-line */
+    --inverted-color-rgba: rgba(47, 44, 43, 0.8);
     --shadow-title: 0 4px 4px rgb(220 208 208 / 25%);
     --button-primary-color: #fff;
 }

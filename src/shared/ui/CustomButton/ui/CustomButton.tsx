@@ -1,50 +1,49 @@
-import { type ButtonHTMLAttributes, type FC } from 'react';
+import { type ReactNode, type ButtonHTMLAttributes, type FC } from 'react';
 
 import { ClassNames } from 'shared/lib';
 
 import cls from './CustomButton.module.scss';
 
-export enum ButtonSize {
-    M = 'size_m',
-    L = 'size_l',
-    XL = 'size_xl',
-}
-
 export enum ButtonTheme {
     SECONDARY = 'secondary',
     PRIMARY = 'primary',
-    DEFAULT = 'default',
-    ERROR = 'error',
+    CLEAR = 'clear',
+    CIRCLE = 'circle',
+    SQARE = 'sqare',
+}
+
+export enum ButtonType {
+    BUTTON = 'button',
+    SUBMIT = 'submit',
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
     theme: ButtonTheme;
-    shape?: boolean;
-    size?: ButtonSize;
+    type: ButtonType;
+    children: ReactNode;
 }
+
+/**
+ * @param className - Duration of a ripple effect.
+ * @param theme - Button theme.
+ * @param children - React node.
+ * @param type - Button type.
+ */
 
 export const CustomButton: FC<ButtonProps> = (props) => {
     const {
         className = '',
         children,
-        shape = false,
-        size = '',
-        theme = ButtonTheme.DEFAULT,
+        theme = ButtonTheme.SECONDARY,
+        type,
         ...otherProps
     } = props;
 
-    const mods: Record<string, boolean> = {
-        [cls.circle]: shape,
-    };
-
     return (
         <button
-            className={ClassNames(cls.button, mods, [
-                className,
-                cls[size],
-                cls[theme],
-            ])}
+            type={type}
+            className={ClassNames(cls.button, {}, [className, cls[theme]])}
             {...otherProps}
         >
             {children}

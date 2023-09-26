@@ -1,28 +1,31 @@
 .button {
     cursor: pointer;
 
-    // align-self: flex-start;
+    position: relative;
+
+    overflow: hidden;
 
     width: auto;
     max-height: 53px;
     padding: 16px 46px;
 
-    font: var(--font-m);
+    font: var(--font-m-lato);
     text-transform: uppercase;
 
     border: none;
     outline: none;
 
-    transition: all var(--delay);
+    transition: background color var(--delay);
 }
 
 .secondary {
-    max-width: 292px;
+    // max-width: 292px;
     color: var(--inverted-primary-color);
-    background-color: var(--inverted-bg-color);
+    background: var(--inverted-bg-color);
 
     &:hover {
-        background-color: var(--hover-secondary-color);
+        color: var(--button-primary-color);
+        background: var(--hover-secondary-color);
         transition: all var(--delay);
     }
 }
@@ -30,34 +33,12 @@
 .primary {
     max-width: 176px;
     color: var(--button-primary-color);
-    background-color: var(--accent-color);
+    background: var(--accent-color);
 
     &:hover {
-        background-color: var(--hover-primary-color);
+        background: var(--hover-primary-color);
         transition: all var(--delay);
     }
-}
-
-.default {
-    max-width: auto;
-    padding: 0;
-    background-color: transparent;
-}
-
-.active {
-    color: var(--primary-color);
-    background-color: #f00;
-}
-
-.error {
-    padding: 10px 15px;
-
-    font-size: var(--font-size-l);
-    line-height: var(--line-height-l);
-    color: antiquewhite;
-
-    background-color: #ff0404;
-    border: 1px solid rgb(0 255 229);
 }
 
 .circle {
@@ -67,7 +48,7 @@
 
     padding: 5px;
 
-    background-color: var(--primary-color);
+    background: var(--primary-color);
     border-radius: 100%;
 
     svg {
@@ -75,35 +56,25 @@
     }
 }
 
-.sqare.size_m {
-    width: var(--line-hight-m);
-    height: var(--line-hight-m);
-    font: var(--font-m);
+.sqare {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    
+    color: var(--primary-color);
+
+    background-color: transparent;
+    border: 1px solid var(--inverted-bg-color);
 }
 
-.sqare.size_l {
-    width: var(--line-hight-l);
-    height: var(--line-hight-l);
-    font: var(--font-l);
+.clear {
+    padding: 0;
+    background: transparent;
 }
 
-.sqare.size_xl {
-    width: var(--line-hight-xl);
-    height: var(--line-hight-xl);
-    font: var(--font-xl);
-}
-
-.size_m {
-    width: var(--line-hight-m);
-    font: var(--font-m);
-}
-
-.size_l {
-    width: var(--line-hight-l);
-    font: var(--font-l);
-}
-
-.size_xl {
-    width: var(--line-hight-xl);
-    font: var(--font-xl);
-}

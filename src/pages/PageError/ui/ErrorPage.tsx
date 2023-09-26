@@ -1,8 +1,13 @@
 import { type FC } from 'react';
 import { useTranslation } from 'react-i18next';
+
 import { ClassNames } from 'shared/lib';
 import { CustomButton } from 'shared/ui/CustomButton';
-import { ButtonTheme } from 'shared/ui/CustomButton/ui/CustomButton';
+import {
+    ButtonTheme,
+    ButtonType,
+} from 'shared/ui/CustomButton/ui/CustomButton';
+
 import cls from './ErrorPage.module.scss';
 
 interface ErrorPageProps {
@@ -18,11 +23,10 @@ const ErrorPage: FC<ErrorPageProps> = (props) => {
 
     return (
         <div className={ClassNames(cls.pageError, {}, [className])}>
-            <p>{/* <i>{error.statusText || error.message}</i> */}</p>{' '}
             <span>{t('ОШИБКА')}</span>
             <CustomButton
-                type='button'
-                theme={ButtonTheme.ERROR}
+                type={ButtonType.BUTTON}
+                theme={ButtonTheme.CLEAR}
                 onClick={onThrow}
             >
                 {t('Перезагрузить')}

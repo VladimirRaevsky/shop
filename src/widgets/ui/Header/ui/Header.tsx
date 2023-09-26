@@ -12,7 +12,10 @@ import { ClassNames } from 'shared/lib';
 import { AppLink } from 'shared/ui/AppLink';
 import { Container } from 'shared/ui/Container';
 import { CustomButton } from 'shared/ui/CustomButton';
-import { ButtonTheme } from 'shared/ui/CustomButton/ui/CustomButton';
+import {
+    ButtonTheme,
+    ButtonType,
+} from 'shared/ui/CustomButton/ui/CustomButton';
 import { CustomTitle } from 'shared/ui/CustomTitle';
 
 import { SwitcherLang } from 'widgets/ui/SwitcherLang';
@@ -79,12 +82,12 @@ export const Header: FC<HeaderProps> = () => {
                             />
                         </div>
                     </Col>
-                    <Col xxl={3}>
+                    <Col xxl={4}>
                         <div className={cls.right}>
                             <CustomButton
+                                type={ButtonType.BUTTON}
                                 className={cls.indentation}
-                                theme={ButtonTheme.DEFAULT}
-                                shape
+                                theme={ButtonTheme.CIRCLE}
                             >
                                 <SearchIcon />
                             </CustomButton>
@@ -94,8 +97,9 @@ export const Header: FC<HeaderProps> = () => {
                             <SwitcherTheme className={cls.indentation} />
 
                             <CustomButton
+                                type={ButtonType.BUTTON}
                                 className={cls.indentation}
-                                theme={ButtonTheme.DEFAULT}
+                                theme={ButtonTheme.CLEAR}
                             >
                                 <AvatarIcon
                                     className={cls.avatar}
@@ -104,7 +108,8 @@ export const Header: FC<HeaderProps> = () => {
                             </CustomButton>
 
                             <CustomButton
-                                theme={ButtonTheme.DEFAULT}
+                                type={ButtonType.BUTTON}
+                                theme={ButtonTheme.CLEAR}
                                 className={cls.cart}
                             >
                                 <AppLink

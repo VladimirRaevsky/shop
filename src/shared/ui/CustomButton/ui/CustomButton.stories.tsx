@@ -1,6 +1,9 @@
 import { type Meta, type StoryObj } from '@storybook/react';
 
-import { CustomButton, ButtonSize, ButtonTheme } from './CustomButton';
+import SearchIcon from 'shared/assets/icons/header/ion_search.svg';
+
+import { CustomButton, ButtonTheme } from './CustomButton';
+
 import '../../../config/i18n/i18nForStorybook';
 
 const meta: Meta<typeof CustomButton> = {
@@ -20,23 +23,14 @@ export const Default: Story = {
     },
 };
 
-export const ClearLight: Story = {
+export const CLEAR: Story = {
     args: {
         ...Default.args,
-        theme: ButtonTheme.SECONDARY,
-    },
-    parameters: {
-        backgrounds: {
-            values: [
-                { name: 'red', value: '#f00', color: '#fff' },
-                { name: 'green', value: '#0f0' },
-                { name: 'blue', value: '#00f' },
-            ],
-        },
+        theme: ButtonTheme.CLEAR,
     },
 };
 
-export const Border: StoryObj = {
+export const PRIMARY: StoryObj = {
     args: {
         ...Default.args,
         theme: ButtonTheme.PRIMARY,
@@ -44,58 +38,24 @@ export const Border: StoryObj = {
     },
 };
 
-export const ERROR: Story = {
+export const CIRCLE: StoryObj = {
     args: {
         ...Default.args,
-        theme: ButtonTheme.ERROR,
+        theme: ButtonTheme.CIRCLE,
+        children: <SearchIcon />,
     },
 };
 
-export const Clear: Story = {
+export const SQARE: StoryObj = {
+    args: {
+        theme: ButtonTheme.SQARE,
+        children: '+',
+    },
+};
+
+export const SECONDARY: Story = {
     args: {
         ...Default.args,
         theme: ButtonTheme.SECONDARY,
-    },
-};
-
-export const SQARE_SIZE_M: Story = {
-    args: {
-        children: 'Ru',
-        size: ButtonSize.M,
-    },
-};
-
-export const SQARE_SIZE_L: Story = {
-    args: {
-        children: 'Ru',
-        size: ButtonSize.L,
-    },
-};
-
-export const SQARE_SIZE_XL: Story = {
-    args: {
-        children: 'Ru',
-        size: ButtonSize.XL,
-    },
-};
-
-export const SIZE_M: Story = {
-    args: {
-        children: 'Ru',
-        size: ButtonSize.M,
-    },
-};
-
-export const SIZE_L: Story = {
-    args: {
-        children: 'Ru',
-        size: ButtonSize.L,
-    },
-};
-
-export const SIZE_XL: Story = {
-    args: {
-        children: 'Ru',
-        size: ButtonSize.XL,
     },
 };

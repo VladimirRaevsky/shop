@@ -7,7 +7,10 @@ import { ClassNames } from 'shared/lib';
 import { AppLink } from 'shared/ui/AppLink';
 import { AppLinkTheme } from 'shared/ui/AppLink/ui/AppLink';
 import { CustomButton } from 'shared/ui/CustomButton';
-import { ButtonTheme } from 'shared/ui/CustomButton/ui/CustomButton';
+import {
+    ButtonTheme,
+    ButtonType,
+} from 'shared/ui/CustomButton/ui/CustomButton';
 
 import cls from './NotFound.module.scss';
 
@@ -34,7 +37,10 @@ const NotFound: FC<NotFoundProps> = (props) => {
                 </div>
                 <div className='description'>{t('Попробуйте')}:</div>
 
-                <CustomButton theme={ButtonTheme.DEFAULT}>
+                <CustomButton
+                    type={ButtonType.BUTTON}
+                    theme={ButtonTheme.CLEAR}
+                >
                     <AppLink
                         theme={AppLinkTheme.UNALTERED}
                         to={AppRoutes.MAIN}

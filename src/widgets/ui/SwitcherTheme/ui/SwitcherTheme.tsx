@@ -3,7 +3,10 @@ import { type FC } from 'react';
 import { ClassNames, useTheme } from 'shared/lib';
 import { CustomButton } from 'shared/ui/CustomButton';
 
-import { ButtonTheme } from 'shared/ui/CustomButton/ui/CustomButton';
+import {
+    ButtonTheme,
+    ButtonType,
+} from 'shared/ui/CustomButton/ui/CustomButton';
 
 import { Moony } from './Moony/Moony';
 import { Sunny } from './Sunny/Sunny';
@@ -21,8 +24,9 @@ export const SwitcherTheme: FC<SwitcherThemeProps> = (props) => {
 
     return (
         <CustomButton
+            type={ButtonType.BUTTON}
             data-testid='switcherThemeButton'
-            theme={ButtonTheme.DEFAULT}
+            theme={ButtonTheme.CLEAR}
             className={ClassNames(cls.switcherTheme, {}, [className])}
             onClick={themeToggleHandler}
         >
