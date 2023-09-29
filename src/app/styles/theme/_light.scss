@@ -1,18 +1,53 @@
 :root[data-theme='light'] {
-    --bg-color: #fff;
-    --inverted-bg-color: #383939;
+    // * COLOR
     --accent-color: #72aec8;
-    --hover-primary-color: #aee3fa;
-    --hover-secondary-color: #28282a;
     --p-color: #3a3a3a;
     --primary-color: #272727;
     --inverted-primary-color: #fff;
     --icon-social-color: #d7dddf;
-    --icon-bg-color: #ebeff1;
-    --header-shadow: 0px 0px 14px 0px rgb(11 40 53 / 7%);
-    --input-shadow: 0px 0px 44px 0px rgb(0 0 0 / 8%);
     /* stylelint-disable-next-line */
     --inverted-color-rgba: rgba(158, 158, 158, 0.8);
+    --primary-button-color: #fff;
+
+    // * BUTTON SECONDARY
+    --secondary-button-shadow: 0 6px rgb(48 44 41),
+    0 3px 15px rgb(0 0 0 / 40%),
+    inset 0 1px rgb(255 255 255 / 30%),
+    inset 0 0 3px rgb(255 255 255 / 50%);
+    --secondary-button-hover: rgb(47 44 42) linear-gradient(rgb(11 8 7), rgb(108 96 88) 80%);
+    --secondary-button-active: rgb(41 34 29) linear-gradient(rgb(24 23 22) 20%, rgb(69 57 48));
+    --secondary-button-active-shadow: 0 2px rgb(86 38 6),
+    0 1px 6px rgb(0 0 0 / 40%),
+    inset 0 1px rgb(255 255 255 / 30%),
+    inset 0 0 3px rgb(255 255 255 / 50%);
+
+    // * BUTTON PRIMARY
+    --primary-button-shadow: 0 6px rgb(210 196 185),
+    0 3px 15px rgb(0 0 0 / 40%),
+    inset 0 1px rgb(255 255 255 / 30%),
+    inset 0 0 3px rgb(255 255 255 / 50%);
+    --primary-button-active: rgb(46 194 243) linear-gradient(rgb(239 224 224) 20%, rgb(104 185 236));
+    --primary-button-shadow-active: 0 2px rgb(86 38 6),
+    0 1px 6px rgb(0 0 0 / 40%),
+    inset 0 1px rgb(255 255 255 / 30%),
+    inset 0 0 3px rgb(255 255 255 / 50%);
+
+    // * BUTTON SQARE
+    --sqare-bg-color: #dcdcdc linear-gradient(#fff, #dcdcdc);
+    --sqare-shadow-color: 0 0 0 1px #aaa inset, 0 1px 1px #aaa;
+    --sqare-shadow-color-active: 0 0 0 1px #bbb inset, 0 1px 3px rgba(0 0 0 / 50%) inset, 0 1px 2px #fff;
+
+    // * BACKROUND COLOR
+    --bg-color: #fff;
+    --inverted-bg-color: #383939;
+    --icon-bg-color: #ebeff1;
+
+    // * SHADOW
     --shadow-title: 0 4px 4px rgb(0 0 0 / 25%);
-    --button-primary-color: #fff;
+    --header-shadow: 0px 0px 14px 0px rgb(11 40 53 / 7%);
+    --input-shadow: 0px 0px 44px 0px rgb(0 0 0 / 8%);
+
+    // * HOVER
+    --primary-hover-color: #aee3fa;
+    --secondary-hover-color: #28282a;
 }

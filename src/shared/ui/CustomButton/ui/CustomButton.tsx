@@ -1,6 +1,7 @@
 import { type ReactNode, type ButtonHTMLAttributes, type FC } from 'react';
 
 import { ClassNames } from 'shared/lib';
+import { Ripple } from 'shared/ui/Ripple';
 
 import cls from './CustomButton.module.scss';
 
@@ -43,7 +44,7 @@ export const CustomButton: FC<ButtonProps> = (props) => {
     return (
         <button
             type={type}
-            className={ClassNames(cls.button, {}, [className, cls[theme]])}
+            className={ClassNames('', {}, [className, cls[theme]])}
             {...otherProps}
         >
             {children}

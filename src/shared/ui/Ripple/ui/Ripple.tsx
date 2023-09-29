@@ -63,7 +63,7 @@ export const Ripple: FC<RippleProps> = (props) => {
                     setRippleArray([]);
                     window.clearTimeout(bounce);
                 },
-                (duration as number) * 4,
+                (duration as number) * 2,
             );
         }
 

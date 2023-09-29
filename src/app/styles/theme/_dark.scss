@@ -1,18 +1,53 @@
 :root[data-theme='dark'] {
-    --bg-color: #383939;
-    --inverted-bg-color: #fff;
+    // * COLOR
     --accent-color: #72aec8;
-    --hover-primary-color: #aee3fa;
-    --hover-secondary-color: #2b2b2b;
     --p-color: #c3b1b1;
     --primary-color: #fff;
     --inverted-primary-color: #383939;
     --icon-social-color: #d7dddf;
-    --icon-bg-color: #ebeff1;
-    --header-shadow: 0px 0px 14px 0px rgb(229 237 241 / 7%);
-    --input-shadow: 0px 0px 44px 0px rgb(229 237 241 / 7%);
     /* stylelint-disable-next-line */
     --inverted-color-rgba: rgba(47, 44, 43, 0.8);
+    --primary-button-color: #fff;
+
+    // * BUTTON SECONDARY
+    --secondary-button-shadow: 0 6px rgb(134 130 127),
+    0 3px 15px rgba(255 255 255 / 40%),
+    inset 0 1px rgba(255 255 255 / 30%),
+    inset 0 0 3px rgb(255 255 255 / 50%);
+    --secondary-button-hover: rgb(206 205 205) linear-gradient(rgb(230 229 229), rgb(213 212 212) 80%);
+    --secondary-button-active: rgb(244 196 162) linear-gradient(rgb(209 209 209) 20%, rgb(255 255 255));
+    --secondary-button-active-shadow: 0 2px rgb(201 197 194),
+    0 1px 6px rgba(171 171 171 / 40%),
+    inset 0 1px rgba(255 250 250 / 30%),
+    inset 0 0 3px rgba(184 184 184 / 50%);
+
+    // * BUTTON PRIMARY
+    --primary-button-shadow: 0 6px rgb(210 196 185),
+    0 3px 15px rgb(0 0 0 / 40%),
+    inset 0 1px rgb(255 255 255 / 30%),
+    inset 0 0 3px rgb(255 255 255 / 50%);
+    --primary-button-active: rgb(46 194 243) linear-gradient(rgb(239 224 224) 20%, rgb(104 185 236));
+    --primary-button-shadow-active: 0 2px rgb(86 38 6),
+    0 1px 6px rgb(0 0 0 / 40%),
+    inset 0 1px rgb(255 255 255 / 30%),
+    inset 0 0 3px rgb(255 255 255 / 50%);
+
+    // * BUTTON SQARE
+    --sqare-bg-color: #464444 linear-gradient(#423d3d, #312a2a);
+    --sqare-shadow-color: 0 0 0 1px #e9e2e2 inset, 0 0 1px #eae8e8;
+    --sqare-shadow-color-active: 0 0 0 1px #ececec inset, 0 1px 2px rgba(176 158 158 / 50%) inset, 0 1px 2px #e2cece;
+
+    // * BACKROUND COLOR
+    --bg-color: #383939;
+    --inverted-bg-color: #efe6e6;
+    --icon-bg-color: #ebeff1;
+
+    // * SHADOW
     --shadow-title: 0 4px 4px rgb(220 208 208 / 25%);
-    --button-primary-color: #fff;
+    --header-shadow: 0px 0px 14px 0px rgb(229 237 241 / 7%);
+    --input-shadow: 0px 0px 44px 0px rgb(229 237 241 / 7%);
+
+    // * HOVER
+    --primary-hover-color: #aee3fa;
+    --secondary-hover-color: #2b2b2b;
 }

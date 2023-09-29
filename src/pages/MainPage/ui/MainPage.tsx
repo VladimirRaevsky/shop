@@ -71,6 +71,7 @@ const MainPage: FC<MainePageProps> = () => {
             </CustomParagraph>
             <CustomButton type={ButtonType.BUTTON} theme={ButtonTheme.PRIMARY}>
                 купить
+                <Ripple duration={3000} color='red' />
             </CustomButton>
 
             <CustomButton
@@ -78,21 +79,32 @@ const MainPage: FC<MainePageProps> = () => {
                 theme={ButtonTheme.SECONDARY}
             >
                 Proceed
-                <Ripple duration={4000} color='yellow' />
+                <Ripple duration={3000} color='blue' />
             </CustomButton>
 
-            <CustomButton type={ButtonType.BUTTON} theme={ButtonTheme.SQARE}>
-                -
-                <Ripple duration={4000} />
-            </CustomButton>
-            <CustomButton type={ButtonType.BUTTON} theme={ButtonTheme.SQARE}>
-                1
-                <Ripple duration={4000} />
-            </CustomButton>
-            <CustomButton type={ButtonType.BUTTON} theme={ButtonTheme.SQARE}>
-                +
-                <Ripple duration={4000} />
-            </CustomButton>
+            <div className={cls.box}>
+                <CustomButton
+                    type={ButtonType.BUTTON}
+                    theme={ButtonTheme.SQARE}
+                >
+                    -
+                    <Ripple duration={4000} />
+                </CustomButton>
+                <CustomButton
+                    type={ButtonType.BUTTON}
+                    theme={ButtonTheme.SQARE}
+                >
+                    1
+                    <Ripple duration={4000} />
+                </CustomButton>
+                <CustomButton
+                    type={ButtonType.BUTTON}
+                    theme={ButtonTheme.SQARE}
+                >
+                    +
+                    <Ripple duration={4000} />
+                </CustomButton>
+            </div>
 
             {t('Главная страница')}
             <Counter />

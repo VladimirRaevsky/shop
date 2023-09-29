@@ -5,3 +5,12 @@
     min-height: 100vh;
     color: var(--primary-color);
 }
+
+.box {
+    display: flex;
+    margin-top: 15px;
+
+    & > button {
+        margin-right: 10px;
+    }
+}

@@ -1,43 +1,77 @@
-.button {
+button {
     cursor: pointer;
 
     position: relative;
 
     overflow: hidden;
+    display: inline-block;
 
-    width: auto;
-    max-height: 53px;
-    padding: 16px 46px;
+    padding: 1rem 2.875rem;
 
     font: var(--font-m-lato);
+    text-decoration: none;
+    text-shadow: 0 -1px rgb(0 0 0 / 50%);
     text-transform: uppercase;
 
     border: none;
     outline: none;
-
-    transition: background color var(--delay);
+    
+    transition: all var(--delay-transition);
 }
 
 .secondary {
-    // max-width: 292px;
-    color: var(--inverted-primary-color);
-    background: var(--inverted-bg-color);
+    user-select: none;
 
-    &:hover {
-        color: var(--button-primary-color);
-        background: var(--hover-secondary-color);
-        transition: all var(--delay);
+    display: inline-block;
+
+    color: var(--inverted-primary-color);
+    text-decoration: none;
+    text-transform: uppercase;
+
+    background: var(--inverted-bg-color);
+    outline: none;
+    box-shadow: var(--secondary-button-shadow);
+
+    transition: all var(--delay-transition);
+
+    &:hover,
+    &:focus {
+        background: var(--secondary-button-hover);
     }
-}
+    
+    &:active {
+        transform: translate(0, 4px);
+        background: var(--secondary-button-active);
+        box-shadow: var(--secondary-button-active-shadow);
+    }
+} 
+
+  
 
 .primary {
-    max-width: 176px;
-    color: var(--button-primary-color);
-    background: var(--accent-color);
+    user-select: none;
 
-    &:hover {
-        background: var(--hover-primary-color);
-        transition: all var(--delay);
+    display: inline-block;
+
+    color: var(--primary-button-color);
+    text-decoration: none;
+    text-transform: uppercase;
+
+    background: var(--accent-color);
+    outline: none;
+    box-shadow: var(--primary-button-shadow);
+
+    transition: all var(--delay-transition);
+
+    &:hover,
+    &:focus {
+        background: var(--primary-hover-color);
+    }
+    
+    &:active {
+        transform: translate(0, 4px);
+        background: var(--primary-button-active);
+        box-shadow: var(--primary-button-shadow-active);
     }
 }
 
@@ -71,10 +105,20 @@
 
     background-color: transparent;
     border: 1px solid var(--inverted-bg-color);
+    border-radius: 5px;
+
+    &:hover,
+    &:focus {
+        background: var(--sqare-bg-color);
+    }
+
+    &:active {
+        background: var(--sqare-bg-color);
+        box-shadow: var(--sqare-shadow-color-active);
+    }
 }
 
 .clear {
     padding: 0;
     background: transparent;
 }
-

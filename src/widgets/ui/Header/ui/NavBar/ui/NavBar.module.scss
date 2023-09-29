@@ -40,5 +40,5 @@
 
 .active {
     color: var(--hover-color);
-    transition: color .3s;
+    transition: color var(--delay-transition);
 }

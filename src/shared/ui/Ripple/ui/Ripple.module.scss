@@ -1,10 +1,7 @@
 .rippleContainer {
     position: absolute;
-    z-index: 1;
     inset: 0;
-
     overflow: hidden;
-
     background-color: #0000;
 }
 
@@ -22,7 +19,7 @@
     border-radius: 100%;
 
     animation-name: ripple;
-    animation-duration: 850ms;
+    animation-duration: var(--delay-animation);
 }
 
 @keyframes ripple {
