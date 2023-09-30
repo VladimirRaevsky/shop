@@ -20,6 +20,12 @@ interface TitleProps {
     ariaLevel: TitleLevel;
 }
 
+/**
+ * @param level - Header level
+ * @param ariaLevel - Area level.
+ * @param children - React node.
+ */
+
 export const CustomTitle: FC<TitleProps> = (props) => {
     const { className = '', children, level, ariaLevel } = props;
 
