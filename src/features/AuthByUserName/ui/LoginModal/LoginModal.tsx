@@ -3,7 +3,14 @@ import { type FC } from 'react';
 import { LoginForm } from '../LoginForm/LoginForm';
 
 import { ClassNames } from 'shared/lib';
+
+import { CustomButton } from 'shared/ui/CustomButton';
+import {
+    ButtonTheme,
+    ButtonType,
+} from 'shared/ui/CustomButton/ui/CustomButton';
 import { Modal } from 'shared/ui/Modal';
+import { Ripple } from 'shared/ui/Ripple';
 
 import cls from './LoginModal.module.scss';
 
@@ -23,6 +30,10 @@ export const LoginModal: FC<LoginModalProps> = (props) => {
             className={ClassNames(cls.loginModal, {}, [className])}
         >
             <LoginForm />
+            <CustomButton type={ButtonType.SUBMIT} theme={ButtonTheme.SUBMIT}>
+                отправить
+                <Ripple duration={3000} color='red' />
+            </CustomButton>
         </Modal>
     );
 };

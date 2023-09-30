@@ -16,7 +16,7 @@
     inset 0 0 3px rgb(255 255 255 / 50%);
     --secondary-button-hover: rgb(47 44 42) linear-gradient(rgb(11 8 7), rgb(108 96 88) 80%);
     --secondary-button-active: rgb(41 34 29) linear-gradient(rgb(24 23 22) 20%, rgb(69 57 48));
-    --secondary-button-active-shadow: 0 2px rgb(86 38 6),
+    --secondary-button-shadow-active: 0 2px rgb(86 38 6),
     0 1px 6px rgb(0 0 0 / 40%),
     inset 0 1px rgb(255 255 255 / 30%),
     inset 0 0 3px rgb(255 255 255 / 50%);
@@ -33,9 +33,17 @@
     inset 0 0 3px rgb(255 255 255 / 50%);
 
     // * BUTTON SQARE
-    --sqare-bg-color: #dcdcdc linear-gradient(#fff, #dcdcdc);
-    --sqare-shadow-color: 0 0 0 1px #aaa inset, 0 1px 1px #aaa;
-    --sqare-shadow-color-active: 0 0 0 1px #bbb inset, 0 1px 3px rgba(0 0 0 / 50%) inset, 0 1px 2px #fff;
+    --sqare-button-bg: #dcdcdc linear-gradient(#fff, #dcdcdc);
+    --sqare-button-shadow: 0 0 0 1px #aaa inset, 0 1px 1px #aaa;
+    --sqare-button-shadow-active: 0 0 0 1px #bbb inset, 0 1px 3px rgba(0 0 0 / 50%) inset, 0 1px 2px #fff;
+
+    // * BUTTON SUBMIT
+    --submit-button-bg: rgb(255 212 3) linear-gradient(rgb(255 212 3), rgb(248 157 23));
+    --submit-button-border: 1px solid rgb(250 172 17);
+    --submit-button-shadow: inset 0 -2px 1px rgba(0 0 0), inset 0 1px 2px rgb(0 0 0 / 0%), inset 0 0 0 60px rgb(255 255 0 / 0%);
+    --submit-button-shadow-hover: inset 0 -1px 1px rgba(0 0 0), inset 0 1px 2px rgba(0 0 0), inset 0 0 0 60px rgb(255 255 0 / 50%);
+    --submit-button-shadow-active: inset 0 -1px 1px rgba(0 0 0 / 10%), inset 0 1px 2px rgb(0 0 0 / 30%), inset 0 0 0 60px rgb(255 255 0 / 45%);
+    --submit-button-border-active: rgba(177 159 10%);
 
     // * BACKROUND COLOR
     --bg-color: #fff;
@@ -48,6 +56,6 @@
     --input-shadow: 0px 0px 44px 0px rgb(0 0 0 / 8%);
 
     // * HOVER
-    --primary-hover-color: #aee3fa;
-    --secondary-hover-color: #28282a;
+    --primary-hover: #aee3fa;
+    --secondary-hover: #28282a;
 }

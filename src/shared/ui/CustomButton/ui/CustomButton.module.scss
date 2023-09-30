@@ -6,17 +6,31 @@ button {
     overflow: hidden;
     display: inline-block;
 
-    padding: 1rem 2.875rem;
+    padding: 16px 50px;
 
     font: var(--font-m-lato);
     text-decoration: none;
     text-shadow: 0 -1px rgb(0 0 0 / 50%);
     text-transform: uppercase;
+    letter-spacing: 1.4px;
 
     border: none;
     outline: none;
     
     transition: all var(--delay-transition);
+    
+    @media screen and ( width <= 992px ) {
+        padding: 12px 30px;
+    }
+    
+    @media screen and ( width <= 768px ) {
+        letter-spacing: 1px;
+    }
+    
+    @media screen and ( width <= 576px ) {
+        padding: 8px 15px;
+        letter-spacing: .5px;
+    }
 }
 
 .secondary {
@@ -42,7 +56,7 @@ button {
     &:active {
         transform: translate(0, 4px);
         background: var(--secondary-button-active);
-        box-shadow: var(--secondary-button-active-shadow);
+        box-shadow: var(--secondary-button-shadow-active);
     }
 } 
 
@@ -65,7 +79,7 @@ button {
 
     &:hover,
     &:focus {
-        background: var(--primary-hover-color);
+        background: var(--primary-hover);
     }
     
     &:active {
@@ -109,16 +123,48 @@ button {
 
     &:hover,
     &:focus {
-        background: var(--sqare-bg-color);
+        background: var(--sqare-button-bg);
     }
 
     &:active {
-        background: var(--sqare-bg-color);
-        box-shadow: var(--sqare-shadow-color-active);
+        background: var(--sqare-button-bg);
+        box-shadow: var(--sqare-button-shadow-active);
     }
 }
 
 .clear {
     padding: 0;
     background: transparent;
+}
+
+.submit {
+    user-select: none;
+
+    display: inline-block;
+
+    padding: .25em .5em;
+
+    font-size: 125%;
+    font-weight: 700;
+    color: black;
+    text-decoration: none;
+
+    background: var(--submit-button-bg);
+    border: var(--submit-button-border);
+    border-radius: 7px;
+    outline: none;
+    box-shadow: var(--submit-button-shadow);
+
+    transition: box-shadow .2s, border-color .2s;
+
+  &:hover,
+  &:focus {
+    box-shadow: var(--submit-button-shadow-hover);
+  }
+
+  &:active {
+    padding: calc(.25em + 1px) .5em calc(.25em - 1px);
+    border-color: var(--submit-button-border-active);
+    box-shadow: var(--submit-button-shadow-active);
+  }
 }

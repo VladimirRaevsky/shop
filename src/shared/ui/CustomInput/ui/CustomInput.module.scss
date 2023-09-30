@@ -23,9 +23,7 @@
         width: 53px;
         height: 100%;
 
-        font: var(--font-m);
-        font-weight: 500;
-        font-style: normal;
+        font: var(--font-m-lato);
         line-height: 148%;
         text-transform: uppercase;
         letter-spacing: 1.4px;
@@ -103,9 +101,7 @@
             height: 100%;
             padding: 16px;
     
-            font-family: Lato, sans-serif;
-            font-size: 14px;
-            font-weight: 500;
+            font: var(--font-m-lato);
             font-style: normal;
             line-height: 148%;
             text-transform: uppercase;
@@ -164,21 +160,18 @@
         height: 100%;
         padding: 16px;
         
-        font-family: Lato, sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        font-style: normal;
+        font: var(--font-m-lato);
         line-height: 148%;
         text-transform: uppercase;
         letter-spacing: 1.4px;
         
         background-color: #020202;
         
-        transition: all var(--delay);
+        transition: all var(--delay-transition);
 
         &:hover {
             background-color: #4a4545;
-            transition: all var(--delay);
+            transition: all var(--delay-transition);
         }
 
         & > span > span  {
@@ -194,8 +187,4 @@
 
 }
 
-.size_m {
-    max-width: 100%;
-    height: 45px;
-}
 

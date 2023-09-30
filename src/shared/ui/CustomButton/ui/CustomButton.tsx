@@ -10,6 +10,7 @@ export enum ButtonTheme {
     CLEAR = 'clear',
     CIRCLE = 'circle',
     SQARE = 'sqare',
+    SUBMIT = 'submit',
 }
 
 export enum ButtonType {

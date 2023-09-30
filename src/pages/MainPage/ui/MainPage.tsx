@@ -8,10 +8,13 @@ import {
     ButtonType,
 } from 'shared/ui/CustomButton/ui/CustomButton';
 
+import { CustomInput } from 'shared/ui/CustomInput';
+import { InputText, InputTheme } from 'shared/ui/CustomInput/ui/CustomInput';
 import {
     CustomParagraph,
     CustomParagraphTheme,
 } from 'shared/ui/CustomParagraph/ui/CustomParagraph';
+import { InputPlaceholder, InputType } from 'shared/ui/InputForm/ui/InputForm';
 import { Ripple } from 'shared/ui/Ripple';
 
 import cls from './MainPage.module.scss';
@@ -78,7 +81,7 @@ const MainPage: FC<MainePageProps> = () => {
                 type={ButtonType.BUTTON}
                 theme={ButtonTheme.SECONDARY}
             >
-                Proceed
+                Add to cart
                 <Ripple duration={3000} color='blue' />
             </CustomButton>
 
@@ -107,6 +110,18 @@ const MainPage: FC<MainePageProps> = () => {
             </div>
 
             {t('Главная страница')}
+
+            <CustomInput
+                theme={InputTheme.SEARCH}
+                placeholder={InputPlaceholder.SEARCH}
+                type={InputType.TEXT}
+            />
+
+            <CustomInput
+                theme={InputTheme.SUBSCRIBE}
+                placeholder={InputPlaceholder.EMAIL}
+                type={InputType.TEXT}
+            />
             <Counter />
 
             {/* <ul style={{ display: 'flex', flexWrap: 'wrap' }}>
