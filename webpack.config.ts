@@ -9,6 +9,7 @@ export default (env: BuildEnv) => {
         build: path.resolve(__dirname, 'build'),
         html: path.resolve(__dirname, 'public', 'index.html'),
         src: path.resolve(__dirname, 'src'),
+        scssVar: path.resolve(__dirname, 'src', './app/styles/variables/_media-variables.scss')
     };
 
     const mode = env.mode || 'development';

@@ -3,13 +3,15 @@ import { BuildOptions } from "./types/config";
 
 export function buildResolve (options: BuildOptions):ResolveOptions {
     
-    const { paths: { src } } = options;
+    const { paths: { src, scssVar} } = options;
 
     return {
         extensions: ['.tsx', '.ts', '.js'],
         mainFiles: ['index'],
         preferAbsolute: true,
         modules: [src, 'node_modules'],
-        alias: {},
+        alias: {
+            'scss-variables': scssVar
+        },
     }
 }

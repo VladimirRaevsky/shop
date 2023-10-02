@@ -9,12 +9,17 @@ import {
 } from 'shared/ui/CustomButton/ui/CustomButton';
 
 import { CustomInput } from 'shared/ui/CustomInput';
-import { InputText, InputTheme } from 'shared/ui/CustomInput/ui/CustomInput';
+import { InputTheme } from 'shared/ui/CustomInput/ui/CustomInput';
 import {
     CustomParagraph,
     CustomParagraphTheme,
 } from 'shared/ui/CustomParagraph/ui/CustomParagraph';
-import { InputPlaceholder, InputType } from 'shared/ui/InputForm/ui/InputForm';
+import {
+    InputForm,
+    InputFormTheme,
+    InputPlaceholder,
+    InputType,
+} from 'shared/ui/InputForm/ui/InputForm';
 import { Ripple } from 'shared/ui/Ripple';
 
 import cls from './MainPage.module.scss';
@@ -123,6 +128,13 @@ const MainPage: FC<MainePageProps> = () => {
                 type={InputType.TEXT}
             />
             <Counter />
+
+            <InputForm
+                type={InputType.TEXT}
+                placeholder={InputPlaceholder.EMAIL}
+                theme={InputFormTheme.BIG}
+                description='Email address *'
+            />
 
             {/* <ul style={{ display: 'flex', flexWrap: 'wrap' }}>
                 {test != null ? (

@@ -1,3 +1,5 @@
+@import 'scss-variables';
+
 .modal {
     pointer-events: none;
 
@@ -46,23 +48,22 @@
 
     transition: transform 0.6s;
 
-    @media screen and ( width <= 992px ) {
+    @media #{$tablets} {
         min-width: 20%;
         max-width: 50%;
     }
     
-    @media screen and ( width <= 768px ) {
+    @media #{$tablets-landscape} {
+        max-height: 60%;
+    }
+
+    @media #{$mobile-devices-portrait} {
         max-width: 70%;
         max-height: 20%;
         padding: 10px;
     }
-
-    @media (orientation: landscape) and ( width <= 992px ) {
-        min-height: 30%;
-        max-height: 60%;
-    }
     
-    @media screen and ( width <= 576px ) {
+    @media #{$small-mobile-devices-portrait} {
         max-width: 90%;
     }
 }

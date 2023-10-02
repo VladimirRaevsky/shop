@@ -12,6 +12,13 @@ interface ModalProps {
     onClose?: () => void;
 }
 
+/**
+ * @param className - Class for controlling a component from outside.
+ * @param isOpen - Variable responsible for opening.
+ * @param children - React node.
+ * @param onClose - Function responsible for closing.
+ */
+
 export const Modal: FC<ModalProps> = (props) => {
     const { className = '', isOpen, onClose, children } = props;
 

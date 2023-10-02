@@ -9,6 +9,11 @@ interface ContainerProps {
     children: ReactNode;
 }
 
+/**
+ * @param className - Class for controlling a component from outside.
+ * @param children - React node.
+ */
+
 export const Container: FC<ContainerProps> = (props) => {
     const { className = '', children } = props;
 

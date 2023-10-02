@@ -2,7 +2,7 @@ import { type Meta, type StoryObj } from '@storybook/react';
 
 import { InputPlaceholder, InputType } from 'shared/ui/InputForm/ui/InputForm';
 
-import { CustomInput, InputText, InputTheme } from './CustomInput';
+import { CustomInput, InputTheme } from './CustomInput';
 
 const meta: Meta<typeof CustomInput> = {
     title: 'shared/CustomInput',
@@ -28,6 +28,5 @@ export const Subscribe: StoryObj = {
         theme: InputTheme.SUBSCRIBE,
         type: InputType.TEXT,
         placeholder: InputPlaceholder.EMAIL,
-        subscribe: InputText.SUBSCRIBE,
     },
 };

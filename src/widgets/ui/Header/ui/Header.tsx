@@ -73,7 +73,7 @@ export const Header: FC<HeaderProps> = () => {
                             <span style={{ font: 'inherit' }}>MiniStore</span>
                         </CustomTitle>
                     </Col>
-                    <Col lg={13}>
+                    <Col lg={15}>
                         <div className={cls.center}>
                             <NavBar
                                 listElements={listElements}

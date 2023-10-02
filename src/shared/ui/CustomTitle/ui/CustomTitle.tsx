@@ -21,6 +21,7 @@ interface TitleProps {
 }
 
 /**
+ * @param className - Class for controlling a component from outside
  * @param level - Header level
  * @param ariaLevel - Area level.
  * @param children - React node.

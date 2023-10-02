@@ -1,3 +1,5 @@
+@import 'scss-variables';
+
 .input {
     input::placeholder {
         color: rgb(114 112 112);
@@ -8,11 +10,6 @@
 :global {
     .ant-btn > div > div {
         color: var(--primary-color);
-    }
-
-    .ant-input-wrapper,
-    .ant-input-affix-wrapper {
-        height: 100%;
     }
 
     span.ant-input-affix-wrapper.ant-input-affix-wrapper-focused.css-dev-only-do-not-override-fpg3f5{
@@ -35,18 +32,24 @@
         }
     }
 
-    .ant-input-suffix {
-        svg {
-            width: .7rem;
-            height: .7rem;
-            color: #f4a4a4;
+    .ant-input-affix-wrapper {
+        > span.ant-input-suffix {
+            svg {
+                width: .7rem;
+                height: .7rem;
+                color: #f4a4a4;
+            }
+
+            @media #{$mobile-devices-portrait} {
+                display: none !important;
+            }        
         }
-    }
+    } 
 
     .css-dev-only-do-not-override-fpg3f5.ant-btn.ant-btn-icon-only .anticon {
         font-size: 20px;
     }
-
+    
     .css-dev-only-do-not-override-fpg3f5.ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled) {
         border-color: transparent;
         border-color: #4a4545;
@@ -65,10 +68,12 @@
     }
 
     .css-dev-only-do-not-override-fpg3f5[class^="ant-input"], .css-dev-only-do-not-override-fpg3f5[class*=" ant-input"] {
-        font-family: inherit;
-        font-size: inherit;
-    }
+        font: var(--font-m-lato);
 
+        @media #{$tablets} {
+            font: var(--font-s-lato);
+        }
+    }
 }
 
 .name,
@@ -86,33 +91,14 @@
     display: block;
     width: 494px;
     height: 53px;
-    font-size: 16px;
 
-    span {
-        display: flex;
-        align-items: center;
-        height: 100%;
-
-        & > span:nth-child(2) > button {
-            display: flex;
-            justify-content: center;
+    @media #{$tablets} { 
+        width: 300px;
+        height: 35px;
+    }
     
-            width: 166px;
-            height: 100%;
-            padding: 16px;
-    
-            font: var(--font-m-lato);
-            font-style: normal;
-            line-height: 148%;
-            text-transform: uppercase;
-            letter-spacing: 1.4px;
-    
-            background-color: var(--accent-color);
-
-            & > span {
-                padding-top: 15px;
-            }
-        }
+    @media #{$mobile-devices-portrait} {
+        width: 200px;
     }
 }
 
@@ -121,8 +107,6 @@
 
     width: 290px;
     height: 53px;
-
-    font-size: 16px;
 
     border: 1px solid #EEE;
     border-style: none;
@@ -185,6 +169,13 @@
         }
     }
 
+    @media #{$tablets} { 
+        width: 200px;
+        height: 40px;
+    }
+    
+    @media #{$mobile-devices-portrait} {
+        width: 150px;
+        height: 30px;
+    }
 }
-
-

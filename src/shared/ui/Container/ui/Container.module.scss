@@ -1,12 +1,13 @@
+@import 'scss-variables';
+
 .container {
     width: 100%;
-    max-width: 83.25rem;
-    min-height: 100%;
+    max-width: 156rem;
     margin: 0 auto;
     padding: 0 2rem; 
 
     /* stylelint-disable */
-    @media screen and (width <= 768px) and (orientation: portrait) {
+    @media #{$mobile-devices-portrait} {
         padding: 0 1rem; 
     }
 }

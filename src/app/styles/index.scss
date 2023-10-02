@@ -1,6 +1,6 @@
 @import './reset';
 @import './variables/global';
-@import './variables/variables';
+@import './variables/media-variables';
 @import './theme/dark';
 @import './theme/light';
 @import './normalize';
@@ -10,6 +10,10 @@ body {
     font: var(--font-m-lato);
     color: var(--primary-color);
     background-color: var(--bg-color);
+
+    @media #{$tablets} {
+        font: var(--font-s-lato);
+    }
 }
 
 .app {

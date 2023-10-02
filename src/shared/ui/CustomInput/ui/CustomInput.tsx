@@ -9,9 +9,11 @@ import {
     ButtonType,
 } from 'shared/ui/CustomButton/ui/CustomButton';
 import {
+    type StatusType,
     type InputPlaceholder,
     type InputType,
 } from 'shared/ui/InputForm/ui/InputForm';
+import { Ripple } from 'shared/ui/Ripple';
 
 import cls from './CustomInput.module.scss';
 
@@ -22,29 +24,34 @@ export enum InputTheme {
     SEARCH = 'search',
 }
 
-export enum InputText {
-    SUBSCRIBE = 'subscribe',
-}
-
-export interface IInputProps {
+export interface InputProps {
     theme: InputTheme;
     type: InputType;
     placeholder: InputPlaceholder;
     className?: string;
+    status?: StatusType;
 }
 
 /**
- * @param className - Duration of a ripple effect.
+ * @param className - Class for controlling a component from outside.
  * @param theme - Input theme.
  * @param children - React node.
  * @param type - Input type.
  * @param placeholder - Input placeholder.
+ * @param status - Input work status.
  */
 
 let isSearch: boolean = false;
 
-export const CustomInput: FC<IInputProps> = (props) => {
-    const { type, placeholder, className = '', theme, ...other } = props;
+export const CustomInput: FC<InputProps> = (props) => {
+    const {
+        type,
+        placeholder,
+        className = '',
+        theme,
+        status,
+        ...other
+    } = props;
 
     isSearch = theme === 'search';
 
@@ -65,6 +72,7 @@ export const CustomInput: FC<IInputProps> = (props) => {
                 showCount
                 placeholder={placeholder}
                 allowClear
+                status={status}
                 onInput={(e: any) => {
                     onSearchHandler(e);
                 }}
@@ -83,6 +91,7 @@ export const CustomInput: FC<IInputProps> = (props) => {
                     showCount
                     placeholder={placeholder}
                     allowClear
+                    status={status}
                     onInput={(e: any) => {
                         onSearchHandler(e);
                     }}
@@ -91,10 +100,11 @@ export const CustomInput: FC<IInputProps> = (props) => {
                     {...other}
                 />
                 <CustomButton
-                    theme={ButtonTheme.CLEAR}
+                    theme={ButtonTheme.SUBSCRIBE}
                     type={ButtonType.SUBMIT}
                 >
                     {t('подписаться')}
+                    <Ripple duration={4000} />
                 </CustomButton>
             </Space.Compact>
         </span>

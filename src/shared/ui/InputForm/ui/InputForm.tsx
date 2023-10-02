@@ -12,7 +12,7 @@ export enum InputFormTheme {
 }
 
 export enum InputPlaceholder {
-    EMAIL = 'Your email address here',
+    EMAIL = 'Your email address',
     SEARCH = 'Search',
     NAME = 'Name',
     PASSWORD = 'Password',
@@ -24,15 +24,40 @@ export enum InputType {
     PASSWORD = 'password',
 }
 
+export type DescriptionInput =
+    | 'First name *'
+    | 'Last name *'
+    | 'Company name (optional)'
+    | 'Country / Region *'
+    | 'Street address *'
+    | 'Town / City *'
+    | 'State *'
+    | 'ZIP Code *'
+    | 'Phone *'
+    | 'Email address *'
+    | 'Order notes (optional)';
+
+export type StatusType = 'warning' | 'error';
+
 interface InputFormProps {
     className?: string;
     placeholder?: string;
-    description?: string;
+    description?: DescriptionInput;
     type: InputType;
-    status?: 'warning' | 'error';
+    status?: StatusType;
     prefix?: ReactNode;
     theme: InputFormTheme;
 }
+
+/**
+ * @param className - Class for controlling a component from outside.
+ * @param theme - Input theme.
+ * @param children - React node.
+ * @param type - Input type.
+ * @param placeholder - Input placeholder.
+ * @param status - Input work status.
+ * @param description - Field name to describe the contents of the input.
+ */
 
 export const InputForm: FC<InputFormProps> = (props) => {
     const {
@@ -46,7 +71,6 @@ export const InputForm: FC<InputFormProps> = (props) => {
         ...other
     } = props;
 
-    console.log(type);
     const onInputHandler = (vl: any): any => {
         console.log(vl.target.value);
     };
@@ -55,7 +79,7 @@ export const InputForm: FC<InputFormProps> = (props) => {
         <span className={ClassNames(cls.wrapper, {}, [className, cls[theme]])}>
             {description != null && (
                 <label className={cls.label} htmlFor='inputField'>
-                    {description}
+                    <p>{description}</p>
                 </label>
             )}
             {type !== 'password' ? (

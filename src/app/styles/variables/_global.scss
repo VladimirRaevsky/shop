@@ -1,4 +1,12 @@
+@import 'scss-variables';
+
 :root {
+    // * SIZE S Lato
+    --font-size-s-lato: 0.7rem;
+    --line-hight-s-lato: 0.6rem;
+    --font-family-s-lato: 'Lato', sans-serif;
+    --font-s-lato: 400 var(--font-size-s-lato) / var(--line-hight-s-lato) var(--font-family-s-lato);
+
     // * SIZE M Lato
     --font-size-m-lato: 1rem;
     --line-hight-m-lato: 0.9rem;
@@ -60,11 +68,11 @@
     --delay-animation: .5s;
 
     // * MEDIA
-    @media screen and ( width <= 1400px ) {
+    @media #{$large-displays} {
         --header-height: 4.5rem;
     }
     
-    @media screen and ( width <= 992px ) {
+    @media #{$tablets} {
         --font-size-xl-lato: 2rem;
         --font-size-l-jost: 2rem;
         --font-size-xl-jost: 4rem;
@@ -72,7 +80,7 @@
         --header-height: 4rem;
     }
     
-    @media screen and ( width <= 768px ) {
+    @media #{$mobile-devices-portrait} {
         --font-size-xl-lato: 1.6rem;
         --font-size-l-jost: 1.8rem;
         --font-size-xl-jost: 3rem;
@@ -80,7 +88,7 @@
         --header-height: 3rem;
     }
     
-    @media screen and ( width <= 576px ) {
+    @media #{$small-mobile-devices-portrait} {
         --font-size-l-jost: 1.5rem;
         --font-size-xl-jost: 2.5rem;
         --font-size-m-jost: .8rem;

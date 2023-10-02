@@ -5,6 +5,7 @@ export interface BuildPaths {
     build: string;
     html: string;
     src: string;
+    scssVar: string;
 }
 
 export interface BuildEnv {

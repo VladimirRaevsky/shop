@@ -1,5 +1,8 @@
+@import 'scss-variables';
+
 button {
     cursor: pointer;
+    user-select: none;
 
     position: relative;
 
@@ -8,7 +11,6 @@ button {
 
     padding: 16px 50px;
 
-    font: var(--font-m-lato);
     text-decoration: none;
     text-shadow: 0 -1px rgb(0 0 0 / 50%);
     text-transform: uppercase;
@@ -19,23 +21,21 @@ button {
     
     transition: all var(--delay-transition);
     
-    @media screen and ( width <= 992px ) {
+    @media #{$tablets} {
         padding: 12px 30px;
     }
     
-    @media screen and ( width <= 768px ) {
+    @media #{$mobile-devices-portrait} {
         letter-spacing: 1px;
     }
     
-    @media screen and ( width <= 576px ) {
+    @media #{$small-mobile-devices-portrait} {
         padding: 8px 15px;
         letter-spacing: .5px;
     }
 }
 
 .secondary {
-    user-select: none;
-
     display: inline-block;
 
     color: var(--inverted-primary-color);
@@ -48,7 +48,6 @@ button {
 
     transition: all var(--delay-transition);
 
-    &:hover,
     &:focus {
         background: var(--secondary-button-hover);
     }
@@ -58,13 +57,15 @@ button {
         background: var(--secondary-button-active);
         box-shadow: var(--secondary-button-shadow-active);
     }
+
+    @media #{$mouse-devices} {
+        &:hover {
+            background: var(--secondary-button-hover);
+        }
+    }
 } 
 
-  
-
 .primary {
-    user-select: none;
-
     display: inline-block;
 
     color: var(--primary-button-color);
@@ -77,7 +78,6 @@ button {
 
     transition: all var(--delay-transition);
 
-    &:hover,
     &:focus {
         background: var(--primary-hover);
     }
@@ -86,6 +86,12 @@ button {
         transform: translate(0, 4px);
         background: var(--primary-button-active);
         box-shadow: var(--primary-button-shadow-active);
+    }
+
+    @media #{$mouse-devices} {
+        &:hover {
+            background: var(--primary-hover);
+        }
     }
 }
 
@@ -121,7 +127,6 @@ button {
     border: 1px solid var(--inverted-bg-color);
     border-radius: 5px;
 
-    &:hover,
     &:focus {
         background: var(--sqare-button-bg);
     }
@@ -129,6 +134,24 @@ button {
     &:active {
         background: var(--sqare-button-bg);
         box-shadow: var(--sqare-button-shadow-active);
+    }
+
+    @media #{$mouse-devices} {
+        &:hover {
+            background: var(--sqare-button-bg);
+        }
+    }
+
+    @media #{$tablets} {
+        gap: 7px; 
+        width: 35px;
+        height: 35px;
+    }
+    
+    @media #{$small-mobile-devices-portrait} {
+        gap: 5px; 
+        width: 30px;
+        height: 30px;
     }
 }
 
@@ -138,13 +161,10 @@ button {
 }
 
 .submit {
-    user-select: none;
-
     display: inline-block;
 
     padding: .25em .5em;
 
-    font-size: 125%;
     font-weight: 700;
     color: black;
     text-decoration: none;
@@ -157,7 +177,6 @@ button {
 
     transition: box-shadow .2s, border-color .2s;
 
-  &:hover,
   &:focus {
     box-shadow: var(--submit-button-shadow-hover);
   }
@@ -167,4 +186,43 @@ button {
     border-color: var(--submit-button-border-active);
     box-shadow: var(--submit-button-shadow-active);
   }
+
+  @media #{$mouse-devices} {
+        &:hover {
+            box-shadow: var(--submit-button-shadow-hover);
+        }
+  }
+}
+
+.subscribe {
+    padding: 16px 40px;
+
+    color: var(--primary-button-color);
+    text-transform: uppercase;
+    vertical-align: middle;
+
+    background: var(--accent-color);
+
+    &:focus {
+        background: var(--subscribe-button-focus);
+    }
+    
+    &:active {
+        background: var(--subscribe-button-active);
+    }
+
+    @media #{$mouse-devices} {
+        &:hover {
+            background: var(--primary-hover);
+            transition: background var(--delay-transition);
+        }
+    }
+
+    @media #{$tablets} { 
+        padding: 14px 20px;
+    }
+    
+    @media #{$mobile-devices-portrait} {
+        padding: 10px 8px;
+    }
 }

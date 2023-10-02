@@ -1,7 +1,14 @@
+@import 'scss-variables';
+
 .loginForm {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 3;
+    justify-content: space-between;
+
     padding: 15px 0;
 
-    @media screen and ( width <= 768px ) {
+    @media #{$mobile-devices-portrait} {
         padding: 0;
     }
 }
@@ -14,10 +21,10 @@
 }
 
 .input {
-    width: 100%;
+    min-width: 100%;
     margin-bottom: 20px;
 
-    @media screen and ( width <= 768px ) {
+    @media #{$mobile-devices-portrait} {
         margin-bottom: 5px;
     }
 }

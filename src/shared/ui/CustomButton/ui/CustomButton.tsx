@@ -11,6 +11,7 @@ export enum ButtonTheme {
     CIRCLE = 'circle',
     SQARE = 'sqare',
     SUBMIT = 'submit',
+    SUBSCRIBE = 'subscribe',
 }
 
 export enum ButtonType {
@@ -26,7 +27,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 /**
- * @param className - Duration of a ripple effect.
+ * @param className - Class for controlling a component from outside.
  * @param theme - Button theme.
  * @param children - React node.
  * @param type - Button type.
