@@ -16,6 +16,12 @@ interface CustomParagraphProps {
     children: ReactNode;
 }
 
+/**
+ * @param className - Class for controlling a component from outside.
+ * @param theme - Paragraph theme.
+ * @param children - React node.
+ */
+
 export const CustomParagraph: FC<CustomParagraphProps> = (props) => {
     const { className = '', children, theme, ...other } = props;
 

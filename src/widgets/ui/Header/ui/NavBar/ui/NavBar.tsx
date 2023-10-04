@@ -16,6 +16,13 @@ interface NavBarProps {
     listElements: ListType[];
 }
 
+/**
+ * @param className - Class for controlling a component from outside.
+ * @param handlerToggleClass - Activity class switching function.
+ * @param setListElements - Set the state for the list.
+ * @param listElements - List of elements for rendering.
+ */
+
 export const NavBar: FC<NavBarProps> = (props) => {
     const {
         className = '',

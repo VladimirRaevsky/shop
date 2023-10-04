@@ -7,13 +7,11 @@ import { PageLoader } from 'widgets/ui/PageLoader';
 export const AppRouter: FC = () => {
     return (
         <Suspense fallback={<PageLoader />}>
-            <div className='page-wrapper'>
-                <Routes>
-                    {RouteConfig.map(({ element, path }) => (
-                        <Route key={path} path={path} element={element} />
-                    ))}
-                </Routes>
-            </div>
+            <Routes>
+                {RouteConfig.map(({ element, path }) => (
+                    <Route key={path} path={path} element={element} />
+                ))}
+            </Routes>
         </Suspense>
     );
 };

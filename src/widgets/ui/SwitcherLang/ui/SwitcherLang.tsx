@@ -10,6 +10,10 @@ interface SwitcherLangProps {
     className?: string;
 }
 
+/**
+ * @param className - Class for controlling a component from outside.
+ */
+
 export const SwitcherLang: FC<SwitcherLangProps> = (props) => {
     const { className = '' } = props;
 

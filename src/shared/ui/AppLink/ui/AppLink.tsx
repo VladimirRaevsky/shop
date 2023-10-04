@@ -19,6 +19,13 @@ interface AppLinkProps extends Omit<LinkProps, 'to'> {
     to: AppRoutes;
 }
 
+/**
+ * @param className - Class for controlling a component from outside
+ * @param theme - Links theme.
+ * @param to - Path.
+ * @param children - React node.
+ */
+
 export const AppLink: FC<AppLinkProps> = (props) => {
     const {
         to,

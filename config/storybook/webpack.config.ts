@@ -18,9 +18,15 @@ export default ({
         build: '',
         html: '',
         src: path.resolve(__dirname, '..', '..', 'src'),
+        scssVar: path.resolve(__dirname, '..', '..', 'src', './app/styles/variables/_media-variables.scss')
     };
 
     config.resolve?.modules?.push(paths.src);
+
+    config!.resolve!.alias = {
+        ...config.resolve!.alias,
+        'scss-variables': paths.scssVar
+    }
 
     config.resolve?.extensions?.push('ts', 'tsx');
 
@@ -41,6 +47,7 @@ export default ({
         test: /\.svg$/,
         use: ['@svgr/webpack'],
     });
+
     config.module?.rules?.push(buildCssLoader(true));
 
     config.plugins?.push(new webpack.DefinePlugin({

@@ -29,6 +29,10 @@ interface HeaderProps {
     className?: string;
 }
 
+/**
+ * @param className - Class for controlling a component from outside.
+ */
+
 export const Header: FC<HeaderProps> = () => {
     const [openModal, setOpenModal] = useState(false);
 

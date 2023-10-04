@@ -1,12 +1,7 @@
 import { type FC, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import AboutSvg from 'shared/assets/icons/clarity_list.svg';
-import HomeSvg from 'shared/assets/icons/home.svg';
-import { AppRoutes } from 'shared/config/routeConfig/RouteConfig';
 import { ClassNames } from 'shared/lib';
-import { AppLink } from 'shared/ui/AppLink';
-import { AppLinkTheme } from 'shared/ui/AppLink/ui/AppLink';
 
 import cls from './SideBar.module.scss';
 
@@ -33,9 +28,9 @@ export const SideBar: FC<SideBarProps> = (props) => {
             ])}
         >
             <div className={cls.items}></div>
-            <div className={cls.collapsedBtn}></div>
+            {/* <div className={cls.collapsedBtn}></div>
 
-            <div className={cls.switchers}></div>
+            <div className={cls.switchers}></div> */}
         </div>
     );
 };

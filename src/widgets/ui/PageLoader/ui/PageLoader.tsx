@@ -10,6 +10,10 @@ interface PageLoaderProps {
     className?: string;
 }
 
+/**
+ * @param className - Class for controlling a component from outside.
+ */
+
 export const PageLoader: FC<PageLoaderProps> = (props) => {
     const { className = '' } = props;
 

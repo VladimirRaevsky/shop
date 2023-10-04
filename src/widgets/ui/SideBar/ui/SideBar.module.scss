@@ -1,16 +1,27 @@
+@import 'scss-variables';
+
 .sideBar {
-    position: relative;
+    position: absolute;
+    z-index: 1;
+    top: var(--header-height);
+    bottom: 0;
+    left: 0;
 
     display: flex;
+    display: none;
     flex-shrink: 0;
     justify-content: center;
 
     width: var(--side-bar-width);
-    height: calc(100vh - var(--nav-bar-height));
+    min-height: 100vh;
 
-    background-color: var(--inverted-bg-color);
+    background-color: yellow;
 
     transition: width 0.3s;
+
+    @media #{$tablets} {
+        display: block;
+    }
 }
 
 .items {

@@ -5,27 +5,36 @@ import { ClassNames } from 'shared/lib';
 
 import cls from './CardProduct.module.scss';
 
-const { Meta } = Card;
-
 interface CardProps {
     className?: string;
     url: string;
     title: string;
+    price: number;
 }
 
+/**
+ * @param className - Class for controlling a component from outside.
+ * @param url - Url images.
+ * @param title - Title of card.
+ * @param price - Price of card.
+ */
+
 export const CardProduct: FC<CardProps> = (props) => {
-    const { className = '', title, url, ...other } = props;
+    const { className = '', title, url, price, ...other } = props;
 
     return (
-        <Card
-            className={ClassNames(cls.card, {}, [className])}
-            title={title}
-            hoverable
-            style={{ width: 240 }}
-            cover={<img alt='example' src={url} />}
-            {...other}
-        >
-            <Meta title={title} description={title} />
-        </Card>
+        <div className={cls.container}>
+            <Card
+                className={ClassNames(cls.card, {}, [className])}
+                hoverable
+                cover={<img alt={title} src={url} />}
+                {...other}
+            >
+                <div className={cls.description}>
+                    <span className={cls.title}>{title}</span>{' '}
+                    <span className={cls.price}>&#36;{price}</span>
+                </div>
+            </Card>
+        </div>
     );
 };

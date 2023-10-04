@@ -1,0 +1,55 @@
+@import 'scss-variables';
+
+.container {
+    max-width: 310px;
+    background-color: var(--bg-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+
+    @media #{$laptops} {
+        max-width: 270px;
+    }
+
+    @media #{$tablets} {
+        max-width: 200px;
+    }
+}
+
+.card {
+    width: 100%;
+    height: auto;
+}
+
+.description {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    font: var(--font-m-jost);
+    color: var(--primary-color);
+}
+
+.price {
+    font: var(--font-m-jost);
+    color: var(--accent-color);
+}
+
+:global {
+    .css-dev-only-do-not-override-fpg3f5.ant-card {
+        background: inherit;
+    }
+
+    .css-dev-only-do-not-override-fpg3f5.ant-card-hoverable:hover {
+        box-shadow: none;
+    }
+
+    //stylelint-disable
+    .css-dev-only-do-not-override-fpg3f5.ant-card-hoverable {
+        @media #{$mouse-devices} {
+            &:hover {
+                box-shadow: var(--ant-card-hoverable);
+            }
+        }
+    }
+}

@@ -1,7 +1,10 @@
 import { useEffect, useState, type FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import PhoneImg from '../../../shared/assets/icons/phone.png';
+
 import { Counter } from 'entites/Counter';
+import { CardProduct } from 'shared/ui/CardProduct';
 import { CustomButton } from 'shared/ui/CustomButton';
 import {
     ButtonTheme,
@@ -136,6 +139,7 @@ const MainPage: FC<MainePageProps> = () => {
                 description='Email address *'
             />
 
+            <CardProduct title='phone' url={PhoneImg} price={1000} />
             {/* <ul style={{ display: 'flex', flexWrap: 'wrap' }}>
                 {test != null ? (
                     test.map((el: Photo) => {

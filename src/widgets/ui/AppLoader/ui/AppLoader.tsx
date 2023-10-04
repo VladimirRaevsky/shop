@@ -10,6 +10,10 @@ interface AppLoaderProps {
     className?: string;
 }
 
+/**
+ * @param className - Class for controlling a component from outside.
+ */
+
 export const AppLoader: FC<AppLoaderProps> = (props) => {
     const { className = '' } = props;
 

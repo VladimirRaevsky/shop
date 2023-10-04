@@ -17,6 +17,10 @@ interface SwitcherThemeProps {
     className?: string;
 }
 
+/**
+ * @param className - Class for controlling a component from outside.
+ */
+
 export const SwitcherTheme: FC<SwitcherThemeProps> = (props) => {
     const { className = '' } = props;
 
