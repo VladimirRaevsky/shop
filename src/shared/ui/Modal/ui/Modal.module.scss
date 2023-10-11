@@ -71,7 +71,7 @@
 .opened {
     pointer-events: auto;
 
-    z-index: var(--modal-index);
+    z-index: var(--z-index-modal);
 
     opacity: 1;
 

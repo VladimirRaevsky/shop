@@ -1,0 +1,18 @@
+// .nav {
+//     position: absolute;
+// }
+
+.opened {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    width: var(--side-bar-width);
+    height: 100vh;
+}
+
+.closed {
+    width: 0;
+    height: 0;
+}

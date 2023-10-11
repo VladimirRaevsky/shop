@@ -1,6 +1,7 @@
 {
     "include": ["src", ".eslintrc.js", "index.d.ts"],
     "compilerOptions": {
+        "strictNullChecks": true,
         "resolveJsonModule": true,
         "outDir": "./build/",
         "noImplicitAny": true,

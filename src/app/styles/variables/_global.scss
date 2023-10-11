@@ -59,8 +59,10 @@
     --side-bar-width: 30%;
 
     // * Z-INDEX
-    --header-z-index: 2;
-    --modal-z-index: 5;
+    --z-index-sidebar: 1;
+    --z-index-button: 2;
+    --z-index-header: 3;
+    --z-index-modal: 5;
 
     // * OVERLAY COLOR
     /* stylelint-disable-next-line */
@@ -89,11 +91,16 @@
         --font-size-xl-jost: 3rem;
         --font-size-m-jost: .9rem;
         --header-height: 3rem;
+        --side-bar-width: 40%;
     }
     
     @media #{$small-mobile-devices-portrait} {
         --font-size-l-jost: 1.5rem;
         --font-size-xl-jost: 2.5rem;
         --font-size-m-jost: .8rem;
+    }
+
+    @media #{$small-mobile-devices-portrait} {
+        --side-bar-width: 90%;
     }
 }
