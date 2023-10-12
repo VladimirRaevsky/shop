@@ -1,85 +1,111 @@
 @import 'scss-variables';
 
 .sideBar {
-    position: absolute;
-    z-index: 1;
+    position: fixed;
+    z-index: var(--z-index-sidebar);
     top: var(--header-height);
     bottom: 0;
     left: 0;
+    transform: translateX(-100%);
 
-    display: flex;
     display: none;
-    flex-shrink: 0;
-    justify-content: center;
 
     width: var(--side-bar-width);
-    min-height: 100vh;
+    max-height: 300px;
 
-    background-color: yellow;
+    background-color: var(--bg-color);
+    border-right: 1px solid var(--inverted-bg-color);
+    border-bottom: 1px solid var(--inverted-bg-color);
 
-    transition: width 0.3s;
+    transition: width var(--delay-transition), transform var(--delay-transition);
+
+    &.collapsed {
+        transform: translateX(0);
+    }
 
     @media #{$tablets} {
         display: block;
     }
 }
 
-.items {
+.button {
+    cursor: pointer;
+
+    position: absolute;
+    right: -30px;
+
+    color: var(--inverted-primary-color);
+
+    background-color: var(--inverted-bg-color);
+}
+
+.wrapper {
+    min-height: 100%;
+    padding-top: var(--header-height);
+}
+
+.direction {
     display: flex;
     flex-direction: column;
-}
-
-.link {
-    display: flex;
     align-items: center;
+    justify-content: space-between;
+
+    min-height: 100%;
 }
 
-.icon {
-    fill: var(--inverted-primary-color);
-}
 
-.item {
-    margin-left: 15px;
-    opacity: 1;
-    transition: all 0.2s;
-}
+// .items {
+//     display: flex;
+//     flex-direction: column;
+// }
 
-.collapsedBtn {
-    position: absolute;
-    right: -35px;
-    bottom: 32px;
-}
+// .link {
+//     display: flex;
+//     align-items: center;
+// }
 
-.lang {
-    margin-left: 20px;
-}
+// .item {
+//     margin-left: 15px;
+//     opacity: 1;
+//     transition: all 0.2s;
+// }
 
-.switchers {
-    position: absolute;
-    bottom: 30px;
-    display: flex;
-    align-items: center;
-}
+// .collapsedBtn {
+//     position: absolute;
+//     right: -35px;
+//     bottom: 32px;
+// }
 
-.collapsed {
-    width: var(--side-bar-width-collapsed);
+// .lang {
+//     margin-left: 20px;
+// }
 
-    .switchers {
-        flex-direction: column;
-    }
+// .switchers {
+//     position: absolute;
+//     bottom: 30px;
+//     display: flex;
+//     align-items: center;
+// }
 
-    .lang {
-        margin-left: 0;
-    }
+// .collapsed {
+//     width: var(--side-bar-width-collapsed);
 
-    .item {
-        width: 0;
-        height: 0;
-        opacity: 0;
-        transition: all 0.2s;
-    }
+//     .switchers {
+//         flex-direction: column;
+//     }
 
-    .link {
-        margin-bottom: 10px;
-    }
-}
+//     .lang {
+//         margin-left: 0;
+//     }
+
+//     .item {
+//         width: 0;
+//         height: 0;
+//         opacity: 0;
+//         transition: all 0.2s;
+//     }
+
+//     .link {
+//         margin-bottom: 10px;
+//     }
+// }

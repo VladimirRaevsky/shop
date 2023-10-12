@@ -1,12 +1,5 @@
 @import 'scss-variables';
 
-.navBar {
-    @media #{$tablets} {
-        display: none;
-    }
-}
-
-
 .list {
     display: flex;
     align-items: center;
@@ -16,9 +9,8 @@
 
 .item {
     margin: 0;
-    padding: 0;
-
-    font: var(--font-m-lato);
+    padding: 0;  
+    
     color: unset;
     list-style: none;
 
@@ -29,12 +21,18 @@
     }
 
     a {
+        font-size: inherit;
         color: inherit;
         text-transform: uppercase;
-    }  
+    }
 
     @media #{$laptops} {
         font: var(--font-s-lato);
+    }
+
+    @media #{$tablets} {
+        margin-right: 0;
+        font: var(--font-l-lato);
     }
 }
 

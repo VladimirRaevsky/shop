@@ -1,5 +1,9 @@
 import { type FC } from 'react';
 
+import { Moony } from '../Moony/Moony';
+
+import { Sunny } from '../Sunny/Sunny';
+
 import { ClassNames, useTheme } from 'shared/lib';
 import { CustomButton } from 'shared/ui/CustomButton';
 
@@ -7,9 +11,6 @@ import {
     ButtonTheme,
     ButtonType,
 } from 'shared/ui/CustomButton/ui/CustomButton';
-
-import { Moony } from './Moony/Moony';
-import { Sunny } from './Sunny/Sunny';
 
 import cls from './SwitcherTheme.module.scss';
 

@@ -23,7 +23,6 @@ import { SwitcherTheme } from 'widgets/ui/SwitcherTheme';
 
 import cls from './Header.module.scss';
 import { NavBar } from './NavBar';
-import { type ListType, LIST_ITEMS } from './NavBar/const';
 
 interface HeaderProps {
     className?: string;
@@ -35,26 +34,6 @@ interface HeaderProps {
 
 export const Header: FC<HeaderProps> = () => {
     const [openModal, setOpenModal] = useState(false);
-
-    const [listElements, setListElements] = useState<ListType[]>(LIST_ITEMS);
-
-    const handlerToggleClass = useCallback((index: number): void => {
-        const newList = listElements.map((el, i) => {
-            if (i !== index) {
-                return {
-                    ...el,
-                    hover: false,
-                };
-            } else {
-                return {
-                    ...el,
-                    hover: true,
-                };
-            }
-        });
-
-        setListElements(newList);
-    }, []);
 
     const handlerOpenModal = useCallback((): void => {
         setOpenModal(true);
@@ -79,11 +58,7 @@ export const Header: FC<HeaderProps> = () => {
                     </Col>
                     <Col lg={15}>
                         <div className={cls.center}>
-                            <NavBar
-                                listElements={listElements}
-                                handlerToggleClass={handlerToggleClass}
-                                setListElements={setListElements}
-                            />
+                            <NavBar />
                         </div>
                     </Col>
                     <Col xxl={4}>
@@ -124,7 +99,7 @@ export const Header: FC<HeaderProps> = () => {
                                         className={cls.icon}
                                         icon='fluent:cart-20-filled'
                                         onClick={() => {
-                                            handlerToggleClass(4);
+                                            // handlerToggleClass(4);
                                         }}
                                     />
                                 </AppLink>
