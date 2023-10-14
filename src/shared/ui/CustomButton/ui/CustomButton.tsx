@@ -42,7 +42,6 @@ export const CustomButton: FC<ButtonProps> = (props) => {
         ...otherProps
     } = props;
 
-    console.log(children);
     return (
         <button
             type={type}

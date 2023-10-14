@@ -1,10 +1,8 @@
-import { type CSSProperties, useEffect, useState, type FC } from 'react';
+import { useEffect, useState, type CSSProperties, type FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
 
-import { __LIST_ITEMS__, type ListType } from '../const';
-
-import { ClassNames } from 'shared/lib';
+import { ClassNames, useToggleClass } from 'shared/lib';
 import { AppLink } from 'shared/ui/AppLink';
 
 import cls from './NavBar.module.scss';
@@ -22,54 +20,11 @@ interface NavBarProps {
 export const NavBar: FC<NavBarProps> = (props) => {
     const { className = '', style } = props;
 
-    const location = useLocation();
-
-    const { t } = useTranslation();
+    const { listElements, handlerToggleClass } = useToggleClass();
 
     const [hoveredIndex, setHoveredIndex] = useState<null | number>(null);
 
-    const [listElements, setListElements] =
-        useState<ListType[]>(__LIST_ITEMS__);
-
-    const handlerToggleClass = (index: number): void => {
-        const newList = listElements.map((el, i) => {
-            if (i !== index) {
-                return {
-                    ...el,
-                    hover: false,
-                };
-            } else {
-                return {
-                    ...el,
-                    hover: true,
-                };
-            }
-        });
-
-        setListElements(newList);
-    };
-
-    useEffect(() => {
-        const path =
-            location.pathname.length > 1
-                ? location.pathname.slice(1)
-                : location.pathname;
-
-        const newList = listElements.map((el) => {
-            if (el.to !== path) {
-                return {
-                    ...el,
-                    hover: false,
-                };
-            } else {
-                return {
-                    ...el,
-                    hover: true,
-                };
-            }
-        });
-        setListElements(newList);
-    }, []);
+    const { t } = useTranslation();
 
     return (
         <nav className={ClassNames(cls.navBar, {}, [])}>

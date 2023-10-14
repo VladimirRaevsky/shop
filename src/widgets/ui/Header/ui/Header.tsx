@@ -8,7 +8,7 @@ import { LoginModal } from 'features/AuthByUserName';
 import AvatarIcon from 'shared/assets/icons/header/avatar.svg';
 import SearchIcon from 'shared/assets/icons/header/ion_search.svg';
 import { AppRoutes } from 'shared/config/routeConfig/RouteConfig';
-import { ClassNames } from 'shared/lib';
+import { ClassNames, useToggleClass } from 'shared/lib';
 import { AppLink } from 'shared/ui/AppLink';
 import { Container } from 'shared/ui/Container';
 import { CustomButton } from 'shared/ui/CustomButton';
@@ -33,6 +33,8 @@ interface HeaderProps {
  */
 
 export const Header: FC<HeaderProps> = () => {
+    const { handlerToggleClass } = useToggleClass();
+
     const [openModal, setOpenModal] = useState(false);
 
     const handlerOpenModal = useCallback((): void => {
@@ -99,7 +101,7 @@ export const Header: FC<HeaderProps> = () => {
                                         className={cls.icon}
                                         icon='fluent:cart-20-filled'
                                         onClick={() => {
-                                            // handlerToggleClass(4);
+                                            handlerToggleClass(4);
                                         }}
                                     />
                                 </AppLink>
