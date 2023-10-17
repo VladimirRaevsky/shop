@@ -26,6 +26,7 @@ export const SideBar: FC<SideBarProps> = (props) => {
     const [collapsed, setCollapsed] = useState(false);
 
     const sidePanelRef = useRef<HTMLDivElement>(null);
+
     const buttonRef = useRef<HTMLDivElement>(null);
 
     const onToggle = (): void => {

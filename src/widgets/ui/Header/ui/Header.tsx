@@ -1,7 +1,6 @@
 import { Icon } from '@iconify/react';
-import { Col, Row, Typography } from 'antd';
+import { Col, Row } from 'antd';
 import { useCallback, useState, type FC } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import { LoginModal } from 'features/AuthByUserName';
 

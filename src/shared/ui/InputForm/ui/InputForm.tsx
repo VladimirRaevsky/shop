@@ -1,6 +1,7 @@
+/* eslint-disable no-irregular-whitespace */
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import { Input } from 'antd';
-import { type ReactNode, type FC } from 'react';
+import { type ReactNode, type ChangeEvent, memo } from 'react';
 
 import { ClassNames } from 'shared/lib';
 
@@ -41,12 +42,14 @@ export type StatusType = 'warning' | 'error';
 
 interface InputFormProps {
     className?: string;
-    placeholder?: string;
+    placeholder: string;
     description?: DescriptionInput;
     type: InputType;
     status?: StatusType;
     prefix?: ReactNode;
     theme: InputFormTheme;
+    value?: string | number;
+    onChange?: (value: string) => void;
 }
 
 /**
@@ -57,9 +60,11 @@ interface InputFormProps {
  * @param placeholder - Input placeholder.
  * @param status - Input work status.
  * @param description - Field name to describe the contents of the input.
+ * @param onChange - Function for reading fields from inputs.
+ * @param value - Read values ​​from inputs.
  */
 
-export const InputForm: FC<InputFormProps> = (props) => {
+export const InputForm = memo(function InputForm(props: InputFormProps) {
     const {
         className = '',
         placeholder,
@@ -68,17 +73,21 @@ export const InputForm: FC<InputFormProps> = (props) => {
         theme,
         status,
         prefix,
+        onChange,
+        value,
         ...other
     } = props;
 
-    const onInputHandler = (vl: any): any => {
-        console.log(vl.target.value);
+    const uniqueId = `inputField_${Math.random().toString(36).slice(2, 9)}`;
+
+    const handlerOnChange = (event: ChangeEvent<HTMLInputElement>): void => {
+        onChange?.(event.target.value);
     };
 
     return (
         <span className={ClassNames(cls.wrapper, {}, [className, cls[theme]])}>
             {description != null && (
-                <label className={cls.label} htmlFor='inputField'>
+                <label className={cls.label} htmlFor={uniqueId}>
                     <p>{description}</p>
                 </label>
             )}
@@ -87,12 +96,13 @@ export const InputForm: FC<InputFormProps> = (props) => {
                     className={ClassNames(cls.inputForm, {}, [])}
                     placeholder={placeholder}
                     status={status}
-                    id='inputField'
+                    id={uniqueId}
                     type={type}
                     maxLength={50}
                     showCount
                     allowClear
-                    onInput={(e) => onInputHandler(e)}
+                    onChange={handlerOnChange}
+                    value={value}
                     prefix={prefix}
                     {...other}
                 />
@@ -101,12 +111,13 @@ export const InputForm: FC<InputFormProps> = (props) => {
                     className={ClassNames(cls.inputForm, {}, [])}
                     placeholder={placeholder}
                     status={status}
-                    id='inputField'
+                    id={uniqueId}
                     type={type}
                     maxLength={50}
                     showCount
                     allowClear
-                    onInput={(e) => onInputHandler(e)}
+                    value={value}
+                    onChange={handlerOnChange}
                     iconRender={(visible) =>
                         visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
                     }
@@ -115,4 +126,4 @@ export const InputForm: FC<InputFormProps> = (props) => {
             )}
         </span>
     );
-};
+});

@@ -1,6 +1,5 @@
-import { useEffect, useState, type CSSProperties, type FC } from 'react';
+import { useState, type CSSProperties, type FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useLocation } from 'react-router-dom';
 
 import { ClassNames, useToggleClass } from 'shared/lib';
 import { AppLink } from 'shared/ui/AppLink';

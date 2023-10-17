@@ -12,4 +12,6 @@ const meta: Meta<typeof SideBar> = {
 export default meta;
 
 type Story = StoryObj<typeof SideBar>;
-export const Default: Story = {};
+export const Default: Story = {
+    args: {},
+};

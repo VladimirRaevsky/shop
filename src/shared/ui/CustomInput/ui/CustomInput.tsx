@@ -76,7 +76,7 @@ export const CustomInput: FC<InputProps> = (props) => {
                 onInput={(e: any) => {
                     onSearchHandler(e);
                 }}
-                onClick={handlerOnAnimation}
+                // onChange={handlerOnAnimation}
                 spellCheck
                 {...other}
             />

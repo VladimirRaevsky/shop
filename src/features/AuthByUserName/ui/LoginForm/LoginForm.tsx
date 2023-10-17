@@ -1,5 +1,10 @@
 import { UserOutlined } from '@ant-design/icons';
-import { type FC } from 'react';
+
+import { memo, useCallback, type FC } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
+import { loginActions } from '../../model/slice/loginSlice';
 
 import { ClassNames } from 'shared/lib';
 import { CustomButton } from 'shared/ui/CustomButton';
@@ -21,8 +26,26 @@ interface LoginFormProps {
     className?: string;
 }
 
-export const LoginForm: FC<LoginFormProps> = (props) => {
+export const LoginForm = memo(function LoginForm(props: LoginFormProps) {
     const { className = '' } = props;
+
+    const dispatch = useDispatch();
+
+    const { username, password } = useSelector(getLoginState);
+
+    const handlerOnChangeUsername = useCallback(
+        (value: string): void => {
+            dispatch(loginActions.setUserName(value));
+        },
+        [dispatch],
+    );
+
+    const handlerOnChangePassword = useCallback(
+        (value: string): void => {
+            dispatch(loginActions.setPassword(value));
+        },
+        [dispatch],
+    );
 
     return (
         <form className={ClassNames(cls.loginForm, {}, [className])}>
@@ -32,12 +55,16 @@ export const LoginForm: FC<LoginFormProps> = (props) => {
                 placeholder={InputPlaceholder.NAME}
                 theme={InputFormTheme.SMALL}
                 prefix={<UserOutlined />}
+                onChange={handlerOnChangeUsername}
+                value={username}
             />
             <InputForm
                 className={cls.input}
                 type={InputType.PASSWORD}
                 placeholder={InputPlaceholder.PASSWORD}
                 theme={InputFormTheme.SMALL}
+                onChange={handlerOnChangePassword}
+                value={password}
             />
             <CustomButton type={ButtonType.SUBMIT} theme={ButtonTheme.SUBMIT}>
                 отправить
@@ -45,4 +72,4 @@ export const LoginForm: FC<LoginFormProps> = (props) => {
             </CustomButton>
         </form>
     );
-};
+});
