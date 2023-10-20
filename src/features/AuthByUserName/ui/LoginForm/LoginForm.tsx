@@ -1,12 +1,13 @@
 import { UserOutlined } from '@ant-design/icons';
 
-import { memo, useCallback, type FC } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { memo, useCallback } from 'react';
+import { useSelector } from 'react-redux';
 
 import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
+import { loginByUsername } from '../../model/services/loginByUsername';
 import { loginActions } from '../../model/slice/loginSlice';
 
-import { ClassNames } from 'shared/lib';
+import { ClassNames, useAppDispatch } from 'shared/lib';
 import { CustomButton } from 'shared/ui/CustomButton';
 import {
     ButtonTheme,
@@ -24,18 +25,19 @@ import cls from './LoginForm.module.scss';
 
 interface LoginFormProps {
     className?: string;
+    isOpen: boolean;
 }
 
 export const LoginForm = memo(function LoginForm(props: LoginFormProps) {
-    const { className = '' } = props;
+    const { className = '', isOpen } = props;
 
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     const { username, password } = useSelector(getLoginState);
 
     const handlerOnChangeUsername = useCallback(
         (value: string): void => {
-            dispatch(loginActions.setUserName(value));
+            dispatch(loginActions.setUsername(value));
         },
         [dispatch],
     );
@@ -47,8 +49,17 @@ export const LoginForm = memo(function LoginForm(props: LoginFormProps) {
         [dispatch],
     );
 
+    const handlerOnLogin = useCallback(() => {
+        dispatch(loginByUsername({ username, password }));
+    }, [dispatch, username, password]);
+
     return (
-        <form className={ClassNames(cls.loginForm, {}, [className])}>
+        <form
+            className={ClassNames(cls.loginForm, {}, [className])}
+            onClick={(e) => {
+                e.preventDefault();
+            }}
+        >
             <InputForm
                 className={cls.input}
                 type={InputType.TEXT}
@@ -66,7 +77,11 @@ export const LoginForm = memo(function LoginForm(props: LoginFormProps) {
                 onChange={handlerOnChangePassword}
                 value={password}
             />
-            <CustomButton type={ButtonType.SUBMIT} theme={ButtonTheme.SUBMIT}>
+            <CustomButton
+                type={ButtonType.SUBMIT}
+                theme={ButtonTheme.SUBMIT}
+                onClick={handlerOnLogin}
+            >
                 отправить
                 <Ripple duration={3000} color='red' />
             </CustomButton>

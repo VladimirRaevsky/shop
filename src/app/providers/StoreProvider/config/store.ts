@@ -17,3 +17,6 @@ export function CreateRedaxStore(initialState?: StateSchema) {
         preloadedState: initialState,
     });
 }
+
+export const store = CreateRedaxStore();
+export type AppDispatch = typeof store.dispatch;

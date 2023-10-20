@@ -1,5 +1,6 @@
 import { type ReactNode } from 'react';
 import { Provider } from 'react-redux';
+
 import { type StateSchema } from '../config/StateSchema';
 import { CreateRedaxStore } from '../config/store';
 

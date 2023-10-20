@@ -23,7 +23,7 @@ export const LoginModal: FC<LoginModalProps> = (props) => {
             onClose={onClose}
             className={ClassNames(cls.loginModal, {}, [className])}
         >
-            <LoginForm />
+            <LoginForm isOpen={isOpen} />
         </Modal>
     );
 };
