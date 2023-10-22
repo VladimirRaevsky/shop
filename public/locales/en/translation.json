@@ -13,5 +13,8 @@
     "светлая": "Light",
     "подписаться": "Subscribe",
     "поиск": "Search",
-    "имэйл": "Your email address here"
+    "имэйл": "Your email address here",
+    "Минимум 5 символов": "Minimum 5 characters",
+    "Неверный пароль или логин": "Incorrect password or login",
+    "Форма авторизации": "Authorization form"
 }

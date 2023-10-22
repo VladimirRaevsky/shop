@@ -1,5 +1,4 @@
-import { useEffect, useState, type FC } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useState, type FC } from 'react';
 
 import PhoneImg from '../../../shared/assets/icons/phone.png';
 
@@ -40,7 +39,6 @@ interface Photo {
 }
 
 const MainPage: FC<MainePageProps> = () => {
-    const { t } = useTranslation('home');
     const [test, setTest] = useState<Photo[]>();
 
     console.log(CSSStyleSheet.prototype);
@@ -116,8 +114,6 @@ const MainPage: FC<MainePageProps> = () => {
                     <Ripple duration={4000} />
                 </CustomButton>
             </div>
-
-            {t('Главная страница')}
 
             <CustomInput
                 theme={InputTheme.SEARCH}

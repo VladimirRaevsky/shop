@@ -1,6 +1,7 @@
 import { UserOutlined } from '@ant-design/icons';
 
-import { memo, useCallback } from 'react';
+import { memo, useCallback, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
 import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
@@ -20,6 +21,9 @@ import {
     InputType,
 } from 'shared/ui/InputForm/ui/InputForm';
 import { Ripple } from 'shared/ui/Ripple';
+import { Text } from 'shared/ui/Text';
+
+import { TextTheme } from 'shared/ui/Text/ui/Text';
 
 import cls from './LoginForm.module.scss';
 
@@ -31,12 +35,29 @@ interface LoginFormProps {
 export const LoginForm = memo(function LoginForm(props: LoginFormProps) {
     const { className = '', isOpen } = props;
 
+    const { t } = useTranslation();
+
+    const [{ usernameValue, passwordValue }, setStatus] = useState<
+        Record<string, 'error' | undefined>
+    >({
+        usernameValue: undefined,
+        passwordValue: undefined,
+    });
+
     const dispatch = useAppDispatch();
 
-    const { username, password } = useSelector(getLoginState);
+    const { username, password, isLoading, error } = useSelector(getLoginState);
 
     const handlerOnChangeUsername = useCallback(
         (value: string): void => {
+            setStatus((prev) => {
+                return {
+                    ...prev,
+                    usernameValue:
+                        value.trim().length < 5 ? 'error' : undefined,
+                };
+            });
+
             dispatch(loginActions.setUsername(value));
         },
         [dispatch],
@@ -44,13 +65,21 @@ export const LoginForm = memo(function LoginForm(props: LoginFormProps) {
 
     const handlerOnChangePassword = useCallback(
         (value: string): void => {
+            setStatus((prev) => {
+                return {
+                    ...prev,
+                    passwordValue:
+                        value.trim().length < 5 ? 'error' : undefined,
+                };
+            });
+
             dispatch(loginActions.setPassword(value));
         },
         [dispatch],
     );
 
     const handlerOnLogin = useCallback(() => {
-        dispatch(loginByUsername({ username, password }));
+        void dispatch(loginByUsername({ username, password }));
     }, [dispatch, username, password]);
 
     return (
@@ -60,6 +89,10 @@ export const LoginForm = memo(function LoginForm(props: LoginFormProps) {
                 e.preventDefault();
             }}
         >
+            {<Text title={t('Форма авторизации')} />}
+            {error != null && (
+                <Text description={error} theme={TextTheme.ERROR} />
+            )}
             <InputForm
                 className={cls.input}
                 type={InputType.TEXT}
@@ -68,6 +101,7 @@ export const LoginForm = memo(function LoginForm(props: LoginFormProps) {
                 prefix={<UserOutlined />}
                 onChange={handlerOnChangeUsername}
                 value={username}
+                status={usernameValue}
             />
             <InputForm
                 className={cls.input}
@@ -76,11 +110,13 @@ export const LoginForm = memo(function LoginForm(props: LoginFormProps) {
                 theme={InputFormTheme.SMALL}
                 onChange={handlerOnChangePassword}
                 value={password}
+                status={passwordValue}
             />
             <CustomButton
                 type={ButtonType.SUBMIT}
                 theme={ButtonTheme.SUBMIT}
                 onClick={handlerOnLogin}
+                disabled={isLoading}
             >
                 отправить
                 <Ripple duration={3000} color='red' />

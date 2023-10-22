@@ -1,6 +1,8 @@
 @import 'scss-variables';
 
 .loginForm {
+    position: relative;
+
     display: flex;
     flex-direction: column;
     flex-grow: 3;

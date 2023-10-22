@@ -24,6 +24,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     theme: ButtonTheme;
     type: ButtonType;
     children: ReactNode;
+    disabled?: boolean;
 }
 
 /**
@@ -31,6 +32,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
  * @param theme - Button theme.
  * @param children - React node.
  * @param type - Button type.
+ * @param disabled - Button activation.
  */
 
 export const CustomButton: FC<ButtonProps> = (props) => {
@@ -39,13 +41,19 @@ export const CustomButton: FC<ButtonProps> = (props) => {
         children,
         theme = ButtonTheme.SECONDARY,
         type,
+        disabled,
         ...otherProps
     } = props;
+
+    const mods: Record<string, any> = {
+        [cls.disabled]: disabled,
+    };
 
     return (
         <button
             type={type}
-            className={ClassNames('', {}, [className, cls[theme]])}
+            className={ClassNames('', mods, [className, cls[theme]])}
+            disabled={disabled}
             {...otherProps}
         >
             {children}

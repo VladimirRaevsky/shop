@@ -226,3 +226,8 @@ button {
         padding: 10px 8px;
     }
 }
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
