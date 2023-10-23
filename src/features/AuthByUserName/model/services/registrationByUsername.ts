@@ -5,19 +5,19 @@ import { userActions, type User } from 'entites/User';
 import i18n from 'shared/config/i18n/i18n';
 import { USER_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
 
-interface LoginByUsernameProps {
+interface RegistrationByUsernameProps {
     username: string;
     password: string;
 }
 
-export const loginByUsername = createAsyncThunk<
+export const registrationByUsername = createAsyncThunk<
     User,
-    LoginByUsernameProps,
+    RegistrationByUsernameProps,
     { rejectValue: string }
->('login/loginByUsername', async (authData, thunkAPI) => {
+>('registration/registrationByUsername', async (authData, thunkAPI) => {
     try {
         const response = await axios.post<User>(
-            'http://localhost:8000/login',
+            'http://localhost:8000/registration',
             authData,
         );
 
@@ -34,6 +34,6 @@ export const loginByUsername = createAsyncThunk<
 
         return response.data;
     } catch (error) {
-        return thunkAPI.rejectWithValue(i18n.t('Неверный пароль или логин'));
+        return thunkAPI.rejectWithValue(i18n.t('Минимум 5 символов'));
     }
 });

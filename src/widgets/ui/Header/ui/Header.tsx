@@ -2,10 +2,13 @@ import { Icon } from '@iconify/react';
 import { Col, Row } from 'antd';
 import { useCallback, useState, type FC } from 'react';
 
+import { useSelector } from 'react-redux';
+
+import { getUserAuthData } from 'entites/User';
 import { LoginModal } from 'features/AuthByUserName';
 
 import AvatarIcon from 'shared/assets/icons/header/avatar.svg';
-import SearchIcon from 'shared/assets/icons/header/ion_search.svg';
+import MenuIcon from 'shared/assets/icons/header/menu.svg';
 import { AppRoutes } from 'shared/config/routeConfig/RouteConfig';
 import { ClassNames, useToggleClass } from 'shared/lib';
 import { AppLink } from 'shared/ui/AppLink';
@@ -35,6 +38,8 @@ export const Header: FC<HeaderProps> = () => {
     const { handlerToggleClass } = useToggleClass();
 
     const [openModal, setOpenModal] = useState(false);
+
+    const AuthData = useSelector(getUserAuthData);
 
     const handlerOpenModal = useCallback((): void => {
         setOpenModal(true);
@@ -67,9 +72,12 @@ export const Header: FC<HeaderProps> = () => {
                             <CustomButton
                                 type={ButtonType.BUTTON}
                                 className={cls.indentation}
-                                theme={ButtonTheme.CIRCLE}
+                                theme={ButtonTheme.CLEAR}
                             >
-                                <SearchIcon />
+                                <MenuIcon
+                                    className={cls.icon}
+                                    onClick={handlerOpenModal}
+                                />
                             </CustomButton>
 
                             <SwitcherLang className={cls.indentation} />
@@ -81,10 +89,14 @@ export const Header: FC<HeaderProps> = () => {
                                 className={cls.indentation}
                                 theme={ButtonTheme.CLEAR}
                             >
-                                <AvatarIcon
-                                    className={cls.avatar}
-                                    onClick={handlerOpenModal}
-                                />
+                                <AvatarIcon className={cls.avatar} />
+                                {AuthData !== undefined && AuthData !== null ? (
+                                    <span className={cls.user}>
+                                        {AuthData?.username}
+                                    </span>
+                                ) : (
+                                    ''
+                                )}
                             </CustomButton>
 
                             <CustomButton

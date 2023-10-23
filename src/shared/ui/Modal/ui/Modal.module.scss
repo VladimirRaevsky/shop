@@ -9,7 +9,7 @@
 
     opacity: 0;
 
-    transition-duration: 0.2s;
+    transition-duration: var(--delay-transition);
     transition-property: opacity, z-index;
 }
 
@@ -24,7 +24,7 @@
 
     background-color: var(--overlay-color);
 
-    transition: all 0.4s;
+    transition: all var(--delay-transition);
 }
 
 
@@ -37,7 +37,7 @@
     flex-direction: column;
     justify-content: space-between;
 
-    min-width: 20%;
+    min-width: 25%;
     max-width: 30%;
     min-height: 170px;
     max-height: 300px;
@@ -46,7 +46,7 @@
     background: var(--bg-color);
     border-radius: 10px;
 
-    transition: transform 0.6s;
+    transition: transform var(--delay-transition);
 
     @media #{$tablets} {
         min-width: 20%;
@@ -59,7 +59,7 @@
 
     @media #{$mobile-devices-portrait} {
         max-width: 70%;
-        max-height: 20%;
+        max-height: 52%;
         padding: 10px;
     }
     

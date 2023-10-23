@@ -4,9 +4,9 @@ import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
-import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
-import { loginByUsername } from '../../model/services/loginByUsername';
-import { loginActions } from '../../model/slice/loginSlice';
+import { getLoginState } from '../../../../model/selectors/getLoginState/getLoginState';
+import { loginByUsername } from '../../../../model/services/loginByUsername';
+import { loginActions } from '../../../../model/slice/loginSlice';
 
 import { ClassNames, useAppDispatch } from 'shared/lib';
 import { CustomButton } from 'shared/ui/CustomButton';
@@ -22,8 +22,6 @@ import {
 } from 'shared/ui/InputForm/ui/InputForm';
 import { Ripple } from 'shared/ui/Ripple';
 import { Text } from 'shared/ui/Text';
-
-import { TextTheme } from 'shared/ui/Text/ui/Text';
 
 import cls from './LoginForm.module.scss';
 
@@ -82,6 +80,12 @@ export const LoginForm = memo(function LoginForm(props: LoginFormProps) {
         void dispatch(loginByUsername({ username, password }));
     }, [dispatch, username, password]);
 
+    if (error != null) {
+        setTimeout(() => {
+            dispatch(loginActions.clearError());
+        }, 2000);
+    }
+
     return (
         <form
             className={ClassNames(cls.loginForm, {}, [className])}
@@ -90,9 +94,7 @@ export const LoginForm = memo(function LoginForm(props: LoginFormProps) {
             }}
         >
             {<Text title={t('Форма авторизации')} />}
-            {error != null && (
-                <Text description={error} theme={TextTheme.ERROR} />
-            )}
+            {error != null && <Text description={error} />}
             <InputForm
                 className={cls.input}
                 type={InputType.TEXT}
@@ -118,7 +120,7 @@ export const LoginForm = memo(function LoginForm(props: LoginFormProps) {
                 onClick={handlerOnLogin}
                 disabled={isLoading}
             >
-                отправить
+                {t('Авторизоваться')}
                 <Ripple duration={3000} color='red' />
             </CustomButton>
         </form>

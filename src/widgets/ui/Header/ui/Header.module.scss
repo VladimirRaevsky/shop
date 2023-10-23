@@ -68,12 +68,16 @@
 }
 
 .indentation {
+    position: relative;
+    display: flex;
+    align-items: center;
     margin-right: 5px;
 }
 
 .icon {
     width: 30px;
     height: 30px;
+    stroke: var(--primary-color);
 
     path {
         fill: var(--primary-color);
@@ -121,4 +125,11 @@
     svg {
         flex-shrink: 0;
     }
+}
+
+.user {
+    position: absolute;
+    right: -10px;
+    margin-top: 38px;
+    color: var(--primary-color);
 }

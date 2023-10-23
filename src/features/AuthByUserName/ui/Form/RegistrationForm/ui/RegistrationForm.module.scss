@@ -1,0 +1,32 @@
+@import 'scss-variables';
+
+.registrationForm {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    flex-grow: 3;
+    justify-content: space-between;
+
+    padding: 15px 0;
+
+    @media #{$mobile-devices-portrait} {
+        padding: 0;
+    }
+}
+
+:global {
+    .ant-input-group .ant-input-affix-wrapper:not(:last-child) {
+        border-start-end-radius: 4px !important;
+        border-end-end-radius: 4px !important;
+    }
+}
+
+.input {
+    min-width: 100%;
+    margin-bottom: 20px;
+
+    @media #{$mobile-devices-portrait} {
+        margin-bottom: 5px;
+    }
+}

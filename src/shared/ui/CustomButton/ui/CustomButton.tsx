@@ -12,6 +12,7 @@ export enum ButtonTheme {
     SQARE = 'sqare',
     SUBMIT = 'submit',
     SUBSCRIBE = 'subscribe',
+    REGISTER = 'register',
 }
 
 export enum ButtonType {

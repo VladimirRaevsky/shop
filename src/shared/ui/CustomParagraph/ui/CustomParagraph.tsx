@@ -8,6 +8,7 @@ export enum CustomParagraphTheme {
     M = 'size_m',
     L = 'size_l',
     XL = 'size_xl',
+    ERROR = 'error',
 }
 
 interface CustomParagraphProps {

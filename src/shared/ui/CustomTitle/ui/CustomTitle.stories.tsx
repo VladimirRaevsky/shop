@@ -1,6 +1,6 @@
 import { type Meta, type StoryObj } from '@storybook/react';
 
-import { CustomTitle, TitleLevel } from './CustomTitle';
+import { CustomTitle, TitleLevel, TitleTheme } from './CustomTitle';
 
 const meta: Meta<typeof CustomTitle> = {
     title: 'shared/CustomTitle',
@@ -31,5 +31,14 @@ export const TitleThree: StoryObj = {
     args: {
         level: TitleLevel.THREE,
         children: 3,
+    },
+};
+
+export const TitlePrimaryTheme: StoryObj = {
+    args: {
+        level: TitleLevel.THREE,
+        children:
+            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis repudiandae ea fuga odio optio nihil expedita, debitis impedit quasi illo fugiat ratione maxime, ut eaque sit, fugit facere soluta tenetur.',
+        theme: TitleTheme.PRIMARY,
     },
 };

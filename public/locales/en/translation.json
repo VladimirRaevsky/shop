@@ -16,5 +16,8 @@
     "имэйл": "Your email address here",
     "Минимум 5 символов": "Minimum 5 characters",
     "Неверный пароль или логин": "Incorrect password or login",
-    "Форма авторизации": "Authorization form"
+    "Форма авторизации": "Authorization form",
+    "Авторизоваться": "Login",
+    "Зарегистрироваться": "Register",
+    "Форма регистрации": "Registration form"
 }

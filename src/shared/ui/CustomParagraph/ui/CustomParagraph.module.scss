@@ -14,3 +14,9 @@
 .size_xl {
     font: var(--font-xl-lato);
 }
+
+.error {
+    margin-bottom: 5px;
+    font: var(--font-m-lato);
+    color: var(--error-color);
+}

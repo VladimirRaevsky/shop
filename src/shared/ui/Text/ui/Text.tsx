@@ -1,50 +1,43 @@
 import { type FC } from 'react';
 
 import { ClassNames } from 'shared/lib';
+import {
+    CustomParagraph,
+    CustomParagraphTheme,
+} from 'shared/ui/CustomParagraph/ui/CustomParagraph';
 import { CustomTitle } from 'shared/ui/CustomTitle';
-import { TitleLevel } from 'shared/ui/CustomTitle/ui/CustomTitle';
-
-import cls from './Text.module.scss';
-
-export enum TextTheme {
-    ERROR = 'error',
-}
+import { TitleLevel, TitleTheme } from 'shared/ui/CustomTitle/ui/CustomTitle';
 
 interface TextProps {
     className?: string;
     title?: string;
     description?: string;
-    theme?: TextTheme;
 }
 
 /**
  * @param className - Class for controlling a component from outside
  * @param title - Text title
  * @param description - Text description.
- * @param theme - Text theme.
  */
 
 export const Text: FC<TextProps> = (props) => {
-    const { className = '', title, theme = '', description, ...other } = props;
-
-    const mods: Record<string, boolean> = {
-        [cls.error]: theme === TextTheme.ERROR,
-    };
+    const { className = '', title, description, ...other } = props;
 
     return (
-        <div className={ClassNames(cls.text, mods, [className])} {...other}>
+        <div className={ClassNames('', {}, [className])} {...other}>
             {title !== undefined && (
-                <div className={cls.title}>
-                    <CustomTitle
-                        level={TitleLevel.THREE}
-                        ariaLevel={TitleLevel.THREE}
-                    >
-                        {title}
-                    </CustomTitle>
-                </div>
+                <CustomTitle
+                    level={TitleLevel.THREE}
+                    ariaLevel={TitleLevel.THREE}
+                    theme={TitleTheme.PRIMARY}
+                >
+                    {title}
+                </CustomTitle>
             )}
             {description !== undefined && (
-                <p className={cls.description}>{description}</p>
+                <CustomParagraph theme={CustomParagraphTheme.ERROR}>
+                    {description}
+                </CustomParagraph>
             )}
         </div>
     );

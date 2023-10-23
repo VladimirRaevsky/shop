@@ -1,7 +1,8 @@
-import { type FC, Suspense } from 'react';
+import { type FC, Suspense, useEffect } from 'react';
 
 import { AppRouter } from 'app/providers/router';
-import { ClassNames, useTheme } from 'shared/lib';
+import { userActions } from 'entites/User';
+import { ClassNames, useAppDispatch, useTheme } from 'shared/lib';
 import { Container } from 'shared/ui/Container';
 import { AppLoader } from 'widgets/ui/AppLoader';
 import { Footer } from 'widgets/ui/Footer';
@@ -14,6 +15,12 @@ interface AppProps {
 
 export const App: FC<AppProps> = () => {
     const { theme } = useTheme();
+
+    const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        dispatch(userActions.initialUser());
+    }, [dispatch]);
 
     return (
         <div className={ClassNames('app', {}, [theme])}>

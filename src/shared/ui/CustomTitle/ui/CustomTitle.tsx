@@ -13,11 +13,16 @@ export const enum TitleLevel {
     THREE = 3,
 }
 
+export enum TitleTheme {
+    PRIMARY = 'primary',
+}
+
 interface TitleProps {
     className?: string;
     children: ReactNode;
     level: TitleLevel;
     ariaLevel: TitleLevel;
+    theme?: TitleTheme;
 }
 
 /**
@@ -25,10 +30,11 @@ interface TitleProps {
  * @param level - Header level
  * @param ariaLevel - Area level.
  * @param children - React node.
+ * @param theme - Theme.
  */
 
 export const CustomTitle: FC<TitleProps> = (props) => {
-    const { className = '', children, level, ariaLevel } = props;
+    const { className = '', children, level, theme = '', ariaLevel } = props;
 
     const mods: Record<string, boolean> = {
         [cls.h1]: level === 1,
@@ -38,10 +44,12 @@ export const CustomTitle: FC<TitleProps> = (props) => {
 
     return (
         <Title
-            className={ClassNames(cls.customTitle, mods, [className])}
+            className={ClassNames(cls.customTitle, mods, [
+                className,
+                cls[theme],
+            ])}
             aria-level={ariaLevel}
             level={level}
-            style={{ margin: 0, fontWeight: 'inherit' }}
         >
             {children}
         </Title>

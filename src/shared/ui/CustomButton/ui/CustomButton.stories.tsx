@@ -30,6 +30,13 @@ export const CLEAR: Story = {
     },
 };
 
+export const Register: Story = {
+    args: {
+        ...Default.args,
+        theme: ButtonTheme.REGISTER,
+    },
+};
+
 export const PRIMARY: StoryObj = {
     args: {
         ...Default.args,
