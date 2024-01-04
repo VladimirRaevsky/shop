@@ -10,16 +10,15 @@ import { loginActions } from '../../../../model/slice/loginSlice';
 
 import { ClassNames, useAppDispatch } from 'shared/lib';
 import { CustomButton } from 'shared/ui/CustomButton';
-import {
-    ButtonTheme,
-    ButtonType,
-} from 'shared/ui/CustomButton/ui/CustomButton';
+
+import { ButtonTheme, ButtonType } from 'shared/ui/CustomButton/types';
 import { InputForm } from 'shared/ui/InputForm';
+
 import {
     InputFormTheme,
     InputPlaceholder,
     InputType,
-} from 'shared/ui/InputForm/ui/InputForm';
+} from 'shared/ui/InputForm/types';
 import { Ripple } from 'shared/ui/Ripple';
 import { Text } from 'shared/ui/Text';
 
@@ -46,7 +45,7 @@ export const LoginForm = memo(function LoginForm(props: LoginFormProps) {
 
     const { username, password, isLoading, error } = useSelector(getLoginState);
 
-    const handlerOnChangeUsername = useCallback(
+    const onChangeUsernameHandler = useCallback(
         (value: string): void => {
             setStatus((prev) => {
                 return {
@@ -61,7 +60,7 @@ export const LoginForm = memo(function LoginForm(props: LoginFormProps) {
         [dispatch],
     );
 
-    const handlerOnChangePassword = useCallback(
+    const onChangePasswordHandler = useCallback(
         (value: string): void => {
             setStatus((prev) => {
                 return {
@@ -101,7 +100,7 @@ export const LoginForm = memo(function LoginForm(props: LoginFormProps) {
                 placeholder={InputPlaceholder.NAME}
                 theme={InputFormTheme.SMALL}
                 prefix={<UserOutlined />}
-                onChange={handlerOnChangeUsername}
+                onChange={onChangeUsernameHandler}
                 value={username}
                 status={usernameValue}
             />
@@ -110,7 +109,7 @@ export const LoginForm = memo(function LoginForm(props: LoginFormProps) {
                 type={InputType.PASSWORD}
                 placeholder={InputPlaceholder.PASSWORD}
                 theme={InputFormTheme.SMALL}
-                onChange={handlerOnChangePassword}
+                onChange={onChangePasswordHandler}
                 value={password}
                 status={passwordValue}
             />

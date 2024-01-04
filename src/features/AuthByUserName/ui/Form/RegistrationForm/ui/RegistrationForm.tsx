@@ -4,16 +4,14 @@ import { type FC } from 'react';
 
 import { ClassNames } from 'shared/lib';
 import { CustomButton } from 'shared/ui/CustomButton';
-import {
-    ButtonTheme,
-    ButtonType,
-} from 'shared/ui/CustomButton/ui/CustomButton';
+import { ButtonTheme, ButtonType } from 'shared/ui/CustomButton/types';
+
 import { InputForm } from 'shared/ui/InputForm';
 import {
     InputFormTheme,
     InputPlaceholder,
     InputType,
-} from 'shared/ui/InputForm/ui/InputForm';
+} from 'shared/ui/InputForm/types';
 import { Ripple } from 'shared/ui/Ripple';
 import { Text } from 'shared/ui/Text';
 

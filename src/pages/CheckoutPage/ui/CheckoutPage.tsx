@@ -1,11 +1,9 @@
 import { type FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import cls from './CheckoutPage.module.scss';
+import { type CheckoutPageProps } from '../types';
 
-interface CheckoutPageProps {
-    className?: string;
-}
+import cls from './CheckoutPage.module.scss';
 
 const CheckoutPage: FC<CheckoutPageProps> = () => {
     const { t } = useTranslation('Pages');

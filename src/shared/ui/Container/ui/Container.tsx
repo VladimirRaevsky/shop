@@ -1,13 +1,10 @@
-import { type ReactNode, type FC } from 'react';
+import { type FC } from 'react';
+
+import { type ContainerProps } from '../types';
 
 import { ClassNames } from 'shared/lib';
 
 import cls from './Container.module.scss';
-
-interface ContainerProps {
-    className?: string;
-    children: ReactNode;
-}
 
 /**
  * @param className - Class for controlling a component from outside.

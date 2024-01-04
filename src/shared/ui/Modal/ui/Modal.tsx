@@ -1,16 +1,11 @@
-import { type ReactNode, type FC, useEffect, useCallback } from 'react';
+import { type FC, useEffect, useCallback } from 'react';
+
+import { type ModalProps } from '../types';
 
 import { ClassNames } from 'shared/lib';
-import { Portal } from 'shared/ui/Portal/Portal';
+import { Portal } from 'shared/ui/Portal/ui/Portal';
 
 import cls from './Modal.module.scss';
-
-interface ModalProps {
-    className?: string;
-    children: ReactNode;
-    isOpen: boolean;
-    onClose?: () => void;
-}
 
 /**
  * @param className - Class for controlling a component from outside.
@@ -32,7 +27,7 @@ export const Modal: FC<ModalProps> = (props) => {
         }
     }, [onClose]);
 
-    const onContentClick = (e: React.MouseEvent): void => {
+    const onContentClickHandler = (e: React.MouseEvent): void => {
         e.stopPropagation();
     };
 
@@ -63,7 +58,10 @@ export const Modal: FC<ModalProps> = (props) => {
         <Portal>
             <div className={ClassNames(cls.modal, mods, [className])}>
                 <div className={cls.overlay} onClick={onCloseHandler}>
-                    <div className={cls.content} onClick={onContentClick}>
+                    <div
+                        className={cls.content}
+                        onClick={onContentClickHandler}
+                    >
                         {children}
                     </div>
                 </div>

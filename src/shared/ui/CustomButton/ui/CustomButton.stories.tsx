@@ -1,8 +1,10 @@
 import { type Meta, type StoryObj } from '@storybook/react';
 
+import { ButtonTheme } from '../types';
+
 import SearchIcon from 'shared/assets/icons/header/ion_search.svg';
 
-import { CustomButton, ButtonTheme } from './CustomButton';
+import { CustomButton } from './CustomButton';
 
 import '../../../config/i18n/i18nForStorybook';
 

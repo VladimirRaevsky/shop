@@ -1,32 +1,10 @@
-import { type ReactNode, type ButtonHTMLAttributes, type FC } from 'react';
+import { type FC } from 'react';
+
+import { type ButtonProps, ButtonTheme } from '../types';
 
 import { ClassNames } from 'shared/lib';
 
 import cls from './CustomButton.module.scss';
-
-export enum ButtonTheme {
-    SECONDARY = 'secondary',
-    PRIMARY = 'primary',
-    CLEAR = 'clear',
-    CIRCLE = 'circle',
-    SQARE = 'sqare',
-    SUBMIT = 'submit',
-    SUBSCRIBE = 'subscribe',
-    REGISTER = 'register',
-}
-
-export enum ButtonType {
-    BUTTON = 'button',
-    SUBMIT = 'submit',
-}
-
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-    className?: string;
-    theme: ButtonTheme;
-    type: ButtonType;
-    children: ReactNode;
-    disabled?: boolean;
-}
 
 /**
  * @param className - Class for controlling a component from outside.
@@ -43,6 +21,7 @@ export const CustomButton: FC<ButtonProps> = (props) => {
         theme = ButtonTheme.SECONDARY,
         type,
         disabled,
+        buttonRef,
         ...otherProps
     } = props;
 
@@ -52,6 +31,7 @@ export const CustomButton: FC<ButtonProps> = (props) => {
 
     return (
         <button
+            ref={buttonRef}
             type={type}
             className={ClassNames('', mods, [className, cls[theme]])}
             disabled={disabled}

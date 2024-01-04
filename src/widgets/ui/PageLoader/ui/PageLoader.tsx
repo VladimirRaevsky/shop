@@ -1,14 +1,12 @@
 import { type FC } from 'react';
 
+import { type PageLoaderProps } from '../types';
+
 import { ClassNames } from 'shared/lib';
 
 import { Loader } from 'shared/ui/Loader';
 
 import cls from './PageLoader.module.scss';
-
-interface PageLoaderProps {
-    className?: string;
-}
 
 /**
  * @param className - Class for controlling a component from outside.

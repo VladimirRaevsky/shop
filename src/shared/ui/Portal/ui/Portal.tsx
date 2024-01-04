@@ -1,10 +1,7 @@
-import { type ReactNode, type FC } from 'react';
+import { type FC } from 'react';
 import { createPortal } from 'react-dom';
 
-interface PortalProps {
-    element?: HTMLElement;
-    children: ReactNode;
-}
+import { type PortalProps } from '../types';
 
 /**
  * @param element - Html element.

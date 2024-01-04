@@ -1,14 +1,7 @@
-import { type FC, useMemo, useState, type ReactNode, useEffect } from 'react';
-import {
-    LOCAL_STORAGE_THEME_KEY,
-    Theme,
-    ThemeContext,
-} from '../lib/ThemeContext';
+import { type FC, useMemo, useState, useEffect } from 'react';
 
-interface ThemeProviderProps {
-    children?: ReactNode;
-    themeProps?: Theme;
-}
+import { LOCAL_STORAGE_THEME_KEY, ThemeContext } from '../lib/ThemeContext';
+import { Theme, type ThemeProviderProps } from '../types';
 
 const defaultTheme =
     // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions

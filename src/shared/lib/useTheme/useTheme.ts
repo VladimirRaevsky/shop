@@ -6,10 +6,7 @@ import {
     ThemeContext,
 } from 'app/providers/ThemeProviders/lib/ThemeContext';
 
-export interface UseThemeResult {
-    theme: string;
-    themeToggleHandler: () => void;
-}
+import { type UseThemeResult } from './types';
 
 export function useTheme(): UseThemeResult {
     const { theme, setTheme } = useContext(ThemeContext);

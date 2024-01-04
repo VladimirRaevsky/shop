@@ -1,11 +1,9 @@
 import { type FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import cls from './Blogs.module.scss';
+import { type BlogsProps } from '../types';
 
-interface BlogsProps {
-    className?: string;
-}
+import cls from './Blogs.module.scss';
 
 const Blogs: FC<BlogsProps> = () => {
     const { t } = useTranslation('about');

@@ -1,14 +1,8 @@
 import React, { type ReactNode, type ErrorInfo, Suspense } from 'react';
 
+import { type ErrorBoundaryProps, type ErrorBoundaryState } from '../types';
+
 import { ErrorPage } from 'pages/PageError';
-
-interface ErrorBoundaryProps {
-    children: ReactNode;
-}
-
-interface ErrorBoundaryState {
-    hasError: boolean;
-}
 
 export class ErrorBoundary extends React.Component<
     ErrorBoundaryProps,

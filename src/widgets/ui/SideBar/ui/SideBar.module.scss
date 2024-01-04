@@ -23,6 +23,10 @@
         transform: translateX(0);
     }
 
+    @media #{$tablets-landscape} {
+        width: var(--side-bar-landscape-width);
+    }
+    
     @media #{$tablets} {
         display: block;
     }

@@ -1,17 +1,8 @@
 import { useEffect, useState, type FC, type MouseEvent } from 'react';
 
+import { type RippleItem, type RippleProps } from '../types';
+
 import cls from './Ripple.module.scss';
-
-type RippleItem = {
-    x: number;
-    y: number;
-    size: number;
-};
-
-interface RippleProps {
-    duration?: number;
-    color?: string;
-}
 
 /**
  * @param duration - Duration of a ripple effect.

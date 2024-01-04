@@ -1,36 +1,18 @@
 import { Input, Space } from 'antd';
-import { type InputHTMLAttributes, type FC, useState } from 'react';
+import { type FC } from 'react';
 import { useTranslation } from 'react-i18next';
+
+import { type InputProps } from '../types';
 
 import { ClassNames } from 'shared/lib';
 import { CustomButton } from 'shared/ui/CustomButton';
-import {
-    ButtonTheme,
-    ButtonType,
-} from 'shared/ui/CustomButton/ui/CustomButton';
-import {
-    type StatusType,
-    type InputPlaceholder,
-    type InputType,
-} from 'shared/ui/InputForm/ui/InputForm';
+
+import { ButtonTheme, ButtonType } from 'shared/ui/CustomButton/types';
 import { Ripple } from 'shared/ui/Ripple';
 
 import cls from './CustomInput.module.scss';
 
 const { Search } = Input;
-
-export enum InputTheme {
-    SUBSCRIBE = 'subscribe',
-    SEARCH = 'search',
-}
-
-export interface InputProps {
-    theme: InputTheme;
-    type: InputType;
-    placeholder: InputPlaceholder;
-    className?: string;
-    status?: StatusType;
-}
 
 /**
  * @param className - Class for controlling a component from outside.

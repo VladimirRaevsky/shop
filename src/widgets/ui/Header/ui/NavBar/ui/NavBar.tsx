@@ -1,15 +1,12 @@
-import { useState, type CSSProperties, type FC } from 'react';
+import { useState, type FC } from 'react';
 import { useTranslation } from 'react-i18next';
+
+import { type NavBarProps } from '../types';
 
 import { ClassNames, useToggleClass } from 'shared/lib';
 import { AppLink } from 'shared/ui/AppLink';
 
 import cls from './NavBar.module.scss';
-
-interface NavBarProps {
-    className?: string;
-    style?: CSSProperties | undefined;
-}
 
 /**
  * @param className - Class for controlling a component from outside.

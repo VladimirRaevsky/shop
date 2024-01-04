@@ -4,19 +4,14 @@ import { Moony } from '../Moony/Moony';
 
 import { Sunny } from '../Sunny/Sunny';
 
+import { type SwitcherThemeProps } from '../types';
+
 import { ClassNames, useTheme } from 'shared/lib';
 import { CustomButton } from 'shared/ui/CustomButton';
 
-import {
-    ButtonTheme,
-    ButtonType,
-} from 'shared/ui/CustomButton/ui/CustomButton';
+import { ButtonTheme, ButtonType } from 'shared/ui/CustomButton/types';
 
 import cls from './SwitcherTheme.module.scss';
-
-interface SwitcherThemeProps {
-    className?: string;
-}
 
 /**
  * @param className - Class for controlling a component from outside.

@@ -5,11 +5,7 @@ import { useTheme } from 'shared/lib';
 
 import cls from './Loader.module.scss';
 
-interface LoaderProps {
-    className?: string;
-}
-
-export const Loader: FC<LoaderProps> = () => {
+export const Loader: FC = () => {
     const { theme } = useTheme();
 
     return (

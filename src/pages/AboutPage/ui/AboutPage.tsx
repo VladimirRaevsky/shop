@@ -1,11 +1,9 @@
 import { type FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import cls from './AboutPage.module.scss';
+import { type AboutPageProps } from '../types';
 
-interface AboutPageProps {
-    className?: string;
-}
+import cls from './AboutPage.module.scss';
 
 const AboutPage: FC<AboutPageProps> = () => {
     const { t } = useTranslation('about');

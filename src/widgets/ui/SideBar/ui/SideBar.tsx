@@ -4,15 +4,15 @@ import { useTranslation } from 'react-i18next';
 import { Close } from '../Close/Close';
 import { Open } from '../Open/Open';
 
+import { type SideBarProps } from '../types';
+
 import { ClassNames } from 'shared/lib';
 
+import { CustomButton } from 'shared/ui/CustomButton';
+import { ButtonTheme, ButtonType } from 'shared/ui/CustomButton/types';
 import { NavBar } from 'widgets/ui/Header/ui/NavBar';
 
 import cls from './SideBar.module.scss';
-
-interface SideBarProps {
-    className?: string;
-}
 
 /**
  * @param className - Class for controlling a component from outside.
@@ -27,19 +27,19 @@ export const SideBar: FC<SideBarProps> = (props) => {
 
     const sidePanelRef = useRef<HTMLDivElement>(null);
 
-    const buttonRef = useRef<HTMLDivElement>(null);
+    const buttonRef = useRef<HTMLButtonElement>(null);
 
-    const onToggle = (): void => {
+    const handlerOnToggle = (): void => {
         setCollapsed((prev) => !prev);
     };
 
-    const onKeyDown = (event: KeyboardEvent): void => {
+    const handlerOnKeyDown = (event: KeyboardEvent): void => {
         if (event.key === 'Escape') {
             setCollapsed(false);
         }
     };
 
-    const handleClickOutside = (event: Event): void => {
+    const handlerClickOutside = (event: Event): void => {
         event.stopPropagation();
 
         if (
@@ -53,22 +53,22 @@ export const SideBar: FC<SideBarProps> = (props) => {
     };
 
     useEffect(() => {
-        window.addEventListener('click', handleClickOutside);
+        window.addEventListener('click', handlerClickOutside);
 
         return () => {
-            window.removeEventListener('click', handleClickOutside);
+            window.removeEventListener('click', handlerClickOutside);
         };
     }, []);
 
     useEffect(() => {
         if (collapsed) {
-            window.addEventListener('keydown', onKeyDown);
+            window.addEventListener('keydown', handlerOnKeyDown);
         }
 
         return () => {
-            window.removeEventListener('keydown', onKeyDown);
+            window.removeEventListener('keydown', handlerOnKeyDown);
         };
-    }, [collapsed, onKeyDown]);
+    }, [collapsed, handlerOnKeyDown]);
 
     return (
         <div
@@ -78,12 +78,19 @@ export const SideBar: FC<SideBarProps> = (props) => {
                 className,
             ])}
             onClick={(e: any) => {
-                handleClickOutside(e);
+                handlerClickOutside(e);
             }}
         >
-            <div className={cls.button} onClick={onToggle} ref={buttonRef}>
+            <CustomButton
+                data-testid='button'
+                className={cls.button}
+                onClick={handlerOnToggle}
+                type={ButtonType.BUTTON}
+                theme={ButtonTheme.CLEAR}
+                buttonRef={buttonRef}
+            >
                 {collapsed ? <Close /> : <Open />}
-            </div>
+            </CustomButton>
 
             <div className={cls.wrapper}>
                 <NavBar

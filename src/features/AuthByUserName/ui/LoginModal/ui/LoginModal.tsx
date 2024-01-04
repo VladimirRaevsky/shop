@@ -8,10 +8,8 @@ import { RegistrationForm } from '../../Form/RegistrationForm';
 import { ClassNames } from 'shared/lib';
 
 import { CustomButton } from 'shared/ui/CustomButton';
-import {
-    ButtonTheme,
-    ButtonType,
-} from 'shared/ui/CustomButton/ui/CustomButton';
+
+import { ButtonTheme, ButtonType } from 'shared/ui/CustomButton/types';
 import { Modal } from 'shared/ui/Modal';
 
 import cls from './LoginModal.module.scss';
@@ -27,7 +25,7 @@ export const LoginModal: FC<LoginModalProps> = (props) => {
 
     const [register, setRegister] = useState(true);
 
-    const handlerOnRegistration = (): void => {
+    const onRegistrationHandler = (): void => {
         setRegister((prev) => !prev);
     };
 
@@ -46,7 +44,7 @@ export const LoginModal: FC<LoginModalProps> = (props) => {
                 <CustomButton
                     theme={ButtonTheme.REGISTER}
                     type={ButtonType.BUTTON}
-                    onClick={handlerOnRegistration}
+                    onClick={onRegistrationHandler}
                     className={cls.button}
                 >
                     {register ? t('Авторизоваться') : t('Зарегистрироваться')}

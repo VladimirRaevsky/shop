@@ -8,7 +8,7 @@ export interface ListType {
 }
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
-export const __LIST_ITEMS__: ListType[] = [
+export const LIST_ITEMS: ListType[] = [
     { id: 1, to: AppRoutes.MAIN, text: 'главная', hover: true },
     { id: 2, to: AppRoutes.ABOUT, text: 'о нас', hover: false },
     { id: 3, to: AppRoutes.BLOGS, text: 'блоги', hover: false },

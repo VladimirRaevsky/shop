@@ -1,11 +1,9 @@
 import { type FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import cls from './CartPage.module.scss';
+import { type CartPageProps } from '../types';
 
-interface CartPageProps {
-    className?: string;
-}
+import cls from './CartPage.module.scss';
 
 const CartPage: FC<CartPageProps> = () => {
     const { t } = useTranslation('home');

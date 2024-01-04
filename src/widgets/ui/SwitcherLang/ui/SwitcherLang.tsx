@@ -2,13 +2,11 @@ import Select from 'antd/es/select';
 import { type FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { type SwitcherLangProps } from '../types';
+
 import { ClassNames } from 'shared/lib';
 
 import cls from './SwitcherLang.module.scss';
-
-interface SwitcherLangProps {
-    className?: string;
-}
 
 /**
  * @param className - Class for controlling a component from outside.

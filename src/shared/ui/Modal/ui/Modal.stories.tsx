@@ -1,19 +1,15 @@
 import { UserOutlined } from '@ant-design/icons';
 import { type Meta, type StoryObj } from '@storybook/react';
 
-import cls from '../../../../features/AuthByUserName/ui/LoginForm/LoginForm.module.scss';
-
 import { CustomButton } from 'shared/ui/CustomButton';
-import {
-    ButtonTheme,
-    ButtonType,
-} from 'shared/ui/CustomButton/ui/CustomButton';
+
+import { ButtonTheme, ButtonType } from 'shared/ui/CustomButton/types';
 import { InputForm } from 'shared/ui/InputForm';
 import {
     InputFormTheme,
     InputPlaceholder,
     InputType,
-} from 'shared/ui/InputForm/ui/InputForm';
+} from 'shared/ui/InputForm/types';
 import { Ripple } from 'shared/ui/Ripple';
 
 import { Modal } from './Modal';
@@ -35,14 +31,12 @@ export const Primary: Story = {
         children: (
             <>
                 <InputForm
-                    className={cls.input}
                     type={InputType.TEXT}
                     placeholder={InputPlaceholder.NAME}
                     theme={InputFormTheme.SMALL}
                     prefix={<UserOutlined />}
                 />
                 <InputForm
-                    className={cls.input}
                     type={InputType.PASSWORD}
                     placeholder={InputPlaceholder.PASSWORD}
                     theme={InputFormTheme.SMALL}

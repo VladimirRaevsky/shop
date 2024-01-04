@@ -4,6 +4,8 @@ import { useCallback, useState, type FC } from 'react';
 
 import { useSelector } from 'react-redux';
 
+import { type HeaderProps } from '../types';
+
 import { getUserAuthData } from 'entites/User';
 import { LoginModal } from 'features/AuthByUserName';
 
@@ -14,10 +16,7 @@ import { ClassNames, useToggleClass } from 'shared/lib';
 import { AppLink } from 'shared/ui/AppLink';
 import { Container } from 'shared/ui/Container';
 import { CustomButton } from 'shared/ui/CustomButton';
-import {
-    ButtonTheme,
-    ButtonType,
-} from 'shared/ui/CustomButton/ui/CustomButton';
+import { ButtonTheme, ButtonType } from 'shared/ui/CustomButton/types';
 import { CustomTitle } from 'shared/ui/CustomTitle';
 
 import { SwitcherLang } from 'widgets/ui/SwitcherLang';
@@ -25,10 +24,6 @@ import { SwitcherTheme } from 'widgets/ui/SwitcherTheme';
 
 import cls from './Header.module.scss';
 import { NavBar } from './NavBar';
-
-interface HeaderProps {
-    className?: string;
-}
 
 /**
  * @param className - Class for controlling a component from outside.

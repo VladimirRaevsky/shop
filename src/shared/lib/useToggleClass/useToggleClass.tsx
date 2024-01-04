@@ -1,19 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import {
-    type ListType,
-    __LIST_ITEMS__,
-} from 'widgets/ui/Header/ui/NavBar/const';
+import { type ListType, LIST_ITEMS } from 'widgets/ui/Header/ui/NavBar/const';
 
-export interface UseToggleClassResult {
-    listElements: ListType[];
-    handlerToggleClass: (index: number) => void;
-}
+import { type UseToggleClassResult } from './types';
 
 export function useToggleClass(): UseToggleClassResult {
-    const [listElements, setListElements] =
-        useState<ListType[]>(__LIST_ITEMS__);
+    const [listElements, setListElements] = useState<ListType[]>(LIST_ITEMS);
 
     const location = useLocation();
 

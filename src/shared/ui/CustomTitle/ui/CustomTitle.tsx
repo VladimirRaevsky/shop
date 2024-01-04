@@ -1,29 +1,13 @@
 import { Typography } from 'antd';
-import { type ReactNode, type FC } from 'react';
+import { type FC } from 'react';
+
+import { type TitleProps } from '../types';
 
 import { ClassNames } from 'shared/lib';
 
 import cls from './CustomTitle.module.scss';
 
 const { Title } = Typography;
-
-export const enum TitleLevel {
-    ONE = 1,
-    TWO = 2,
-    THREE = 3,
-}
-
-export enum TitleTheme {
-    PRIMARY = 'primary',
-}
-
-interface TitleProps {
-    className?: string;
-    children: ReactNode;
-    level: TitleLevel;
-    ariaLevel: TitleLevel;
-    theme?: TitleTheme;
-}
 
 /**
  * @param className - Class for controlling a component from outside

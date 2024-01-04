@@ -1,8 +1,10 @@
 import { type Meta, type StoryObj } from '@storybook/react';
 
-import { InputPlaceholder, InputType } from 'shared/ui/InputForm/ui/InputForm';
+import { InputTheme } from '../types';
 
-import { CustomInput, InputTheme } from './CustomInput';
+import { InputPlaceholder, InputType } from 'shared/ui/InputForm/types';
+
+import { CustomInput } from './CustomInput';
 
 const meta: Meta<typeof CustomInput> = {
     title: 'shared/CustomInput',

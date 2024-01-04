@@ -1,6 +1,8 @@
 import { type Meta, type StoryObj } from '@storybook/react';
 
-import { CustomTitle, TitleLevel, TitleTheme } from './CustomTitle';
+import { TitleLevel, TitleTheme } from '../types';
+
+import { CustomTitle } from './CustomTitle';
 
 const meta: Meta<typeof CustomTitle> = {
     title: 'shared/CustomTitle',
@@ -13,28 +15,28 @@ export default meta;
 
 type Story = StoryObj<typeof CustomTitle>;
 
-export const TitleOne: StoryObj = {
+export const TitleOne: Story = {
     args: {
         level: TitleLevel.ONE,
         children: 1,
     },
 };
 
-export const TitleTwo: StoryObj = {
+export const TitleTwo: Story = {
     args: {
         level: TitleLevel.TWO,
         children: 2,
     },
 };
 
-export const TitleThree: StoryObj = {
+export const TitleThree: Story = {
     args: {
         level: TitleLevel.THREE,
         children: 3,
     },
 };
 
-export const TitlePrimaryTheme: StoryObj = {
+export const TitlePrimaryTheme: Story = {
     args: {
         level: TitleLevel.THREE,
         children:

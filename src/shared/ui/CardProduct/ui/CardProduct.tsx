@@ -1,16 +1,11 @@
 import { Card } from 'antd';
 import { type FC } from 'react';
 
+import { type CardProps } from '../types';
+
 import { ClassNames } from 'shared/lib';
 
 import cls from './CardProduct.module.scss';
-
-interface CardProps {
-    className?: string;
-    url: string;
-    title: string;
-    price: number;
-}
 
 /**
  * @param className - Class for controlling a component from outside.

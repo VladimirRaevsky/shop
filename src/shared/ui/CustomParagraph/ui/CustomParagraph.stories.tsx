@@ -1,6 +1,8 @@
 import { type Meta, type StoryObj } from '@storybook/react';
 
-import { CustomParagraph, CustomParagraphTheme } from './CustomParagraph';
+import { CustomParagraphTheme } from '../types';
+
+import { CustomParagraph } from './CustomParagraph';
 
 const meta: Meta<typeof CustomParagraph> = {
     title: 'shared/CustomParagraph',

@@ -176,7 +176,7 @@ button {
     outline: none;
     box-shadow: var(--submit-button-shadow);
 
-    transition: box-shadow .2s, border-color .2s;
+    transition: box-shadow var(--delay-transition), border-color var(--delay-transition);
 
   &:focus {
     box-shadow: var(--submit-button-shadow-hover);

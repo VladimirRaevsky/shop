@@ -1,18 +1,13 @@
 import { type FC } from 'react';
 
-import { ClassNames } from 'shared/lib';
-import {
-    CustomParagraph,
-    CustomParagraphTheme,
-} from 'shared/ui/CustomParagraph/ui/CustomParagraph';
-import { CustomTitle } from 'shared/ui/CustomTitle';
-import { TitleLevel, TitleTheme } from 'shared/ui/CustomTitle/ui/CustomTitle';
+import { type TextProps } from '../types';
 
-interface TextProps {
-    className?: string;
-    title?: string;
-    description?: string;
-}
+import { ClassNames } from 'shared/lib';
+
+import { CustomParagraphTheme } from 'shared/ui/CustomParagraph/types';
+import { CustomParagraph } from 'shared/ui/CustomParagraph/ui/CustomParagraph';
+import { CustomTitle } from 'shared/ui/CustomTitle';
+import { TitleLevel, TitleTheme } from 'shared/ui/CustomTitle/types';
 
 /**
  * @param className - Class for controlling a component from outside

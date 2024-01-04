@@ -2,41 +2,26 @@ import { useState, type FC } from 'react';
 
 import PhoneImg from '../../../shared/assets/icons/phone.png';
 
+import { type MainePageProps, type Photo } from '../types';
+
 import { Counter } from 'entites/Counter';
 import { CardProduct } from 'shared/ui/CardProduct';
 import { CustomButton } from 'shared/ui/CustomButton';
-import {
-    ButtonTheme,
-    ButtonType,
-} from 'shared/ui/CustomButton/ui/CustomButton';
 
+import { ButtonTheme, ButtonType } from 'shared/ui/CustomButton/types';
 import { CustomInput } from 'shared/ui/CustomInput';
-import { InputTheme } from 'shared/ui/CustomInput/ui/CustomInput';
+import { InputTheme } from 'shared/ui/CustomInput/types';
+import { CustomParagraphTheme } from 'shared/ui/CustomParagraph/types';
+import { CustomParagraph } from 'shared/ui/CustomParagraph/ui/CustomParagraph';
+import { InputForm } from 'shared/ui/InputForm';
 import {
-    CustomParagraph,
-    CustomParagraphTheme,
-} from 'shared/ui/CustomParagraph/ui/CustomParagraph';
-import {
-    InputForm,
     InputFormTheme,
     InputPlaceholder,
     InputType,
-} from 'shared/ui/InputForm/ui/InputForm';
+} from 'shared/ui/InputForm/types';
 import { Ripple } from 'shared/ui/Ripple';
 
 import cls from './MainPage.module.scss';
-
-interface MainePageProps {
-    className?: string;
-}
-
-interface Photo {
-    albumId: number;
-    id: number;
-    title: string;
-    url: string;
-    thumbnailUrl: string;
-}
 
 const MainPage: FC<MainePageProps> = () => {
     const [test, setTest] = useState<Photo[]>();

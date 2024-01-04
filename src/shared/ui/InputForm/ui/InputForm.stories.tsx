@@ -1,7 +1,9 @@
 import { UserOutlined } from '@ant-design/icons';
 import { type Meta, type StoryObj } from '@storybook/react';
 
-import { InputForm, InputFormTheme, InputType } from './InputForm';
+import { InputFormTheme, InputType } from '../types';
+
+import { InputForm } from './InputForm';
 
 const meta: Meta<typeof InputForm> = {
     title: 'shared/InputForm',

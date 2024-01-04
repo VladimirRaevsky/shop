@@ -2,21 +2,18 @@ import { type FC } from 'react';
 
 import { useTranslation } from 'react-i18next';
 
+import { type NotFoundProps } from '../types';
+
 import { AppRoutes } from 'shared/config/routeConfig/RouteConfig';
 import { ClassNames } from 'shared/lib';
 import { AppLink } from 'shared/ui/AppLink';
-import { AppLinkTheme } from 'shared/ui/AppLink/ui/AppLink';
+
+import { AppLinkTheme } from 'shared/ui/AppLink/types';
 import { CustomButton } from 'shared/ui/CustomButton';
-import {
-    ButtonTheme,
-    ButtonType,
-} from 'shared/ui/CustomButton/ui/CustomButton';
+
+import { ButtonTheme, ButtonType } from 'shared/ui/CustomButton/types';
 
 import cls from './NotFound.module.scss';
-
-interface NotFoundProps {
-    className?: string;
-}
 
 const NotFound: FC<NotFoundProps> = (props) => {
     const { className = '' } = props;
