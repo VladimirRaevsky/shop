@@ -31,8 +31,8 @@ const preview: Preview = {
                 title: 'locale',
                 icon: 'globe',
                 items: [
-                    { value: 'en', right: 'us', title: 'English' },
-                    { value: 'ru', right: '🇷🇺', title: 'Русский' },
+                    { value: 'en', right: 'US', title: 'English' },
+                    { value: 'ru', right: 'RU', title: 'Русский' },
                 ],
                 dynamicTitle: true,
             },

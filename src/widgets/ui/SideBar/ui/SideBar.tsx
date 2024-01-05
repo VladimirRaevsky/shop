@@ -29,11 +29,11 @@ export const SideBar: FC<SideBarProps> = (props) => {
 
     const buttonRef = useRef<HTMLButtonElement>(null);
 
-    const handlerOnToggle = (): void => {
+    const onToggleHandler = (): void => {
         setCollapsed((prev) => !prev);
     };
 
-    const handlerOnKeyDown = (event: KeyboardEvent): void => {
+    const onKeyDownHandler = (event: KeyboardEvent): void => {
         if (event.key === 'Escape') {
             setCollapsed(false);
         }
@@ -62,13 +62,13 @@ export const SideBar: FC<SideBarProps> = (props) => {
 
     useEffect(() => {
         if (collapsed) {
-            window.addEventListener('keydown', handlerOnKeyDown);
+            window.addEventListener('keydown', onKeyDownHandler);
         }
 
         return () => {
-            window.removeEventListener('keydown', handlerOnKeyDown);
+            window.removeEventListener('keydown', onKeyDownHandler);
         };
-    }, [collapsed, handlerOnKeyDown]);
+    }, [collapsed, onKeyDownHandler]);
 
     return (
         <div
@@ -84,7 +84,7 @@ export const SideBar: FC<SideBarProps> = (props) => {
             <CustomButton
                 data-testid='button'
                 className={cls.button}
-                onClick={handlerOnToggle}
+                onClick={onToggleHandler}
                 type={ButtonType.BUTTON}
                 theme={ButtonTheme.CLEAR}
                 buttonRef={buttonRef}

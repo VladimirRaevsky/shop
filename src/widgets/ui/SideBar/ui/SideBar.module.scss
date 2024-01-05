@@ -11,7 +11,7 @@
     display: none;
 
     width: var(--side-bar-width);
-    max-height: 300px;
+    max-height: var(--side-bar-height);
 
     background-color: var(--bg-color);
     border-right: 1px solid var(--inverted-bg-color);

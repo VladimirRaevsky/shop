@@ -1,4 +1,4 @@
-import { type Meta, type StoryObj } from '@storybook/react';
+import { type Preview, type Meta, type StoryObj } from '@storybook/react';
 
 import { SideBar } from './SideBar';
 
@@ -12,6 +12,9 @@ const meta: Meta<typeof SideBar> = {
 export default meta;
 
 type Story = StoryObj<typeof SideBar>;
-export const Default: Story = {
-    args: {},
+
+export const Default: Story = {};
+
+export const preview: Preview = {
+    parameters: { viewport: { defaultViewport: 'mobile2' } },
 };

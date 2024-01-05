@@ -16,11 +16,13 @@ import cls from './NavBar.module.scss';
 export const NavBar: FC<NavBarProps> = (props) => {
     const { className = '', style } = props;
 
-    const { listElements, handlerToggleClass } = useToggleClass();
+    const { listElements, toggleClassHandler } = useToggleClass();
 
     const [hoveredIndex, setHoveredIndex] = useState<null | number>(null);
 
     const { t } = useTranslation();
+
+    console.log(hoveredIndex);
 
     return (
         <nav className={ClassNames(cls.navBar, {}, [])}>
@@ -44,7 +46,7 @@ export const NavBar: FC<NavBarProps> = (props) => {
                                 ],
                             )}
                             onClick={() => {
-                                handlerToggleClass(index);
+                                toggleClassHandler(index);
                             }}
                             onMouseEnter={() => {
                                 setHoveredIndex(index);

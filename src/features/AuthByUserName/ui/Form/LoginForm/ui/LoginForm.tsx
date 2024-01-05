@@ -75,7 +75,7 @@ export const LoginForm = memo(function LoginForm(props: LoginFormProps) {
         [dispatch],
     );
 
-    const handlerOnLogin = useCallback(() => {
+    const onLoginHandler = useCallback(() => {
         void dispatch(loginByUsername({ username, password }));
     }, [dispatch, username, password]);
 
@@ -116,7 +116,7 @@ export const LoginForm = memo(function LoginForm(props: LoginFormProps) {
             <CustomButton
                 type={ButtonType.SUBMIT}
                 theme={ButtonTheme.SUBMIT}
-                onClick={handlerOnLogin}
+                onClick={onLoginHandler}
                 disabled={isLoading}
             >
                 {t('Авторизоваться')}

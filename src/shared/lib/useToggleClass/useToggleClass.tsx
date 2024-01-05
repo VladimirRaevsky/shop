@@ -10,12 +10,7 @@ export function useToggleClass(): UseToggleClassResult {
 
     const location = useLocation();
 
-    const path =
-        location.pathname.length > 1
-            ? location.pathname.slice(1)
-            : location.pathname;
-
-    const handlerToggleClass = (index: number): void => {
+    const toggleClassHandler = (index: number): void => {
         const newList = listElements.map((el, i) =>
             i !== index ? { ...el, hover: false } : { ...el, hover: true },
         );
@@ -24,6 +19,11 @@ export function useToggleClass(): UseToggleClassResult {
     };
 
     useEffect(() => {
+        const path =
+            location.pathname.length > 1
+                ? location.pathname.slice(1)
+                : location.pathname;
+
         const newList = listElements.map((el) => {
             if (el.to !== path) {
                 return {
@@ -38,10 +38,10 @@ export function useToggleClass(): UseToggleClassResult {
             }
         });
         setListElements(newList);
-    }, [path]);
+    }, []);
 
     return {
         listElements,
-        handlerToggleClass,
+        toggleClassHandler,
     };
 }

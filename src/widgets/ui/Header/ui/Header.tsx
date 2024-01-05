@@ -30,17 +30,17 @@ import { NavBar } from './NavBar';
  */
 
 export const Header: FC<HeaderProps> = () => {
-    const { handlerToggleClass } = useToggleClass();
+    const { toggleClassHandler } = useToggleClass();
 
     const [openModal, setOpenModal] = useState(false);
 
     const AuthData = useSelector(getUserAuthData);
 
-    const handlerOpenModal = useCallback((): void => {
+    const openModalHandler = useCallback((): void => {
         setOpenModal(true);
     }, []);
 
-    const handlerCloseModal = useCallback((): void => {
+    const closeModalHandler = useCallback((): void => {
         setOpenModal(false);
     }, []);
 
@@ -71,7 +71,7 @@ export const Header: FC<HeaderProps> = () => {
                             >
                                 <MenuIcon
                                     className={cls.icon}
-                                    onClick={handlerOpenModal}
+                                    onClick={openModalHandler}
                                 />
                             </CustomButton>
 
@@ -107,7 +107,7 @@ export const Header: FC<HeaderProps> = () => {
                                         className={cls.icon}
                                         icon='fluent:cart-20-filled'
                                         onClick={() => {
-                                            handlerToggleClass(4);
+                                            toggleClassHandler(4);
                                         }}
                                     />
                                 </AppLink>
@@ -115,7 +115,7 @@ export const Header: FC<HeaderProps> = () => {
 
                             <LoginModal
                                 isOpen={openModal}
-                                onClose={handlerCloseModal}
+                                onClose={closeModalHandler}
                             />
                         </div>
                     </Col>
