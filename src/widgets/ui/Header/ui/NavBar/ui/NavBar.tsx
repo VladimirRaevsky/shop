@@ -22,8 +22,6 @@ export const NavBar: FC<NavBarProps> = (props) => {
 
     const { t } = useTranslation();
 
-    console.log(hoveredIndex);
-
     return (
         <nav className={ClassNames(cls.navBar, {}, [])}>
             <ul className={ClassNames(cls.list, {}, [className])}>

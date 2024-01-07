@@ -34,7 +34,7 @@ export const LoginForm = memo(function LoginForm(props: LoginFormProps) {
 
     const { t } = useTranslation();
 
-    const [{ usernameValue, passwordValue }, setStatus] = useState<
+    const [{ usernameValue, passwordValue }] = useState<
         Record<string, 'error' | undefined>
     >({
         usernameValue: undefined,

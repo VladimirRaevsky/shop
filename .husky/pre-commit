@@ -3,4 +3,4 @@
 
 npm run lint:ts
 npm run stylelint:scss
-npm run jest
+npm run jest:test

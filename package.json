@@ -14,7 +14,7 @@
         "stylelint:scss:fix": "stylelint \"**/*{.css,.scss}\" --fix",
         "prettier:check": "npx prettier . --check",
         "prettier:fix": "npx prettier . --write",
-        "jest": "jest --config ./config/jest/jest.config.ts",
+        "jest:test": "NODE_ENV=test jest --ci --config ./config/jest/jest.config.ts",
         "start:dev:server": "node ./json-server/index.js",
         "loki:test": "npx loki test",
         "loki:ok": "npx loki approve",

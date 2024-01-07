@@ -12,17 +12,6 @@ describe('Counter', () => {
                 counter: {
                     value: 10,
                 },
-                loginForm: {
-                    isLoading: false,
-                    password: '',
-                    username: 'name',
-                },
-                user: {
-                    authData: {
-                        id: '1',
-                        username: 'name',
-                    },
-                },
             },
         });
         const title = screen.getByTestId('title');
@@ -34,17 +23,6 @@ describe('Counter', () => {
             initialState: {
                 counter: {
                     value: 1,
-                },
-                loginForm: {
-                    isLoading: false,
-                    password: '',
-                    username: 'name',
-                },
-                user: {
-                    authData: {
-                        id: '1',
-                        username: 'name',
-                    },
                 },
             },
         });

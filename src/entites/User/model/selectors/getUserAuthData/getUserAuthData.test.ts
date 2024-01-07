@@ -16,10 +16,8 @@ describe('get User AuthData', () => {
         };
 
         expect(getUserAuthData(state as StateSchema)).toEqual({
-            authData: {
-                id: '1',
-                username: 'max',
-            },
+            id: '1',
+            username: 'max',
         });
     });
 });
