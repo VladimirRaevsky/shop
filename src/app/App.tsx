@@ -20,7 +20,7 @@ export const App: FC<AppProps> = () => {
 
     useEffect(() => {
         dispatch(userActions.initialUser());
-    }, [dispatch]);
+    }, []);
 
     return (
         <div className={ClassNames('app', {}, [theme])}>

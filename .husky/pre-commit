@@ -3,4 +3,4 @@
 
 npm run lint:ts
 npm run stylelint:scss
-npm run loki:test
+npm run jest

@@ -5,16 +5,16 @@ import { userActions, type User } from 'entites/User';
 import i18n from 'shared/config/i18n/i18n';
 import { USER_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
 
-interface LoginByUsernameProps {
+interface loginByAuthDataProps {
     username: string;
     password: string;
 }
 
-export const loginByUsername = createAsyncThunk<
+export const loginByAuthData = createAsyncThunk<
     User,
-    LoginByUsernameProps,
+    loginByAuthDataProps,
     { rejectValue: string }
->('login/loginByUsername', async (authData, thunkAPI) => {
+>('loginByUsername', async (authData, thunkAPI) => {
     try {
         const response = await axios.post<User>(
             'http://localhost:8000/login',

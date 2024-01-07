@@ -37,7 +37,7 @@ export const InputForm = memo(function InputForm(props: InputFormProps) {
 
     const uniqueId = `inputField_${Math.random().toString(36).slice(2, 9)}`;
 
-    const handlerOnChange = (event: ChangeEvent<HTMLInputElement>): void => {
+    const onChangeHandler = (event: ChangeEvent<HTMLInputElement>): void => {
         onChange?.(event.target.value);
     };
 
@@ -58,7 +58,7 @@ export const InputForm = memo(function InputForm(props: InputFormProps) {
                     maxLength={50}
                     showCount
                     allowClear
-                    onChange={handlerOnChange}
+                    onChange={onChangeHandler}
                     value={value}
                     prefix={prefix}
                     {...other}
@@ -74,7 +74,7 @@ export const InputForm = memo(function InputForm(props: InputFormProps) {
                     showCount
                     allowClear
                     value={value}
-                    onChange={handlerOnChange}
+                    onChange={onChangeHandler}
                     iconRender={(visible) =>
                         visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
                     }

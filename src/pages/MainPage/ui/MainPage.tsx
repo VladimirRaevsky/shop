@@ -1,8 +1,8 @@
-import { useState, type FC } from 'react';
+import { type FC } from 'react';
 
 import PhoneImg from '../../../shared/assets/icons/phone.png';
 
-import { type MainePageProps, type Photo } from '../types';
+import { type MainePageProps } from '../types';
 
 import { Counter } from 'entites/Counter';
 import { CardProduct } from 'shared/ui/CardProduct';
@@ -24,7 +24,7 @@ import { Ripple } from 'shared/ui/Ripple';
 import cls from './MainPage.module.scss';
 
 const MainPage: FC<MainePageProps> = () => {
-    const [test, setTest] = useState<Photo[]>();
+    // const [test, setTest] = useState<Photo[]>();
 
     console.log(CSSStyleSheet.prototype);
     // useEffect(() => {

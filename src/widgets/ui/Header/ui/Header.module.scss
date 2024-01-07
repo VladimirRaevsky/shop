@@ -69,9 +69,13 @@
 
 .indentation {
     position: relative;
+
     display: flex;
     align-items: center;
+
     margin-right: 5px;
+
+    color: var(--primary-color);;
 }
 
 .icon {
@@ -96,11 +100,11 @@
     min-height: 100%;
 }
 
-.avatar {
+.logIn,
+.logOut {
     cursor: pointer;
     display: flex;
     align-items: center;
-    fill: var(--primary-color);
 }
 
 .moon {

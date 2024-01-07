@@ -5,14 +5,14 @@ import { userActions, type User } from 'entites/User';
 import i18n from 'shared/config/i18n/i18n';
 import { USER_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
 
-interface RegistrationByUsernameProps {
+interface RegistrationByAuthDataProps {
     username: string;
     password: string;
 }
 
 export const registrationByUsername = createAsyncThunk<
     User,
-    RegistrationByUsernameProps,
+    RegistrationByAuthDataProps,
     { rejectValue: string }
 >('registration/registrationByUsername', async (authData, thunkAPI) => {
     try {

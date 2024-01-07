@@ -21,6 +21,11 @@ button {
     
     transition: all var(--delay-transition);
     
+
+    svg {
+        fill: inherit;
+    }
+    
     @media #{$tablets} {
         padding: 12px 30px;
     }

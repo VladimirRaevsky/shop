@@ -2,15 +2,13 @@ import { Icon } from '@iconify/react';
 import { Col, Row } from 'antd';
 import { useCallback, useState, type FC } from 'react';
 
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { type HeaderProps } from '../types';
 
-import { getUserAuthData } from 'entites/User';
+import { getUserAuthData, userActions } from 'entites/User';
 import { LoginModal } from 'features/AuthByUserName';
 
-import AvatarIcon from 'shared/assets/icons/header/avatar.svg';
-import MenuIcon from 'shared/assets/icons/header/menu.svg';
 import { AppRoutes } from 'shared/config/routeConfig/RouteConfig';
 import { ClassNames, useToggleClass } from 'shared/lib';
 import { AppLink } from 'shared/ui/AppLink';
@@ -36,12 +34,18 @@ export const Header: FC<HeaderProps> = () => {
 
     const AuthData = useSelector(getUserAuthData);
 
+    const dispatch = useDispatch();
+
     const openModalHandler = useCallback((): void => {
         setOpenModal(true);
     }, []);
 
     const closeModalHandler = useCallback((): void => {
         setOpenModal(false);
+    }, []);
+
+    const logOutHandler = useCallback((): void => {
+        dispatch(userActions.logoutUser());
     }, []);
 
     return (
@@ -64,17 +68,6 @@ export const Header: FC<HeaderProps> = () => {
                     </Col>
                     <Col xxl={4}>
                         <div className={cls.right}>
-                            <CustomButton
-                                type={ButtonType.BUTTON}
-                                className={cls.indentation}
-                                theme={ButtonTheme.CLEAR}
-                            >
-                                <MenuIcon
-                                    className={cls.icon}
-                                    onClick={openModalHandler}
-                                />
-                            </CustomButton>
-
                             <SwitcherLang className={cls.indentation} />
 
                             <SwitcherTheme className={cls.indentation} />
@@ -84,13 +77,25 @@ export const Header: FC<HeaderProps> = () => {
                                 className={cls.indentation}
                                 theme={ButtonTheme.CLEAR}
                             >
-                                <AvatarIcon className={cls.avatar} />
                                 {AuthData !== undefined && AuthData !== null ? (
-                                    <span className={cls.user}>
-                                        {AuthData?.username}
-                                    </span>
+                                    <>
+                                        <Icon
+                                            icon='streamline:logout-1'
+                                            width='25'
+                                            className={cls.logOut}
+                                            onClick={logOutHandler}
+                                        />
+                                        <span className={cls.user}>
+                                            {AuthData.username}
+                                        </span>
+                                    </>
                                 ) : (
-                                    ''
+                                    <Icon
+                                        icon='streamline:login-1'
+                                        width='25'
+                                        className={cls.logIn}
+                                        onClick={openModalHandler}
+                                    />
                                 )}
                             </CustomButton>
 

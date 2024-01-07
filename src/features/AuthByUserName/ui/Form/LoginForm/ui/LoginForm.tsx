@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
 import { getLoginState } from '../../../../model/selectors/getLoginState/getLoginState';
-import { loginByUsername } from '../../../../model/services/loginByUsername';
+import { loginByAuthData } from '../../../../model/services/loginByAuthData';
 import { loginActions } from '../../../../model/slice/loginSlice';
 
 import { ClassNames, useAppDispatch } from 'shared/lib';
@@ -30,7 +30,7 @@ interface LoginFormProps {
 }
 
 export const LoginForm = memo(function LoginForm(props: LoginFormProps) {
-    const { className = '', isOpen } = props;
+    const { className = '' } = props;
 
     const { t } = useTranslation();
 
@@ -47,13 +47,13 @@ export const LoginForm = memo(function LoginForm(props: LoginFormProps) {
 
     const onChangeUsernameHandler = useCallback(
         (value: string): void => {
-            setStatus((prev) => {
-                return {
-                    ...prev,
-                    usernameValue:
-                        value.trim().length < 5 ? 'error' : undefined,
-                };
-            });
+            // setStatus((prev) => {
+            //     return {
+            //         ...prev,
+            //         usernameValue:
+            //             value.trim().length < 5 ? 'error' : undefined,
+            //     };
+            // });
 
             dispatch(loginActions.setUsername(value));
         },
@@ -62,13 +62,13 @@ export const LoginForm = memo(function LoginForm(props: LoginFormProps) {
 
     const onChangePasswordHandler = useCallback(
         (value: string): void => {
-            setStatus((prev) => {
-                return {
-                    ...prev,
-                    passwordValue:
-                        value.trim().length < 5 ? 'error' : undefined,
-                };
-            });
+            // setStatus((prev) => {
+            //     return {
+            //         ...prev,
+            //         passwordValue:
+            //             value.trim().length < 5 ? 'error' : undefined,
+            //     };
+            // });
 
             dispatch(loginActions.setPassword(value));
         },
@@ -76,7 +76,7 @@ export const LoginForm = memo(function LoginForm(props: LoginFormProps) {
     );
 
     const onLoginHandler = useCallback(() => {
-        void dispatch(loginByUsername({ username, password }));
+        void dispatch(loginByAuthData({ username, password }));
     }, [dispatch, username, password]);
 
     if (error != null) {

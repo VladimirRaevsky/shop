@@ -16,6 +16,8 @@ export default meta;
 
 type Story = StoryObj<typeof InputForm>;
 
+export const Default: Story = {};
+
 export const InputNumber: StoryObj = {
     args: {
         type: InputType.NUMBER,

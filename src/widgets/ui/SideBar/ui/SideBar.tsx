@@ -1,5 +1,4 @@
 import { type FC, useState, useEffect, useRef } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import { Close } from '../Close/Close';
 import { Open } from '../Open/Open';
@@ -20,8 +19,6 @@ import cls from './SideBar.module.scss';
 
 export const SideBar: FC<SideBarProps> = (props) => {
     const { className = '' } = props;
-
-    const { t } = useTranslation();
 
     const [collapsed, setCollapsed] = useState(false);
 

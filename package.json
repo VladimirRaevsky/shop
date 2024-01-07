@@ -19,7 +19,7 @@
         "loki:test": "npx loki test",
         "loki:ok": "npx loki approve",
         "loki:update": "npx loki update",
-        "test_ui_ci": "concurrently --kill-others --raw --success first \"npm run storybook\" \"npm run loki:test\"",
+        "test:ui:ci": "concurrently --kill-others --raw --success first \"npm run storybook:start\" \"npm run loki:test\"",
         "storybook:start": "storybook dev -p 6006 -c ./config/storybook -s public",
         "storybook:build": "storybook build -c ./config/storybook",
         "prepare": "husky install"

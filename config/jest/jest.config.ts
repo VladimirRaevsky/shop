@@ -43,6 +43,12 @@ const config: Config = {
     // Indicates which provider should be used to instrument code for coverage
     coverageProvider: 'babel',
 
+    // The glob patterns Jest uses to detect test files
+    testMatch: [
+        "**/__tests__/**/*.[jt]s?(x)",
+        "**/?(*.)+(spec|test).[tj]s?(x)"
+    ],
+
     // All imported modules in your tests should be mocked automatically
     // automock: false,
 
@@ -169,12 +175,6 @@ const config: Config = {
 
     // Adds a location field to test results
     // testLocationInResults: false,
-
-    // The glob patterns Jest uses to detect test files
-    // testMatch: [
-    //   "**/__tests__/**/*.[jt]s?(x)",
-    //   "**/?(*.)+(spec|test).[tj]s?(x)"
-    // ],
 
     // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
     // testPathIgnorePatterns: [
